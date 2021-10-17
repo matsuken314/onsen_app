@@ -1,0 +1,10 @@
+<h1>Onsens#index</h1>
+<ul class="onsens__group">
+
+<% @onsens.each do|onsen| %>
+<li class="onsen__wrapper">
+<%= onsen.name%> - <%= book.price %>円
+</li>
+<%  end%>
+</ul>
+<p>Find me in app/views/onsens/index.html.erb</p>
