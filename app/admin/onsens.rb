@@ -2,13 +2,13 @@ ActiveAdmin.register Onsen do
  permit_params :name, :sauna_temperature, :water_temperature, :image
 
  form do |f|
-      f.inputs "Onsens" do
+   f.inputs do
         f.input :name
         f.input :sauna_temperature
         f.input :water_temperature
         f.input :image, :as => :file
-      end
-      f.actions
+   end
+   f.actions
   end
 
  show do |item_image|

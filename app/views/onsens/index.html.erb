@@ -3,8 +3,9 @@
 
 <% @onsens.each do|onsen| %>
 <li class="onsen__wrapper">
-<%= onsen.name%> - <%= book.price %>円
+<%= onsen.name%>
+<%= onsen.sauna_tenperature %>
 </li>
 <%  end%>
 </ul>
-<p>Find me in app/views/onsens/index.html.erb</p>
+

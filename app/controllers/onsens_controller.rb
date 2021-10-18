@@ -11,11 +11,22 @@ class OnsensController < ApplicationController
    onsen = params.require(:onsen).permit(:name,:sauna_temperature,:water_temperature,:image)
    Onsen.create(onsen)
   end
+  
+  def show
+   @onsen = Onsen.find_by(id:params[:id])
+  end
+
+  def update
+    @onsen = Onsen.find_by(id:params[:id])
+    onsen.update
+  end
 
   def edit
-
+  @onsen = Onsen.find_by(id:params[:id])
   end
-  def update
+
   
+  def destroy
+
   end
 end
