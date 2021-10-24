@@ -1,6 +1,6 @@
 class OnsensController < ApplicationController
   def index
-    @onsens = Onsen.includes(:name,:sauna_temperature,:water_temperature,:image).order('created_at DESC')
+    @onsens = Onsen.all.order('created_at DESC')
   end
 
   def new
