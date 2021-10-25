@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SaunaSample</title>
+    <title>ととのい</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,7 +11,7 @@
   </head>
 
   <body>
-
+<%= render 'shared/header' %>
    <% if flash[:notice] %>
       <div class="alert alert-info">
         <%= flash[:notice] %>
@@ -23,6 +23,6 @@
       </div>
     <% end %>
     <%= yield %>
-    
+    <%= render 'shared/footer' %>
   </body>
 </html>
