@@ -46,6 +46,7 @@ group :development do
   gem "devise"
   gem "devise-i18n"
   gem "mini_magick"
+  gem "pre-commit", require: false
   gem "pry-rails"
   gem "rails-i18n", "~> 6.0"
   gem "rubocop-performance", require: false
