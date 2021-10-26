@@ -6,6 +6,7 @@ AllCops:
   TargetRubyVersion: 2.7
   NewCops: enable # rubocopの新機能をactiveにする
   Exclude:
+    - "config/environments/development.rb"
     - "assets/**/*"
     - "bin/**/*"
     - "db/schema.rb"
