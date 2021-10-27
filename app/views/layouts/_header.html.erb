@@ -1,0 +1,46 @@
+<header class="header">
+    <div class="header__inner">
+    <div class="header__logo">
+    <a href="#"><img src="img/header-logo.png" class="" alt="ヘッダーロゴ"></a>
+    <h1 class="ttl">ととのい</h1>
+  </div>
+<nav class="nav">
+<ul class="nav__list">
+<% if user_signed_in? %>
+  <%# ログイン時 %>
+  <li class="nav__item"><%= link_to "アカウント編集", edit_user_registration_path , class: "nav__item--link"%></li>
+  <li class="nav__item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav__item--link" %></li>
+  <li class="nav__item"><%= "【ログイン中のアドレス】#{current_user.email}" %></li>
+<% else %>
+  <%# 非ログイン時 %>
+  <li class="nav__item"><%= link_to "新規登録", new_user_registration_path, class: "nav__item--link"%></li>
+ <li class="nav__item"> <%= link_to "ログイン", new_user_session_path, class: "nav__item--link"%></li>
+<% end %>
+  <li class="nav__item"><a class="nav__item--link" href="#features">特徴</a></li>
+  <li class="nav__item"><a href="#price" class="nav__item--link">価格</a></li>
+  <li class="nav__item"><a href="#contact" class="nav__item--link">お問い合わせ</a></li>
+</ul>
+  </nav>
+  <a class="header__btn none__btn" href="#contact">お問い合わせ</a>
+<!--hamburgerボタンー-->
+<div class="hamburger__btn">
+  <span class="hamburger__btn--parts -top"></span>
+  <span class="hamburger__btn--parts -middle"></span>
+  <span class="hamburger__btn--parts -bottom"></span>
+</div>
+<!--hamburgerメニュー-->
+<nav class="hamburger">
+  <ul class="hamburger__lists">
+    <li class="hamburger__list">
+      <a class="hamburger__link" href="#features">特徴</a>
+    </li>
+    <li class="hamburger__list">
+      <a class="hamburger__link" href="#price">価格</a>
+    </li>
+    <li class="hamburger__list">
+      <a class="hamburger__link" href="#contact">お問い合わせ</a>
+    </li>
+  </ul>
+</nav>
+</div>
+</header>
