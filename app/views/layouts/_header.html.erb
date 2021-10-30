@@ -11,7 +11,6 @@
   <%# ログイン時 %>
   <li class="nav__item"><%= link_to "アカウント編集", edit_user_registration_path , class: "nav__item--link"%></li>
   <li class="nav__item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav__item--link" %></li>
-  <li class="nav__item"><%= "【ログイン中のアドレス】#{current_user.email}" %></li>
 <% else %>
   <%# 非ログイン時 %>
   <li class="nav__item"><%= link_to "新規登録", new_user_registration_path, class: "nav__item--link"%></li>
