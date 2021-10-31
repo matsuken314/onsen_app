@@ -1,1 +1,9 @@
 <p>このページは仮のトップページです。</p>
+ <%= link_to "施設一覧", onsens_path %> 
+
+ <% @onsens.each do |onsen| %>
+ <p><%= onsen.name %></p>
+
+ <p><%= onsen.image.url %></p>
+
+ <% end %>
