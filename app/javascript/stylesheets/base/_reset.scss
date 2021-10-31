@@ -1,5 +1,4 @@
-
-$bl: #fef6e4;
+@use  "../setting/setting";
 
 
 html,
@@ -21,7 +20,7 @@ html {
 }
 
 body {
-  background-color: $bl;
+  background-color: #000;
   margin-top: 0;
 }
 
