@@ -3,10 +3,11 @@
 
 <% @onsens.each do |onsen| %>
 <li class="onsen__wrapper">
+<%= image_tag onsen.image.to_s %>
 <%= onsen.name %>
 <%= onsen.sauna_temperature %>
 <%= onsen.water_temperature %>
-<%= image_tag onsen.image.to_s %>
+<%= onsen.address %>
 </li>
 </ul>
 <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_01_094405) do
+ActiveRecord::Schema.define(version: 2021_11_03_082451) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -41,10 +41,11 @@ ActiveRecord::Schema.define(version: 2021_11_01_094405) do
   create_table "onsens", force: :cascade do |t|
     t.string "name"
     t.integer "sauna_temperature"
-    t.string "water_temperature"
+    t.integer "water_temperature"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
+    t.string "address"
   end
 
   create_table "users", force: :cascade do |t|
