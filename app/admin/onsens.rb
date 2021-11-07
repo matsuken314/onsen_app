@@ -20,7 +20,7 @@ ActiveAdmin.register Onsen do
       row :address
       # show画面で画像を表示するためのタグを追加
       row :image do
-        image_tag(onsen.image.url)
+        image_tag(onsen.image.to_s)
       end
     end
   end
