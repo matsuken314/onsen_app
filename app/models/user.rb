@@ -9,6 +9,10 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
 
+  def user
+    User.find_by(id: user_id)
+  end
+
   def update_without_current_password(params, *options)
     if params[:password].blank? && params[:password_confirmation].blank?
       params.delete(:password)

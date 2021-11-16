@@ -1,11 +1,35 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+  def index
+    @posts = Post.includes(:user)
+  end
+
   def new
     @post = Post.new
   end
 
   def create
     @post = Post.new(post_params)
+    if @post.save
+      redirect_to controller: :users, action: :show
+    else
+      flash[:alert] = "ととのい記録に失敗しました"
+    end
   end
+
+  def edit; end
+
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+  end
+
+  def update
+    post = Post.find(params[:id])
+    post.update(post_params)
+  end
+
+  def show; end
 
   private
 
