@@ -4,14 +4,35 @@
   <% if @user == current_user %>
    <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark edit-profile-btn" %>
   <% end %>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+  <canvas id="myPieChart"></canvas>
+  <script>
+  var ctx = document.getElementById("myPieChart");
+var myChart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: ["サウナ", "水風呂", "外気浴"],
+    datasets: 
+    [
+      <% @posts.each do |post| %>
+        {
+      　 backgroundColor: ['#f88','#48f','#484'],
+        data: [<%= post.sauna_one %>, <%= post.water_one %>, <%= post.totonoi_one %>]
+        }
+      <% end %>
+    ]
+  }
+});
+  </script>
    <% @posts.each do |post| %>
         <div class="user_post">
          <p><%= post.sauna_one %></p>
          <p><%= post.water_one %></p>
          <p><%= post.totonoi_one %></p>
-          <p><%= post.totonoi_address %></p>
+         <p><%= post.totonoi_address %></p>
         </div>
-        <% end %>
+   <% end %>
   <div class="list-group text-center">
     <%= link_to "サインアウト", destroy_user_session_path, method: :delete, class: "list-group-item list-group-item-action" %>
     <%= link_to "キャンセル", "#", class: "list-group-item list-group-item-action", "data-dismiss": "modal" %>
