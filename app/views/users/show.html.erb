@@ -17,7 +17,7 @@ var myChart = new Chart(ctx, {
     [
       <% @posts.each do |post| %>
         {
-      　 backgroundColor: ['#f88','#48f','#484'],
+        backgroundColor: ['#f88','#48f','#484'],
         data: [<%= post.sauna_one %>, <%= post.water_one %>, <%= post.totonoi_one %>]
         }
       <% end %>
