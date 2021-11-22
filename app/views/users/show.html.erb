@@ -1,11 +1,11 @@
 <div class="UserMainPage__container">
+
  <%= image_tag avatar_url(@user) , size: "200", class: "round-img"%>
   <h1><%= @user.name %></h1>
   <% if @user == current_user %>
    <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark edit-profile-btn" %>
   <% end %>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
   <canvas id="myPieChart"></canvas>
   <script>
   var ctx = document.getElementById("myPieChart");
