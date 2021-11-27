@@ -3,7 +3,15 @@
   width: 100%;
   margin: 0 auto;
   display: flex;
+  justify-content: space-between;
 }
 .hamburger{
   display: none;
+}
+
+.nav__list{
+  display: flex;
+}
+.nav__item{
+  margin-left:1.5rem;
 }

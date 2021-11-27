@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
 
+  mount_uploader :avatar, AvatarUploader
+
   def user
     User.find_by(id: user_id)
   end

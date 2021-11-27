@@ -9,7 +9,11 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "./modal" 
-
+import 'chart.js/dist/chart';
+require('./totonoi_circle')
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+
+

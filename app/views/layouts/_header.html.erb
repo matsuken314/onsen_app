@@ -9,9 +9,8 @@
 <ul class="nav__list">
 <% if user_signed_in? %>
   <%# ログイン時 %>
-  <li class="nav__item"><%= link_to "マイページ", edit_user_registration_path , class: "nav__item--link"%></li>
-  <li class="nav__item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav__item--link" %></li>
     <li class="nav__item"><%= link_to user_path(current_user), class: "nav__item--link" do%><i class="far fa-user"></i><% end %></li>
+    <li class="nav__item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav__item--link" %></li>
 <% else %>
   <%# 非ログイン時 %>
   <li class="nav__item"><%= link_to "新規登録", new_user_registration_path, class: "nav__item--link"%></li>

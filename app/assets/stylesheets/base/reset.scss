@@ -15,9 +15,15 @@ button {
 html {
   color: #000;
   background: #fff;
-  font-size: 16px;
+  font-size: 62.5%;
   line-height: 1.6;
   word-break: break-all;
+}
+
+@media(max-width:1260px) {
+  html{
+    font-size: 0.625vw;
+  }
 }
 
 body {
