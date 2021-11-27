@@ -8,23 +8,16 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
   </head>
 
   <body>
 <%= render "layouts/header" %>
-<%= render "layouts/flash" %>
-   <% if flash[:notice] %>
-      <div class="alert alert-info">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
     <% if flash[:alert] %>
       <div class="alert alert-danger">
         <%= flash[:alert] %>
       </div>
     <% end %>
     <%= yield %>
-    <%= render 'layouts/footer' %>
+  <%= render 'layouts/footer' %>
   </body>
 </html>

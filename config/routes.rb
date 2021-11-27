@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     post "users/guest_sign_in", to: "users/sessions#guest_sign_in"
   end
   get "/users/:id", to: "users#show", as: "user"
-  resources :posts, only: %i[new create]
+  resources :posts, only: %i[index new create]
 end
