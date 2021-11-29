@@ -6,19 +6,7 @@
   <% if @user == current_user %>
    <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark edit-profile-btn" %>
   <% end %>
-  <button id="openModal">モーダルを開く</button>
-   <!-- モーダルエリアここから -->
- <section id="modalArea" class="modalArea">
-   <div id="modalBg" class="modalBg"></div>
-   <div class="modalWrapper">
-     <div class="modalContents">
-       <p>ここに投稿入る</p>
-     </div>
-     <div id="closeModal" class="closeModal">
-       ×
-     </div>
-   </div>
- </section>
+
   </div>
  
 
