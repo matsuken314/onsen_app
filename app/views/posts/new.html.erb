@@ -1,6 +1,6 @@
 <div class = "post_container">
 <%= form_with model: @post do |f| %>
-<%= f.text_area :totonoi_address, placeholder:"ととのった場所"%>
+<%= f.text_field :totonoi_address, autofocus: true,placeholder:"ととのった場所"%>
 <%= f.number_field :sauna_one ,placeholder: "サウナの時間" %>
 <%= f.number_field :water_one , placeholder: "水風呂の時間" %>
 <%= f.number_field :totonoi_one , placeholder: "ととのった時間"%>
