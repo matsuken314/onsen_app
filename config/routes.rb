@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   end
   get "/users/:id", to: "users#show", as: "user"
   resources :posts, only: %i[index new create]
+  resources :onsens do
+    get "/autocomplete_onsen_name/:onsen_name", on: :collection, action: :autocomplete_onsen_name
+  end
 end

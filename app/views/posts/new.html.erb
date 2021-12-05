@@ -1,6 +1,6 @@
 <div class = "post_container">
 <%= form_with model: @post do |f| %>
-<%= f.text_field :totonoi_address, autofocus: true,placeholder:"ととのった場所"%>
+<%= f.text_field :totonoi_address, autofocus: true,placeholder:"ととのった場所", class: 'onsen_name'%>
 <%= f.number_field :sauna_one ,placeholder: "サウナの時間" %>
 <%= f.number_field :water_one , placeholder: "水風呂の時間" %>
 <%= f.number_field :totonoi_one , placeholder: "ととのった時間"%>
@@ -16,4 +16,19 @@
  <%= f.submit "投稿", class: "btn btn-primary" %>
 
   <% end %>
+
   </div>
+<script>
+$(function() {
+  console.log("これ見れてる？")
+        var names = ['RUN','RON','RXN','サウナー','ファイル'];
+        $('.onsen_name').autocomplete({
+          source: names,
+          minLength: 0,
+        });
+
+})    
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
