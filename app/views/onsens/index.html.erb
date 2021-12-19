@@ -8,6 +8,9 @@
 <%= onsen.sauna_temperature %>
 <%= onsen.water_temperature %>
 <p><i class="fas fa-map-marked-alt"></i>  <%= onsen.address %></p>
+<div class="label">
+  <%= render partial: 'bookmarks/bookmark', locals: { onsen: @onsen } %>
+</div>
 </li>
 </ul>
 <% end %>

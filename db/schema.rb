@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_05_081943) do
+ActiveRecord::Schema.define(version: 2021_12_19_074711) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2021_12_05_081943) do
     t.string "image"
     t.string "address"
     t.string "name_hiragana"
+    t.integer "bookmarks_count"
   end
 
   create_table "posts", force: :cascade do |t|
