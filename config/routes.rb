@@ -9,10 +9,8 @@ Rails.application.routes.draw do
   root "onsens#index"
   post "/onsens/guest_sign_in", to: "onsens#guest_sign_in"
   resources :onsens
-  member do
-    post   "/bookmark/:onsen_id" => "bookmarks#bookmark",   as: "bookmark"
-    delete "/bookmark/:onsen_id" => "bookmarks#unbookmark", as: "unbookmark"
-  end
+  post "bookmark/:id" => "bookmarks#create", as: "create_bookmark"
+  delete "bookmark/:id" => "bookmarks#destroy", as: "destroy_bookmark"
   devise_scope :user do
     post "users/guest_sign_in", to: "users/sessions#guest_sign_in"
   end

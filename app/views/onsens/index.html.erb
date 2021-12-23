@@ -8,9 +8,20 @@
 <%= onsen.sauna_temperature %>
 <%= onsen.water_temperature %>
 <p><i class="fas fa-map-marked-alt"></i>  <%= onsen.address %></p>
-<div class="label">
-  <%= render partial: 'bookmarks/bookmark', locals: { onsen: @onsen } %>
-</div>
+<% if current_user.bookmarked_by?(onsen.id) %>
+       <%= link_to 'いいね外す', destroy_bookmark_path(onsen), method: :DELETE %>
+      <div class = "icon">
+      <i class="fas fa-bookmark"></i>
+      </div>
+      <%= onsen.bookmarks.count %>
+<% else %>
+      <%= link_to 'いいねする', create_bookmark_path(onsen), method: :POST %>
+      <div class = "icon">
+     <i class="far fa-bookmark"></i>
+      </div>
+      <%= onsen.bookmarks.count %>
+<% end %>
+
 </li>
 </ul>
 <% end %>

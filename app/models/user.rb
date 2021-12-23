@@ -28,6 +28,10 @@ class User < ApplicationRecord
     result
   end
 
+  def bookmarked_by?(onsen_id)
+    bookmarks.where(onsen_id: onsen_id).exists?
+  end
+
   def self.guest
     find_or_create_by!(email: "guest@example.com") do |user|
       user.name = "ゲストユーザー"
