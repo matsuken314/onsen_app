@@ -1,11 +1,16 @@
 class BookmarksController < ApplicationController
+  before_action :onsen_params
   def create
     Bookmark.create(user_id: current_user.id, onsen_id: params[:id])
-    redirect_to onsens_path
   end
 
   def destroy
     Bookmark.find_by(user_id: current_user.id, onsen_id: params[:id]).destroy
-    redirect_to onsens_path
+  end
+
+  private
+
+  def onsen_params
+    @onsen = Onsen.find(params[:id])
   end
 end
