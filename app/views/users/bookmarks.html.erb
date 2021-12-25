@@ -1,0 +1,7 @@
+<% @bookmark_onsens.each do |onsen| %>
+<%= image_tag onsen.image.to_s %>
+<%= onsen.name %>
+<%= onsen.sauna_temperature %>
+<%= onsen.water_temperature %>
+<%= onsen.address %>
+<% end %>

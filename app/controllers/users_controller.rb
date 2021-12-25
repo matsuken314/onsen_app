@@ -13,6 +13,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def bookmarks
+    @user = User.find(params[:id])
+    bookmarks = Bookmark.where(user_id: @user.id).pluck(:onsen_id)
+    @bookmark_onsens = Onsen.find(bookmarks)
+  end
+
   def user_params
     params.require(:user).permit(:name, :avatar)
   end

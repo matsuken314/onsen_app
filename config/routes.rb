@@ -19,4 +19,9 @@ Rails.application.routes.draw do
   resources :onsens do
     get "/autocomplete_onsen_name/:onsen_name", on: :collection, action: :autocomplete_onsen_name
   end
+  resources :users, only: [:index, :show] do
+    member do
+      get :bookmarks
+    end
+  end
 end

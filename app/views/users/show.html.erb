@@ -6,13 +6,19 @@
   <% if @user == current_user %>
    <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark edit-profile-btn" %>
   <% end %>
- <%= link_to "ととのいを記録", new_post_path, class: " post-btn" %>
+ <%= link_to "ととのいを記録", new_post_path, class: " post_btn" %>
+  <%= link_to "保存ととのい施設", bookmarks_user_path, class: "totonoi_btn" %>
   </div>
  
 
   <div class="UserCircle__container">
   <canvas id="myChart" width="100%" height="100%"></canvas>
   </div>
+<ul class="UserNav">
+<li class="UserNav__item"></li>
+<li class="UserNav__item"></li>
+<li class="UserNav__item"><p>保存した施設</p></li>
+</ul>
 </div>
    <% @posts.each do |post| %>
         <div class="user_post">

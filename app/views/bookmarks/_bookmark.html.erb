@@ -1,15 +1,17 @@
 <% if current_user.bookmarked_by?(onsen.id) %>
-       <%= link_to 'いいね外す', destroy_bookmark_path(onsen), method: :DELETE, remote: true %>
+       <%= link_to destroy_bookmark_path(onsen), method: :DELETE, remote: true do %>
       <div class = "icon">
       <i class="fas fa-bookmark"></i>
       </div>
+      <% end %>
       <%= onsen.bookmarks.count %>
       
 <% else %>
-      <%= link_to 'いいねする', create_bookmark_path(onsen), method: :POST, remote: true  %>
+      <%= link_to create_bookmark_path(onsen), method: :POST, remote: true do %>
       <div class = "icon">
      <i class="far fa-bookmark"></i>
       </div>
+      <% end %>
       <%= onsen.bookmarks.count %>
       
 <% end %>
