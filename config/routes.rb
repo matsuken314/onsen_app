@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   root "onsens#index"
   post "/onsens/guest_sign_in", to: "onsens#guest_sign_in"
   resources :onsens
+  resources :onsens do
+    get "/autocomplete_onsen_name/:onsen_name", on: :collection, action: :autocomplete_onsen_name
+  end
   post "bookmark/:id" => "bookmarks#create", as: "create_bookmark"
   delete "bookmark/:id" => "bookmarks#destroy", as: "destroy_bookmark"
   devise_scope :user do
@@ -16,9 +19,6 @@ Rails.application.routes.draw do
   end
   get "/users/:id", to: "users#show", as: "user"
   resources :posts, only: %i[index new create]
-  resources :onsens do
-    get "/autocomplete_onsen_name/:onsen_name", on: :collection, action: :autocomplete_onsen_name
-  end
   resources :users, only: [:index, :show] do
     member do
       get :bookmarks
