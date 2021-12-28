@@ -6,6 +6,7 @@
   max-width: 1260px;
   width: 100%;
   margin: 0 auto;
+
 }
 
 .onsen__card{
@@ -46,8 +47,27 @@
 .onsen__spec__sauna{
   background-color: #f68655;
   color: #fff;
+    padding: 3px;
+  border-radius: 50%;
 }
 .onsen__spec__water{
   background-color: #6b99cf;
   color: #fff; 
+  padding: 3px;
+  border-radius: 50%;
+}
+
+.onsen__spec__text{
+margin-right: 12px;
+}
+@media (min-width:960px){
+ .onsen__wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 24px;
+  gap: 56px 3.5%;
+ }
+ .onsen__card{
+   width: 31%;
+ }
 }
