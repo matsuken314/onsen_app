@@ -5,13 +5,17 @@
 .onsen__wrapper{
   max-width: 1260px;
   width: 100%;
-  margin: 0 auto;
-
+ margin: 0 auto;
+ display: flex;
+ flex-wrap: wrap;
+ gap:  56px 0;
+ padding: 0 32px;
 }
 
 .onsen__card{
   background-color: #fff;
   display: block;
+  width: 100%;
 }
 .onsen__card__body{
   padding: 15px;
@@ -62,12 +66,18 @@ margin-right: 12px;
 }
 @media (min-width:960px){
  .onsen__wrapper{
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 24px;
   gap: 56px 3.5%;
  }
  .onsen__card{
    width: 31%;
  }
+}
+@media (min-width:520px)and (max-width:959px) {
+  .onsen__wrapper{
+  gap: 56px 4%;
+  }
+  .onsen__card{
+   width: 48%;
+ }
+
 }
