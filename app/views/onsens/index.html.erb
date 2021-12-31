@@ -1,33 +1,6 @@
 <h1>ととのい</h1>
 <div class="onsen__wrapper">
 <% @onsens.each do |onsen| %>
-
-<div class = "onsen__card">
-  <figure class="onsen__card__imgWrapper">
-  <%= link_to image_tag(onsen.image.to_s , class: :onsen__card__img) ,onsen_path(onsen.id) %>
-  </figure>
-  <div class="onsen__card__body">
-    <h3 class="onsen__title">
-     <%= link_to onsen_path(onsen.id),class: 'bookmark__button', method: :get do%>
-   <%= onsen.name %>
-    <% end %>
-   </h3>
-    <p class="onsen__address"><i class="fas fa-map-marker-alt fa-lg"></i>  <%= onsen.address %></p>
-    <div class="onsen__spec">
-      <p class="onsen__spec__text">
-        <span class="onsen__spec__sauna">サ</span>
-        <span class="onsen__spec__sauna-value"><%= onsen.sauna_temperature %>℃</span>
-      </p> 
-      <p class="onsen__spec__text">
-        <span class="onsen__spec__water">水</span> 
-        <span class="onsen__spec__water-value"><%= onsen.water_temperature %>℃</span>
-      </p>
-    </div>
-
-    <div class = "onsen__bookmark__area" id="onsen_<%= onsen.id %>">
-    <%= render partial: 'bookmarks/bookmark', locals: {onsen: onsen} %>
-    </div>
-  </div>
- </div>
+  <%= render partial: 'onsens/onsen', locals: {onsen: onsen} %>
 <% end %>
 </div>

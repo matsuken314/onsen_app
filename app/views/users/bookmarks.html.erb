@@ -1,7 +1,5 @@
+<div class="onsen__wrapper">
 <% @bookmark_onsens.each do |onsen| %>
-<%= image_tag onsen.image.to_s %>
-<%= onsen.name %>
-<%= onsen.sauna_temperature %>
-<%= onsen.water_temperature %>
-<%= onsen.address %>
+ <%= render partial: 'onsens/onsen', locals: {onsen: onsen} %>
 <% end %>
+</div>

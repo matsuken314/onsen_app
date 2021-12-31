@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+
 .onsen__wrapper{
   max-width: 1260px;
   width: 100%;
@@ -16,6 +17,7 @@
   background-color: #fff;
   display: block;
   width: 100%;
+  position: relative;
 }
 .onsen__card__body{
   padding: 15px;
@@ -37,6 +39,15 @@
   height: 100%;
   transform: translateY(-50%);
   object-fit: cover;
+}
+
+#onsen__title-link{
+  text-decoration: none;
+  color: #333;
+}
+#onsen__title-link:hover{
+text-decoration: underline;
+color: #FC9701;
 }
 .onsen__address{
   margin-top: 1rem;
