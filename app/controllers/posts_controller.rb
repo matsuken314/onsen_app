@@ -9,10 +9,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.new(post_params)
+    @post = Post.new(post_params)
     if @post.save
       flash[:notice] = "にととのい記録を追加しました"
-      redirect_to controller: :users, action: :show
+      redirect_to user_path(current_user.id)
     else
       flash[:alert] = "ととのい記録に失敗しました"
     end

@@ -6,25 +6,18 @@
   <% if @user == current_user %>
    <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark edit-profile-btn" %>
   <% end %>
-  <button id="openModal">モーダルを開く</button>
-   <!-- モーダルエリアここから -->
- <section id="modalArea" class="modalArea">
-   <div id="modalBg" class="modalBg"></div>
-   <div class="modalWrapper">
-     <div class="modalContents">
-       <p>ここに投稿入る</p>
-     </div>
-     <div id="closeModal" class="closeModal">
-       ×
-     </div>
-   </div>
- </section>
+ <%= link_to "ととのいを記録", new_post_path, class: " post_btn" %>
+  <%= link_to "保存ととのい施設", bookmarks_user_path, class: "totonoi_btn" %>
   </div>
  
 
   <div class="UserCircle__container">
   <canvas id="myChart" width="100%" height="100%"></canvas>
   </div>
+<ul class="UserNav">
+<li class="UserNav__item"></li>
+<li class="UserNav__item"></li>
+</ul>
 </div>
    <% @posts.each do |post| %>
         <div class="user_post">

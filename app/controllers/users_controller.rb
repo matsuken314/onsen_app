@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = current_user.posts
-    gon.Totonoi_data = [13, 3, 5]
+    gon.Totonoi_data = @posts.circle_data(current_user)
   end
 
   def update
@@ -11,6 +11,12 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def bookmarks
+    @user = User.find(params[:id])
+    bookmarks = Bookmark.where(user_id: @user.id).pluck(:onsen_id)
+    @bookmark_onsens = Onsen.find(bookmarks)
   end
 
   def user_params

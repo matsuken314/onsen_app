@@ -1,14 +1,6 @@
 <h1>ととのい</h1>
-<ul class="onsens__group">
-
+<div class="onsen__wrapper">
 <% @onsens.each do |onsen| %>
-<li class="onsen__wrapper">
-<%= image_tag onsen.image.to_s %>
-<%= onsen.name %>
-<%= onsen.sauna_temperature %>
-<%= onsen.water_temperature %>
-<p><i class="fas fa-map-marked-alt"></i>  <%= onsen.address %></p>
-</li>
-</ul>
+  <%= render partial: 'onsens/onsen', locals: {onsen: onsen} %>
 <% end %>
-
+</div>

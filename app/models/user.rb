@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
 
+  has_many :bookmarks, dependent: :destroy
+  has_many :bookmarked_onsens, through: :bookmarks, source: :onsen
   mount_uploader :avatar, AvatarUploader
 
   def user
@@ -24,6 +26,10 @@ class User < ApplicationRecord
     result = update(params, *options)
     clean_up_passwords
     result
+  end
+
+  def bookmarked_by?(onsen_id)
+    bookmarks.where(onsen_id: onsen_id).exists?
   end
 
   def self.guest

@@ -5,10 +5,13 @@ class Post < ApplicationRecord
   validates :totonoi_one, presence: true
   validates :totonoi_address, presence: true
 
-  def self.chart_data(user)
-    graphs = user.posts.order(date: :asc)
-    return [{ date: Date.today, weight: nil }] if posts.empty?
+  def self.circle_data(user)
+    relax_data = user.posts.pluck(:sauna_one, :water_one, :totonoi_one, :id)
+    return [{ sauna_one: 0, water_one: 0, totonoi_one: 0 }] if relax_data.empty?
 
-    period = posts[0].date..posts[-1].date
+    sauna_ave = user.posts.average(:sauna_one)
+    water_ave = user.posts.average(:water_one)
+    totonoi_ave = user.posts.average(:totonoi_one)
+    [sauna_ave, water_ave, totonoi_ave]
   end
 end
