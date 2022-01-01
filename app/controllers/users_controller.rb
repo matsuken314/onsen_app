@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = current_user.posts
-    gon.Totonoi_data = [13, 3, 5]
+    gon.Totonoi_data = @posts.circle_data(current_user)
   end
 
   def update
