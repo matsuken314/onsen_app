@@ -1,9 +1,11 @@
 <header class="header">
     <div class="header__inner">
     <div class="header__logo">
+    <h1 class ="header__title" >
    <%= link_to root_path, class: :header__title do%>
-      <%= image_tag 'header-logo.png', :alt => 'ヘッダーロゴ'%>
+      <%= image_tag 'header-logo.png', alt: "ヘッダーロゴ"%>
   <% end %>
+  </h1>
   </div>
 <nav class="nav">
 <ul class="nav__list">
@@ -13,16 +15,12 @@
     <li class="nav__item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav__item--link" %></li>
 <% else %>
   <%# 非ログイン時 %>
-  <li class="nav__item"><%= link_to "新規登録", new_user_registration_path, class: "nav__item--link"%></li>
- <li class="nav__item"> <%= link_to "ログイン", new_user_session_path, class: "nav__item--link"%></li>
-  <li class="nav__item"><%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class: "nav__item--link" %></li>
+  <li class="nav__item"><%= link_to "新規登録", new_user_registration_path, class: "nav__item--link",id: "signup__link"%></li>
+ <li class="nav__item"> <%= link_to "ログイン", new_user_session_path, class: "nav__item--link",id: "signin__link"%></li>
+  
 <% end %>
-  <li class="nav__item"><a class="nav__item--link" href="#features">特徴</a></li>
-  <li class="nav__item"><a href="#price" class="nav__item--link">価格</a></li>
-  <li class="nav__item"><a href="#contact" class="nav__item--link">お問い合わせ</a></li>
 </ul>
   </nav>
-  <a class="header__btn none__btn" href="#contact">お問い合わせ</a>
 <!--hamburgerボタンー-->
 <div class="hamburger__btn">
   <span class="hamburger__btn--parts -top"></span>
@@ -33,13 +31,10 @@
 <nav class="hamburger">
   <ul class="hamburger__lists">
     <li class="hamburger__list">
-      <a class="hamburger__link" href="#features">特徴</a>
+      <%= link_to "新規登録", new_user_registration_path, class: "hamburger__link"%>
     </li>
     <li class="hamburger__list">
-      <a class="hamburger__link" href="#price">価格</a>
-    </li>
-    <li class="hamburger__list">
-      <a class="hamburger__link" href="#contact">お問い合わせ</a>
+      <%= link_to "ログイン", new_user_session_path, class: "hamburger__link"%>
     </li>
   </ul>
 </nav>
