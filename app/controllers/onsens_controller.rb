@@ -1,6 +1,9 @@
 class OnsensController < ApplicationController
+  before_action :move_to_index
+
   def index
     @onsens = Onsen.all.select(:name, :sauna_temperature, :water_temperature, :address, :image, :id).order("created_at DESC")
+    @user = current_user
   end
 
   def new
@@ -14,6 +17,7 @@ class OnsensController < ApplicationController
 
   def show
     @onsen = Onsen.find_by(id: params[:id])
+    @user = current_user
   end
 
   def update
@@ -35,5 +39,11 @@ class OnsensController < ApplicationController
     end
     sign_in user
     redirect_to root_path, notice: "ゲストユーザーとしてログインしました。"
+  end
+
+  private
+
+  def move_to_index
+    redirect_to root_path unless user_signed_in?
   end
 end

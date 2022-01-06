@@ -1,7 +1,7 @@
 <%= Gon::Base.render_data %>
 <div class="UserMainPage__container">
  <div class="profile__container">
- <%= image_tag @user.avatar_url , size: "200", class: "round-img"%>
+ <%= image_tag @user.avatar.url , size: "200", class: "round-img"%>
   <h1><%= @user.name %></h1>
   <% if @user == current_user %>
    <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark edit-profile-btn" %>

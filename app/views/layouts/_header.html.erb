@@ -13,9 +13,10 @@
   <%# ログイン時 %>
     <li class="nav__item"><%= link_to user_path(current_user), class: "nav__item--link" do%><i class="far fa-user"></i><% end %></li>
     <li class="nav__item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav__item--link" %></li>
+    <li class="nav__item"> <%=link_to image_tag(@user.avatar.url , size: "40", class: "header__profile__img") ,user_path(current_user.id) %></li>
 <% else %>
   <%# 非ログイン時 %>
-  <li class="nav__item"><%= link_to "新規登録", new_user_registration_path, class: "nav__item--link",id: "signup__link"%></li>
+  <li class="nav__item"><%= link_to "新規登録", new_user_registration_path, class: "nav__item--link",id: "sighup__link"%></li>
  <li class="nav__item"> <%= link_to "ログイン", new_user_session_path, class: "nav__item--link",id: "signin__link"%></li>
   
 <% end %>

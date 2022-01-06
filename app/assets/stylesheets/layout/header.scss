@@ -17,31 +17,39 @@
   height: 50px;
 }
 
-#signup__link{
+
+.nav__item--link{
   width: 100px;
   display: inline-block;
-  background-color: #F6B352;
-  color: #fff;
   max-width: 100%;
   text-align: center;
   font-size: 14px;
   font-weight: 700;
-  text-decoration: none;
   border-radius: 0.8rem;
   padding: 10px 0;
 }
+#sighup__link{
+ background-color: #F6B352;
+ color: #fff;
+ text-decoration: none;
+}
+
 #signin__link{
-  width: 100px;
-   font-size: 14px;
-  display: inline-block;
   background-color: #fff;
   color: #F68655;
-  max-width: 100%;
-  text-align: center;
-  font-weight: 700;
-  padding: 10px 0;
   text-decoration: none;
-  border-radius: 0.8rem;
+}
+
+@media (max-width:520px){
+.nav__item--link{
+  width: 65px;
+  font-size: 12px;
+}
+
+.header__title img{
+width: 100px;
+height: 29px;
+}
 }
 .hamburger__btn{
   display: none;
