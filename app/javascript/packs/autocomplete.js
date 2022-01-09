@@ -1,6 +1,5 @@
-console.log("testだよ")
+document.addEventListener('turbolinks:load', () => {
 $(function() {
-  console.log("これ見れてる？")
         var names = ['RUN','RON','RXN','サウナー','ファイル'];
         $('.onsen_name').autocomplete({
           source: names,
@@ -8,3 +7,4 @@ $(function() {
         });
 
 })    
+})

@@ -1,5 +1,11 @@
 <% if user_signed_in? %>
-
+   <ul class="bottom__spnav">
+        <li><%= link_to  root_path do%><i class="fa fa-home fa-2x"></i><br><span>ホーム</span><% end %></li>
+        <li><a href="#"><i class="fa fa-user fa-2x"></i><br><span>Profile</span></a></li>
+        <li><a href="#"><i class="fas fa-plus-square fa-2x"></i><br><span>サ活記録</span></a></li>
+        <li><a href="#" ><i class="fas fa-bookmark fa-2x"></i><br><span>keep</span></a></li>
+        <li><%= link_to user_path(current_user.id) do%><i class="fas fa-user fa-2x"></i><br><span>マイページ</span></a><% end %></li>
+    </ul>
 <% end %>
 <footer>
 <div class="footer__inner">
