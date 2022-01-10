@@ -1,4 +1,5 @@
-<h2><%= t('.sign_up') %></h2>
+<div class="login__contents__wrapper">
+<h2>ととのい の新規登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -36,4 +37,8 @@
   </div>
 <% end %>
 
+<li class="nav__item"><%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class: "nav__item--link" %></li>
+
 <%= render "devise/shared/links" %>
+
+</div>

@@ -4,7 +4,7 @@
 // that code so it'll be compiled.
 import 'chart.js/dist/chart';
 import './totonoi_circle';
-import './modal';
+import './header';
 import './autocomplete';
 import '@fortawesome/fontawesome-free/js/all';
 require("@rails/ujs").start()
