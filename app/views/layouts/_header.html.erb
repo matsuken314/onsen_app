@@ -1,4 +1,4 @@
-<header class="header">
+ <header class="header">
     <div class="header__inner">
     <div class="header__logo">
     <h1 class ="header__title" >
@@ -11,15 +11,17 @@
   <ul class="nav__list">
   <% if user_signed_in? %>
     <%# ログイン時 %>
-      <li class="nav__item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav__item--link" %></li>
+
       <li class="nav__item opacity clickslide"> 
         <%= image_tag current_user.avatar.url, size: "40", class: "header__profile__img"%>
         <span><i class="fas fa-caret-down fa-3x"></i></span>
       </li>
       <div class = "dropdown__header" id = "dropdown__header">
       <%= link_to "マイページ", user_path(current_user.id), class: "dropdown__link", id: "dropdown__link"  %>
-      <%= link_to "保存した施設", user_path(current_user.id), class: "dropdown__link", id: "dropdown__link"%>
-      <%= link_to "保存した施設", bookmarks_user_path(current_user.id), class: "dropdown__link", id: "dropdown__link" %>
+       <%= link_to "保存した施設", bookmarks_user_path(current_user.id), class: "dropdown__link", id: "dropdown__link" %>
+
+      <%= link_to "サ活を記録", new_post_path, class: "dropdown__link", id: "dropdown__link"%>
+     <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "dropdown__link", id: "dropdown__link"%>
       </div>
       <li class="nav__item"> <%=link_to "サ活を記録", new_post_path, class: "nav__item--link", id: "newpost__link" %></li>
   <% else %>
