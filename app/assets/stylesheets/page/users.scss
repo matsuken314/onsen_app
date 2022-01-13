@@ -3,24 +3,141 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .UserMainPage__container{
-  max-width: 1100px;
+  max-width: 1020px;
   width: 100%;
+  padding: 0 2rem;
   margin: 0 auto;
   display: flex;
   justify-content: center;
 }
 
-.UserCircle__container{
-  max-width: 800px;
+.profile__body{
+  width: 100%;
+  background-color: #fff;
+  padding: 1.8rem;
+}
+.profile__container{
+  max-width: 320px;
+width: 100%;
+}
+
+.profile__name{
+    font-size: 20px;
+    font-weight: 700;
+}
+.user__container{
+  max-width: 700px;
   width: 100%;
   padding-left: 1.6rem;
 }
 .onsen_name{
   margin-bottom: 40px;
 }
-.round-img{
+.profile__img__wrapper{
+  margin-bottom: 1.6rem;
+}
+.profile__outer{
+ margin-bottom: 2.4rem;
+}
+.profile__img{
   border-radius: 50%;
 }
 .header__profile__img{
   border-radius: 50%;
+}
+.profile__edit__btn{
+width: 100%;
+padding: 4px 0;
+background-color: #8A8B8B;
+color: #fff;
+font-weight: 600;
+text-align: center;
+display: inline-block;
+font-size: 16px;
+font-weight: 600;
+}
+
+#profile__edit{
+  color: #fff;
+  text-decoration: none;
+}
+.post__user__img{
+  border-radius: 50%;
+}
+.sauna_one{
+  background-color: #F68655;
+  display: inline-block;
+}
+
+/* タブメニュー */
+.user__tab__wrapper{
+  background-color: #fff;
+}
+
+.tab-menu {
+  display: flex;
+}
+
+.tab-menu__item {
+  box-sizing: border-box;
+  width: 50%;
+}
+
+
+.tab-trigger { /* label */
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  padding: 10px;
+  color: rgba(0,0,0,0.36);
+  border-bottom: 0;
+  font-size: 16px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.tab-trigger.is-active {
+  border-bottom: 2px solid #f8ad8f;
+  color: rgba(0,0,0,0.90);
+  font-weight: 700;
+}
+
+
+/* タブコンテンツ */
+.tab-contents {
+  border-top: 1px solid #ccc;
+  padding: 1.5rem;
+}
+.tab-content__item {
+  box-sizing: border-box;
+  padding: 20px;
+  display: none;
+  text-align: left;
+}
+.tab-content__item.is-active {
+  display: block;
+  animation: fade 0.5s ease;
+}
+@media (max-width:900px){
+  .UserMainPage__container{
+flex-direction: column;
+padding-top: 1.5rem;
+}
+.user__container{
+  margin-top: 2.4rem;
+  padding-left: 0;
+  max-width: 900px;
+}
+.profile__container{
+  max-width: 960px;
+}
+.profile__outer{
+  display: flex;
+  align-items: center;
+}
+.profile__img__wrapper{
+  margin-right: 5%;
+  margin-bottom: 0;
+}
 }

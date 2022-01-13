@@ -1,8 +1,14 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @posts = current_user.posts
-    gon.Totonoi_data = @posts.circle_data(current_user)
+    @posts = @user.posts
+    gon.Totonoi_data = @posts.circle_data(@user)
+
+    @went_onsen = @posts.distinct.pluck(:totonoi_address)
+
+    @went_onsen.each do |went|
+      @UserOnsen_data = Onsen.where(name: went)
+    end
   end
 
   def update

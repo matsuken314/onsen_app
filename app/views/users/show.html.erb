@@ -1,30 +1,65 @@
 <%= Gon::Base.render_data %>
 <div class="UserMainPage__container">
- <div class="profile__container">
- <%= image_tag @user.avatar.url , size: "200", class: "round-img"%>
-  <h1><%= @user.name %></h1>
-  <% if @user == current_user %>
-   <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark edit-profile-btn" %>
-  <% end %>
- <%= link_to "ととのいを記録", new_post_path, class: " post_btn" %>
-  <%= link_to "保存ととのい施設", bookmarks_user_path, class: "totonoi_btn" %>
+  <div class="profile__container">
+     <div class="profile__body">
+          <div class="profile__outer">
+               <div class="profile__img__wrapper">
+                    <%= image_tag @user.avatar.url , size: "120", class: "profile__img"%>
+               </div>
+               <div class="profile__name">
+               <span><%= @user.name %></span>
+               </div>
+          </div>
+          <% if @user == current_user %>
+          <%= link_to "プロフィールを編集", edit_user_registration_path, class: "profile__edit__btn", id: "profile__edit" %>
+          <% end %>
+     </div>
   </div>
  
+  <div class="user__container">
+     <div class="user__circle__wrapper">
+          <canvas id="myChart" width="80%" height="80%"></canvas>
+     </div>
+     <div class="user__nav__wrapper">
+          <ul class="UserNav">
+               <li class="UserNav__item"></li>
+               <li class="UserNav__item"></li>
+          </ul>
+     </div>
 
-  <div class="UserCircle__container">
-  <canvas id="myChart" width="80%" height="80%"></canvas>
-  </div>
-<ul class="UserNav">
-<li class="UserNav__item"></li>
-<li class="UserNav__item"></li>
-</ul>
-</div>
-   <% @posts.each do |post| %>
+ <div class="user__tab__wrapper">
+    <ul class="tab-menu">
+      <li class="tab-menu__item"><span class="tab-trigger js-tab-trigger is-active" data-id="tab01"><i class="far fa-clipboard"></i>サ活記録</span></li>
+      <li class="tab-menu__item"><span class="tab-trigger js-tab-trigger" data-id="tab02">サ活した施設</span></li>
+    </ul>
+    
+    <div class="tab-contents">
+      <div class="tab-content__item js-tab-target is-active" id="tab01">
+  <% @posts.each do |post| %>
         <div class="user_post">
+         <%= image_tag @user.avatar.url , size: "30", class: "post__user__img"%>
+         <%= @user.name%>
+         <p><%= post.totonoi_address %></p>
+         <div class="sauna_one"><span>サ</span><i class="fas fa-stopwatch fa-2x"></i></div>
          <p><%= post.sauna_one %></p>
          <p><%= post.water_one %></p>
          <p><%= post.totonoi_one %></p>
-         <p><%= post.totonoi_address %></p>
         </div>
    <% end %>
+      </div>
+      <div class="tab-content__item js-tab-target" id="tab02">
+        <% @UserOnsen_data.each do |went| %>
+          <p><%= went.sauna_temperature %></p>
+      <% end %> 
+      </div>
+    </div>
+  </div>
+     <div class="post__wrapper">
+ 
+     </div>
+
+  </div>
+
+</div>
+
 

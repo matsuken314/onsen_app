@@ -5,6 +5,7 @@
 import 'chart.js/dist/chart';
 import './totonoi_circle';
 import './header';
+import './user_tab';
 import './autocomplete';
 import '@fortawesome/fontawesome-free/js/all';
 require("@rails/ujs").start()
