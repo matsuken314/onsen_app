@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  belongs_to :post
   validates :sauna_one, presence: true
   validates :water_one, presence: true
   validates :totonoi_one, presence: true
@@ -13,5 +14,10 @@ class Post < ApplicationRecord
     water_ave = user.posts.average(:water_one)
     totonoi_ave = user.posts.average(:totonoi_one)
     [sauna_ave, water_ave, totonoi_ave]
+  end
+
+  def only_totonoi_link(totonoi_address)
+    totonoi_record = Onsen.where(name: totonoi_address)
+    totonoi_record.id
   end
 end

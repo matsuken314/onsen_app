@@ -36,15 +36,21 @@
     <div class="tab-contents">
       <div class="tab-content__item js-tab-target is-active" id="tab01">
   <% @posts.each do |post| %>
-        <div class="user_post">
-         <%= image_tag @user.avatar.url , size: "30", class: "post__user__img"%>
-         <%= @user.name%>
-         <p><%= post.totonoi_address %></p>
-         <div class="sauna_one"><span>サ</span><i class="fas fa-stopwatch fa-2x"></i></div>
-         <p><%= post.sauna_one %></p>
-         <p><%= post.water_one %></p>
-         <p><%= post.totonoi_one %></p>
-        </div>
+        <div class="user__post">
+          <div class="user__post__header">
+               <div class="user__imgicon">
+                    <%= image_tag @user.avatar.url , size: "30", class: "post__user__img"%>
+                    <p class="user__name"><%= @user.name%></p> 
+               </div>
+          </div>
+          <%= link_to onsen_path, class: "user__totonoi__link" %>
+          <%= only_totonoi_link(post.totonoi_address) %>
+          <div class="sauna_one">
+               <span>サ</span><i class="fas fa-stopwatch fa-2x"></i> <span><%= post.sauna_one %></span>分
+          </div>
+          <span><%= post.water_one %></span>分
+          <span><%= post.totonoi_one %></span>分
+       </div>
    <% end %>
       </div>
       <div class="tab-content__item js-tab-target" id="tab02">

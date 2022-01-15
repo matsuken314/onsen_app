@@ -19,6 +19,13 @@ footer{
   }
 }
 
+@media (max-width: 521px){
+
+footer{
+  margin-bottom: 45px;
+}
+}
+
 .bottom__spnav{
   position: fixed;
   bottom: 0;

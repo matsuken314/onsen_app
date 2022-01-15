@@ -3,7 +3,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts
     gon.Totonoi_data = @posts.circle_data(@user)
-
     @went_onsen = @posts.distinct.pluck(:totonoi_address)
 
     @went_onsen.each do |went|
