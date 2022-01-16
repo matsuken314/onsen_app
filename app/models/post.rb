@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
-  belongs_to :post
+  belongs_to :post, optional: true
   validates :sauna_one, presence: true
   validates :water_one, presence: true
   validates :totonoi_one, presence: true
@@ -16,7 +16,7 @@ class Post < ApplicationRecord
     [sauna_ave, water_ave, totonoi_ave]
   end
 
-  def only_totonoi_link(totonoi_address)
+  def self.only_totonoi_link(totonoi_address)
     totonoi_record = Onsen.where(name: totonoi_address)
     totonoi_record.id
   end

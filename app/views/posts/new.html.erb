@@ -1,17 +1,9 @@
 <div class = "post_container">
-<%= form_with model: @post do |f| %>
+<%= form_with model: @post, local: true do |f| %>
 <%= f.text_field :totonoi_address, autofocus: true,placeholder:"サウナ施設名", class: 'onsen_name'%>
 <%= f.number_field :sauna_one ,placeholder: "サウナの時間" %>
 <%= f.number_field :water_one , placeholder: "水風呂の時間" %>
 <%= f.number_field :totonoi_one , placeholder: "ととのった時間"%>
-
-<% f.number_field :sauna_two,placeholder: "サウナの時間"  %>
-<% f.number_field :water_two, placeholder: "水風呂の時間"  %>
-<% f.number_field :totonoi_two, placeholder: "ととのった時間" %>
-
-<% f.number_field :sauna_three,placeholder: "サウナの時間" %>
-<% f.number_field :water_three, placeholder: "水風呂の時間" %>
-<% f.number_field :totonoi_three, placeholder: "ととのった時間" %>
 
  <%= f.submit "投稿", class: "btn btn-primary" %>
 

@@ -43,8 +43,9 @@
                     <p class="user__name"><%= @user.name%></p> 
                </div>
           </div>
-          <%= link_to onsen_path, class: "user__totonoi__link" %>
-          <%= only_totonoi_link(post.totonoi_address) %>
+          <%= link_to onsen_path, class: "user__totonoi__link" do%>                
+          <%= post.totonoi_address %>
+          <% end %>
           <div class="sauna_one">
                <span>サ</span><i class="fas fa-stopwatch fa-2x"></i> <span><%= post.sauna_one %></span>分
           </div>
@@ -55,7 +56,11 @@
       </div>
       <div class="tab-content__item js-tab-target" id="tab02">
         <% @UserOnsen_data.each do |went| %>
+          <%= link_to image_tag(went.image.to_s , class: :post__onsen__img) ,onsen_path(went.id) %>
           <p><%= went.sauna_temperature %></p>
+          <p><%= went.water_temperature %></p>
+           <p><%= went.name %></p>
+            <p><%= went.address %></p>
       <% end %> 
       </div>
     </div>

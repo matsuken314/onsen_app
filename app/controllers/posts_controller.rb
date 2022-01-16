@@ -10,12 +10,17 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    if @post.save
-      flash[:notice] = "にととのい記録を追加しました"
+     if @post.save!
+      flash[:notice] = "サ活の記録を追加しました"
       redirect_to user_path(current_user.id)
-    else
-      flash[:alert] = "ととのい記録に失敗しました"
+     elsif 
+     else
+      flash[:alert] = "サ活の記録に失敗しました"
+      render :new
     end
+    @post.save!
+      flash[:notice] = "ととのい記録を追加しました"
+      redirect_to user_path(current_user.id)
   end
 
   def edit; end
@@ -35,7 +40,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:totonoi_address, :sauna_one, :water_one, :totonoi_one, :sauna_two, :water_two, :totonoi_two, :sauna_three, :water_three,
-                                 :totonoi_three).merge(user_id: current_user.id)
+    params.require(:post).permit(:totonoi_address, :sauna_one, :water_one, :totonoi_one).merge(user_id: current_user.id)
   end
 end
