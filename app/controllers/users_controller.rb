@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts
+    @posts = @user.posts.order("created_at DESC")
     gon.Totonoi_data = @posts.circle_data(@user)
 
     @went_onsen = @posts.distinct.pluck(:totonoi_address)

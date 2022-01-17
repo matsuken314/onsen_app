@@ -10,17 +10,16 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-     if @post.save!
+    if @post.onsen_name_valid(post_params[:totonoi_address])
+      flash[:alert] = "掲載されている正しいサウナ施設名を入力してください"
+      render :new
+    elsif @post.save
       flash[:notice] = "サ活の記録を追加しました"
       redirect_to user_path(current_user.id)
-     elsif 
-     else
+    else
       flash[:alert] = "サ活の記録に失敗しました"
       render :new
     end
-    @post.save!
-      flash[:notice] = "ととのい記録を追加しました"
-      redirect_to user_path(current_user.id)
   end
 
   def edit; end
