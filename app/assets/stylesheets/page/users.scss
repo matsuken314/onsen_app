@@ -5,7 +5,7 @@
 .UserMainPage__container{
   max-width: 1020px;
   width: 100%;
-  padding: 0 2rem;
+  padding: 0 1.6rem;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -57,6 +57,11 @@ font-size: 16px;
 font-weight: 600;
 }
 
+.onsen_svg{
+width: 48px;
+height: 48px;
+background-image: url('');
+}
 #profile__edit{
   color: #fff;
   text-decoration: none;
@@ -111,11 +116,10 @@ font-weight: 600;
 /* タブコンテンツ */
 .tab-contents {
   border-top: 1px solid #ccc;
-  padding: 1.5rem;
+  padding: 1.5rem 0;
 }
 .tab-content__item {
   box-sizing: border-box;
-  padding: 20px;
   display: none;
   text-align: left;
 }
@@ -144,4 +148,24 @@ padding-top: 1.5rem;
   margin-right: 5%;
   margin-bottom: 0;
 }
+}
+
+.temperature__wrapper{
+  display: flex;
+}
+.WentOnsen{
+  display: flex;
+  padding: 18px 7px;
+  border-bottom: 1px solid #eee;
+}
+.WentOnsen__img{
+  flex: 0 0 37%;
+  margin-right: 12px;
+}
+.WentOnsen__text{
+  flex: 1 1 auto;
+}
+.WentOnsen__name{
+  font-size: 18px;
+  font-weight: 700;
 }

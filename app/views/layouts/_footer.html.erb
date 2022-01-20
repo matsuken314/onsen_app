@@ -1,15 +1,15 @@
 <% if user_signed_in? %>
    <ul class="bottom__spnav">
         <li><%= link_to  root_path do%><i class="fa fa-home fa-2x"></i><br><span>ホーム</span><% end %></li>
-        <li><a href="#"><i class="fa fa-user fa-2x"></i><br><span>Profile</span></a></li>
-        <li><a href="#"><i class="far fa-plus-square fa-2x"></i><br><span>サ活記録</span></a></li>
+        <li><a href="#"><%= image_tag 'onsen_icon.png', size: "17",class: "footer_onsen_icon" %><br><span>温泉施設</span></a></li>
+        <li><a href="#"><i class="far fa-plus-square fa-2x"></i><br><span>サ活を記録</span></a></li>
         <li><a href="#" ><i class="far fa-bookmark fa-2x"></i><br><span>keep</span></a></li>
         <li><%= link_to user_path(current_user.id),id: "spnav__link" do%><i class="far fa-user fa-2x"></i><br><span>マイページ</span></a><% end %></li>
     </ul>
 <% end %>
 <footer>
     <div class="footer__inner">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdCTUbMHNBzhNHU61OFUPHnCvmmrtc2lkI4g_s2jnEgGFy_1g/viewform?usp=pp_url" target="_blank" class="footer__form__link">お問い合わせ</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdCTUbMHNBzhNHU61OFUPHnCvmmrtc2lkI4g_s2jnEgGFy_1g/viewform?usp=pp_url" target="_blank" class="footer__form__link">お問い合わせ<i class="fas fa-external-link-alt"></i></a>
         <p>© 2021 ととのい</p>
     </div>
 </footer>

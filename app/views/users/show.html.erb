@@ -29,8 +29,8 @@
 
  <div class="user__tab__wrapper">
     <ul class="tab-menu">
-      <li class="tab-menu__item"><span class="tab-trigger js-tab-trigger is-active" data-id="tab01"><i class="far fa-clipboard"></i>サ活記録</span></li>
-      <li class="tab-menu__item"><span class="tab-trigger js-tab-trigger" data-id="tab02">サ活した施設</span></li>
+      <li class="tab-menu__item"><span class="tab-trigger js-tab-trigger is-active" data-id="tab01"><i class="far fa-edit"></i>サ活一覧</span></li>
+      <li class="tab-menu__item"><span class="tab-trigger js-tab-trigger" data-id="tab02"><%= image_tag 'onsen_icon.png', size: "25",class: "onsen_icon" %>サ活した施設</span></li>
     </ul>
     
     <div class="tab-contents">
@@ -40,7 +40,7 @@
           <div class="user__post__header">
                <div class="user__imgicon">
                     <%= image_tag @user.avatar.url , size: "30", class: "post__user__img"%>
-                    <p class="user__name"><%= @user.name%></p> 
+                    <p class="user__name"><%= @user.name%>が<%= post.created_at.strftime("%Y.%m.%d")%>にサ活</p> 
                </div>
           </div>
           <%= link_to onsen_path, class: "user__totonoi__link" do%>                
@@ -56,11 +56,18 @@
       </div>
       <div class="tab-content__item js-tab-target" id="tab02">
         <% @UserOnsen_data.each do |went| %>
-          <%= link_to image_tag(went.image.to_s , class: :post__onsen__img) ,onsen_path(went.id) %>
-          <p><%= went.sauna_temperature %></p>
-          <p><%= went.water_temperature %></p>
-           <p><%= went.name %></p>
-            <p><%= went.address %></p>
+        <div class="WentOnsen">
+          <div class="WentOnsen__img">
+          <%= link_to image_tag(went.image.to_s , class: :post__onsen__img) ,onsen_path(went.id) %></div>
+         <div class="WentOnsen__text">
+             <div class="WentOnsen__name"> <p><%= went.name %></p></div>
+             <div class="WentOnsen__address"><p><i class="fas fa-map-marker-alt"></i><%= went.address %></p></div>
+             <div class="temperature__wrapper"> 
+               <div class = "sauna_temperature"><span>サ</span><%= went.sauna_temperature %></div>
+               <div class = "water_temperature"> <span>水</span><%= went.water_temperature %></div>
+             </div>
+          </div> 
+         </div>
       <% end %> 
       </div>
     </div>
