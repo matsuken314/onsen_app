@@ -24,4 +24,9 @@ class Post < ApplicationRecord
   def onsen_name_valid(totonoi_address)
     Onsen.where(name: totonoi_address).empty?
   end
+
+  def return_onsen_id(onsen_name)
+    onsen_data = Onsen.where(name: onsen_name).ids
+    onsen_data.first.to_i
+  end
 end

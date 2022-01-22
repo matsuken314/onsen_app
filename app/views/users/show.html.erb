@@ -29,7 +29,7 @@
 
  <div class="user__tab__wrapper">
     <ul class="tab-menu">
-      <li class="tab-menu__item"><span class="tab-trigger js-tab-trigger is-active" data-id="tab01"><i class="far fa-edit"></i>サ活一覧</span></li>
+      <li class="tab-menu__item"><span class="tab-trigger js-tab-trigger is-active" data-id="tab01"><i class="far fa-clipboard"></i>サ活一覧</span></li>
       <li class="tab-menu__item"><span class="tab-trigger js-tab-trigger" data-id="tab02"><%= image_tag 'onsen_icon.png', size: "25",class: "onsen_icon" %>サ活した施設</span></li>
     </ul>
     
@@ -39,18 +39,24 @@
         <div class="user__post">
           <div class="user__post__header">
                <div class="user__imgicon">
-                    <%= image_tag @user.avatar.url , size: "30", class: "post__user__img"%>
+                    <%= image_tag @user.avatar.url , size: "26", class: "post__user__img"%></div>
                     <p class="user__name"><%= @user.name%>が<%= post.created_at.strftime("%Y.%m.%d")%>にサ活</p> 
-               </div>
           </div>
-          <%= link_to onsen_path, class: "user__totonoi__link" do%>                
+          <%= link_to onsen_path(post.went_onsen_id), class: "user__totonoi__link" do%>                
           <%= post.totonoi_address %>
           <% end %>
-          <div class="sauna_one">
-               <span>サ</span><i class="fas fa-stopwatch fa-2x"></i> <span><%= post.sauna_one %></span>分
+          <div class="user__sakatu__data">
+              <i class="far fa-clock fa-2x"></i> 
+              <div class="sauna__minute minute__part">
+                    <span class ="sauna__minute__mark minute__mark__size">サ</span><span class="minute__number"><%= post.sauna_one %></span>分
+               </div>
+               <div class="water__minute minute__part">
+                <span class="water__minute__mark minute__mark__size">水</span><span class = "minute__number"><%= post.water_one %></span>分
+               </div>
+               <div class="totonoi__minute minute__part">
+                <span class="totonoi__minute__mark minute__mark__size">外</span><span class="minute__number"><%= post.totonoi_one %></span>分
+               </div>
           </div>
-          <span><%= post.water_one %></span>分
-          <span><%= post.totonoi_one %></span>分
        </div>
    <% end %>
       </div>
@@ -60,11 +66,11 @@
           <div class="WentOnsen__img">
           <%= link_to image_tag(went.image.to_s , class: :post__onsen__img) ,onsen_path(went.id) %></div>
          <div class="WentOnsen__text">
-             <div class="WentOnsen__name"> <p><%= went.name %></p></div>
-             <div class="WentOnsen__address"><p><i class="fas fa-map-marker-alt"></i><%= went.address %></p></div>
+             <p class="WentOnsen__name"><%= went.name %></p>
+             <div class="WentOnsen__address"><p><i class="fas fa-map-marker-alt fa-2x"></i><%= went.address %></p></div>
              <div class="temperature__wrapper"> 
-               <div class = "sauna_temperature"><span>サ</span><%= went.sauna_temperature %></div>
-               <div class = "water_temperature"> <span>水</span><%= went.water_temperature %></div>
+               <div class = "sauna_temperature"><span class="">サ</span><%= went.sauna_temperature %>℃</div>
+               <div class = "water_temperature"> <span>水</span><%= went.water_temperature %>℃</div>
              </div>
           </div> 
          </div>

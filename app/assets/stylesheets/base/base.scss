@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&family=Noto+Sans+JP&display=swap');
 
 html,
 input,
 textarea,
 select,
 button {
-  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, sans-serif;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, 'Noto Sans JP', sans-serif;
   font-weight: 500;
   font-size: 16px;
 }
@@ -13,6 +16,7 @@ html {
   color: #000;
   font-size: 62.5%;
   line-height: 1.6;
+  letter-spacing: 0.05em;
   word-break: break-all;
   position: relative;
 }
@@ -56,53 +60,6 @@ a{
   transition: .3s ease;
 }
 
-// a {
-//   color: #000;
-//   text-decoration: none;
-//   transition: $transition01;
-// @include pc {
-//     &:hover {
-//       opacity: .8;
-//     }
-//   }
-  
-// }
-
-// input,
-// select,
-// textarea,
-// button {
-//   margin: 0;
-//   padding: 0;
-//   background: none;
-//   border: none;
-//   border-radius: 0;
-//   outline: none;
-//   appearance: none;
-// }
-
-// select::-ms-expand {
-//   display: none;
-// }
-
-// textarea {
-//   resize: vertical;
-// }
-
-// @include placeholder(#ccc);
-
-// button {
-//   border: none;
-//   cursor: pointer;
-// }
-
-// label {
-//   cursor: pointer;
-// }
-
-// table {
-//   border-collapse: collapse;
-// }
 
 ul,
 ol,

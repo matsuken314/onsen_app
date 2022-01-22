@@ -15,6 +15,7 @@
   width: 100%;
   background-color: #fff;
   padding: 1.8rem;
+  border-radius: 16px;
 }
 .profile__container{
   max-width: 320px;
@@ -22,7 +23,7 @@ width: 100%;
 }
 
 .profile__name{
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
 }
 .user__container{
@@ -66,21 +67,66 @@ background-image: url('');
   color: #fff;
   text-decoration: none;
 }
+/*サカツ一覧*/
+.user__imgicon{
+  margin-right: 4px;
+}
 .post__user__img{
   border-radius: 50%;
 }
-.sauna_one{
-  background-color: #F68655;
-  display: inline-block;
+.sauna__minute__mark{
+    background-color: #f68655;
 }
-
+.water__minute__mark{
+      background-color: #6b99cf; 
+}
+.totonoi__minute__mark{
+  background-color: #61C359;
+}
+.minute__mark__size{
+    color: #fff;
+    padding: 3px;
+    border-radius: 50%;
+    margin-right: 2px;
+}
+.user__name{
+  font-size: 14px;
+}
+.user__post__header{
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
 .user__post{
-  padding: 16px 0;
+  padding: 16px 20px 32px;
+  border-top: 1px solid #E4E4E4;
 }
-
+.user__post:first-child{
+  border-top: none;
+}
+.user__totonoi__link{
+  font-size: 18px;
+  font-weight: 800;
+}
+.user__sakatu__data{
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  color: #333;
+}
+.minute__part{
+  margin-left: 8px;
+  font-size: 1rem;
+}
+.minute__number{
+  font-family:'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
 /* タブメニュー */
 .user__tab__wrapper{
   background-color: #fff;
+  border-radius: 16px;
 }
 
 .tab-menu {
@@ -156,8 +202,12 @@ padding-top: 1.5rem;
 .WentOnsen{
   display: flex;
   padding: 18px 7px;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
 }
+.WentOnsen:first-child{
+  border: none;
+}
+
 .WentOnsen__img{
   flex: 0 0 37%;
   margin-right: 12px;
@@ -168,4 +218,8 @@ padding-top: 1.5rem;
 .WentOnsen__name{
   font-size: 18px;
   font-weight: 700;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
