@@ -11,6 +11,19 @@
   justify-content: center;
 }
 
+/*円グラフ*/
+
+.user__circle__wrapper{
+  position: relative;
+  margin:0 auto;
+}
+@media (max-width:900px){
+.user__circle__wrapper{
+  width: 90%;
+  height: 90%;
+
+}
+}
 .profile__body{
   width: 100%;
   background-color: #fff;
@@ -58,11 +71,6 @@ font-size: 16px;
 font-weight: 600;
 }
 
-.onsen_svg{
-width: 48px;
-height: 48px;
-background-image: url('');
-}
 #profile__edit{
   color: #fff;
   text-decoration: none;
@@ -139,7 +147,7 @@ background-image: url('');
 }
 
 
-.tab-trigger { /* label */
+.tab-trigger { 
   text-align: center;
   cursor: pointer;
   display: block;
@@ -199,6 +207,7 @@ padding-top: 1.5rem;
 .temperature__wrapper{
   display: flex;
 }
+/*サカツした施設*/
 .WentOnsen{
   display: flex;
   padding: 18px 7px;
@@ -207,7 +216,12 @@ padding-top: 1.5rem;
 .WentOnsen:first-child{
   border: none;
 }
-
+.onsen_icon{
+  opacity: 0.27;
+}
+.is-active .onsen_icon{
+  opacity: inherit;
+}
 .WentOnsen__img{
   flex: 0 0 37%;
   margin-right: 12px;
