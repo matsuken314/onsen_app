@@ -76,6 +76,9 @@ font-weight: 600;
   text-decoration: none;
 }
 /*サカツ一覧*/
+.user__edit__icon{
+  cursor: pointer;
+}
 .user__imgicon{
   margin-right: 4px;
 }
@@ -100,9 +103,13 @@ font-weight: 600;
 .user__name{
   font-size: 14px;
 }
+.user__feature{
+  display: flex;
+}
 .user__post__header{
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 5px;
 }
 .user__post{
@@ -225,6 +232,9 @@ padding-top: 1.5rem;
 .WentOnsen__img{
   flex: 0 0 37%;
   margin-right: 12px;
+}
+.WentOnsen__address{
+  font-size: 1.2rem;
 }
 .WentOnsen__text{
   flex: 1 1 auto;

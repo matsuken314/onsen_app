@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :set_list, only: %i(edit update)
   def index
     @posts = Post.includes(:user)
   end
@@ -22,23 +22,29 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+  end
+
+  def update
+    if @post.update(post_params)
+      redirect_to :back
+    else
+      render action: :edit
+    end
+  end
 
   def destroy
     post = Post.find(params[:id])
     post.destroy
   end
 
-  def update
-    post = Post.find(params[:id])
-    post.update(post_params)
-  end
-
-  def show; end
-
   private
 
   def post_params
     params.require(:post).permit(:totonoi_address, :sauna_one, :water_one, :totonoi_one).merge(user_id: current_user.id)
+  end
+
+  def set_post
+    @post = Post.find_by(id:params[:id])
   end
 end

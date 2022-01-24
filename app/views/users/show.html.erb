@@ -38,9 +38,17 @@
   <% @posts.each do |post| %>
         <div class="user__post">
           <div class="user__post__header">
+          <div class="user__feature">
                <div class="user__imgicon">
-                    <%= image_tag @user.avatar.url , size: "26", class: "post__user__img"%></div>
+                    <%= image_tag @user.avatar.url , size: "26", class: "post__user__img"%>
+               </div>
                     <p class="user__name"><%= @user.name%>が<%= post.created_at.strftime("%Y.%m.%d")%>にサ活</p> 
+          </div>
+          <p class="user__edit__icon"><i class="fas fa-edit fa-2x"></i><i class="fas fa-caret-down fa-2x"></i></p>
+          <div class="user__edit__menu">
+          <li class="menu__link"><%= link_to edit_post_path(post.id) %></li>
+          <li class="menu__link"></li>
+          </div>
           </div>
           <%= link_to onsen_path(post.went_onsen_id), class: "user__totonoi__link" do%>                
           <%= post.totonoi_address %>
@@ -67,7 +75,7 @@
           <%= link_to image_tag(went.image.to_s , class: :post__onsen__img) ,onsen_path(went.id) %></div>
          <div class="WentOnsen__text">
              <p class="WentOnsen__name"><%= went.name %></p>
-             <div class="WentOnsen__address"><p><i class="fas fa-map-marker-alt fa-2x"></i><%= went.address %></p></div>
+             <div><p class="WentOnsen__address"><i class="fas fa-map-marker-alt"></i><%= went.address %></p></div>
              <div class="temperature__wrapper"> 
                <div class = "sauna_temperature"><span class="">サ</span><%= went.sauna_temperature %>℃</div>
                <div class = "water_temperature"> <span>水</span><%= went.water_temperature %>℃</div>

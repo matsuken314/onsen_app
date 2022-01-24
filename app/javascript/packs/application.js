@@ -4,7 +4,7 @@
 // that code so it'll be compiled.
 import 'chart.js/dist/chart';
 import './totonoi_circle';
-import './header';
+import './popup';
 import './user_tab';
 import './autocomplete';
 import '@fortawesome/fontawesome-free/js/all';
