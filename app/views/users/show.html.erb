@@ -45,9 +45,9 @@
                     <p class="user__name"><%= @user.name%>が<%= post.created_at.strftime("%Y.%m.%d")%>にサ活</p> 
           </div>
           <p class="user__edit__icon"><i class="fas fa-edit fa-2x"></i><i class="fas fa-caret-down fa-2x"></i></p>
-          <div class="user__edit__menu">
-          <li class="menu__link"><%= link_to edit_post_path(post.id) %></li>
-          <li class="menu__link"></li>
+          <div class="user__edit__menu" style="display:none;">
+          <li class="menu__link"><a href="/posts/<%=post.id%>/edit">編集する</a></li>
+          <li class="menu__link"><%= link_to "削除する", post_path(post.id),method: :delete, data: { confirm: "削除しますか?" }  %></li>
           </div>
           </div>
           <%= link_to onsen_path(post.went_onsen_id), class: "user__totonoi__link" do%>                

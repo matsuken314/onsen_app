@@ -1,0 +1,11 @@
+ <div class="post__container">
+  <%= form_with model: @post, url: { action: :update }, html: { class: 'postForm' }, local: true do |f| %>
+        <% if @post.errors.any? %>
+          <p class="text-danger">タイトルは1～255文字以内で入力してください</p>
+        <% end %>
+        <%= f.label :"サウナ施設名" %>
+        <%= f.text_field :totonoi_address, placeholder: "サウナ施設名" %>
+        <div class="text-center"><%= f.submit "編集する", class: "submitBtn" %></div>
+      <% end %>
+      </div>
+    </div>

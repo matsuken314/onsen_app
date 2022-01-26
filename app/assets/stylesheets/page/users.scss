@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+
 .UserMainPage__container{
   max-width: 1020px;
   width: 100%;
@@ -79,6 +80,11 @@ font-weight: 600;
 .user__edit__icon{
   cursor: pointer;
 }
+.user__edit__menu{
+  position: absolute;
+  top: 30px;
+  right: 0;
+}
 .user__imgicon{
   margin-right: 4px;
 }
@@ -108,6 +114,7 @@ font-weight: 600;
 }
 .user__post__header{
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 5px;

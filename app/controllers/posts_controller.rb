@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, :set_list, only: %i(edit update)
+  before_action :authenticate_user!
+  before_action :set_post, only: %i[edit update destroy]
   def index
     @posts = Post.includes(:user)
   end
@@ -22,20 +23,19 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @post.update(post_params)
-      redirect_to :back
+      redirect_to user_path(current_user.id)
     else
       render action: :edit
     end
   end
 
   def destroy
-    post = Post.find(params[:id])
-    post.destroy
+    @post.destroy
+    redirect_to user_path(current_user.id)
   end
 
   private
@@ -45,6 +45,6 @@ class PostsController < ApplicationController
   end
 
   def set_post
-    @post = Post.find_by(id:params[:id])
+    @post = Post.find(params[:id])
   end
 end
