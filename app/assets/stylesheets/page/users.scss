@@ -2,25 +2,318 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+
 .UserMainPage__container{
-  max-width: 1100px;
+  max-width: 1020px;
   width: 100%;
+  padding: 0 1.6rem;
   margin: 0 auto;
   display: flex;
   justify-content: center;
 }
 
-.UserCircle__container{
-  max-width: 800px;
+/*円グラフ*/
+
+.user__circle__wrapper{
+  position: relative;
+  margin:0 auto;
+}
+.user__circle__name{
+  font-weight: 800;
+  position: absolute;
+   left: 0;
+   right: 0;
+   margin: auto;
+   text-align: center;
+   top: 55%;
+   -webkit-transform: translateY(-50%);
+   transform: translateY(-50%);
+}
+@media (max-width:900px){
+.user__circle__wrapper{
+  width: 90%;
+  height: 90%;
+
+}
+}
+.profile__body{
+  width: 100%;
+  background-color: #fff;
+  padding: 1.8rem;
+  border-radius: 16px;
+}
+.profile__container{
+  max-width: 320px;
+width: 100%;
+}
+
+.profile__name{
+    font-size: 2rem;
+    font-weight: 700;
+}
+.user__container{
+  max-width: 700px;
   width: 100%;
   padding-left: 1.6rem;
 }
 .onsen_name{
   margin-bottom: 40px;
 }
-.round-img{
+.profile__img__wrapper{
+  margin-bottom: 1.6rem;
+}
+.profile__outer{
+ margin-bottom: 2.4rem;
+}
+.profile__img{
   border-radius: 50%;
 }
 .header__profile__img{
   border-radius: 50%;
+}
+.profile__edit__btn{
+width: 100%;
+padding: 4px 0;
+background-color: #8A8B8B;
+color: #fff;
+font-weight: 600;
+text-align: center;
+display: inline-block;
+font-size: 16px;
+font-weight: 600;
+}
+
+#profile__edit{
+  color: #fff;
+  text-decoration: none;
+}
+/*サカツ一覧*/
+.user__edit__icon{
+  cursor: pointer;
+  padding:7px 5px;
+    width: 36px;
+    border-radius: 50%;
+    box-shadow: -4px -4px 8px 0px #e4e4e4, 4px 4px 8px 0px #e4e4e4;
+    height: 30px;
+}
+.user__edit__menu{
+  position: absolute;
+  top: 30px;
+  right: 0;
+}
+.user__imgicon{
+  margin-right: 4px;
+}
+.post__user__img{
+  border-radius: 50%;
+}
+.sauna__minute__mark{
+    background-color: #f68655;
+}
+.water__minute__mark{
+      background-color: #6b99cf; 
+}
+.totonoi__minute__mark{
+  background-color: #61C359;
+}
+.minute__mark__size{
+    color: #fff;
+    padding: 3px;
+    border-radius: 50%;
+    margin-right: 2px;
+}
+.user__name{
+  font-size: 14px;
+  line-height: 1.8;
+}
+.user__feature{
+  display: flex;
+}
+.user__post__header{
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.user__post{
+  padding: 16px 20px 32px;
+  border-top: 1px solid #E4E4E4;
+}
+.user__post:first-child{
+  border-top: none;
+}
+.user__totonoi__link{
+  font-size: 18px;
+  font-weight: 800;
+}
+.user__totonoi__link:hover{
+  color: #FC9701;
+}
+.user__totonoi__link[class]{
+  text-decoration: underline;
+}
+
+.user__sakatu__data{
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  color: #333;
+}
+.minute__part{
+  margin-left: 8px;
+  font-size: 1rem;
+}
+.minute__number{
+  font-family:'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+/* タブメニュー */
+.user__tab__wrapper{
+  background-color: #fff;
+  border-radius: 16px;
+}
+
+.tab-menu {
+  display: flex;
+}
+
+.tab-menu__item {
+  box-sizing: border-box;
+  width: 50%;
+}
+
+
+.tab-trigger { 
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  padding: 10px;
+  color: rgba(0,0,0,0.36);
+  border-bottom: 0;
+  font-size: 16px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.tab-trigger.is-active {
+  border-bottom: 2px solid #f8ad8f;
+  color: rgba(0,0,0,0.90);
+  font-weight: 700;
+}
+
+
+/* タブコンテンツ */
+.user__tab__wrapper{
+  margin-top: 2.4rem;
+}
+.tab-contents {
+  border-top: 1px solid #ccc;
+  padding: 1.5rem 0;
+}
+.tab-content__item {
+  box-sizing: border-box;
+  display: none;
+  text-align: left;
+}
+.tab-content__item.is-active {
+  display: block;
+  animation: fade 0.5s ease;
+}
+@media (max-width:900px){
+  .UserMainPage__container{
+flex-direction: column;
+padding-top: 1.5rem;
+}
+.user__container{
+  margin-top: 2.4rem;
+  padding-left: 0;
+  max-width: 900px;
+}
+
+.profile__container{
+  max-width: 960px;
+}
+.profile__outer{
+  display: flex;
+  align-items: center;
+}
+.profile__img__wrapper{
+  margin-right: 5%;
+  margin-bottom: 0;
+}
+}
+
+
+/*サカツした施設*/
+.sauna__temperature{
+  margin-right: 0.6rem;
+}
+.WentOnsen{
+  display: flex;
+  padding: 18px 7px;
+  border-top: 1px solid #eee;
+}
+.WentOnsen:first-child{
+  border: none;
+}
+.onsen_icon{
+  opacity: 0.27;
+}
+.is-active .onsen_icon{
+  opacity: inherit;
+}
+.WentOnsen__img{
+  flex: 0 0 37%;
+  margin-right: 12px;
+}
+.WentOnsen__address{
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+.Onsen__address{
+  margin-left: 4px;
+}
+.WentOnsen__text{
+  flex: 1 1 auto;
+}
+.WentOnsen__name{
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: underline;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.WentOnsen__name a:hover{
+  color: #FC9701;
+}
+.sauna__circle{
+  background-color: #f68655;
+    color: #fff;
+    padding: 3px;
+    margin-right: 2px;
+    border-radius: 50%;
+}
+.water__circle{
+  background-color: #6b99cf;
+    color: #fff;
+    padding: 3px;
+    margin-right: 2px;
+    border-radius: 50%;
+}
+.temperature__wrapper{
+  display: flex;
+  align-items: center;
+  margin-top: 0.4rem;
+}
+.sauna__temperature{
+font-size: 1.2rem;
+margin-left: 4px;
+}
+.water__temperature{
+  font-size: 1.2rem;
 }

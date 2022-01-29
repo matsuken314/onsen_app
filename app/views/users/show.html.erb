@@ -1,30 +1,92 @@
 <%= Gon::Base.render_data %>
 <div class="UserMainPage__container">
- <div class="profile__container">
- <%= image_tag @user.avatar.url , size: "200", class: "round-img"%>
-  <h1><%= @user.name %></h1>
-  <% if @user == current_user %>
-   <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark edit-profile-btn" %>
-  <% end %>
- <%= link_to "ととのいを記録", new_post_path, class: " post_btn" %>
-  <%= link_to "保存ととのい施設", bookmarks_user_path, class: "totonoi_btn" %>
+  <div class="profile__container">
+     <div class="profile__body">
+          <div class="profile__outer">
+               <div class="profile__img__wrapper">
+                    <%= image_tag @user.avatar.url , size: "120", class: "profile__img"%>
+               </div>
+               <div class="profile__name">
+               <span><%= @user.name %></span>
+               </div>
+          </div>
+          <% if @user == current_user %>
+          <%= link_to "プロフィールを編集", edit_user_registration_path, class: "profile__edit__btn", id: "profile__edit" %>
+          <% end %>
+     </div>
   </div>
  
+  <div class="user__container">
+     <div class="user__circle__wrapper">
+          <canvas id= "myChart"></canvas>
+          <p class="user__circle__name">サ活の平均</p>
+     </div>
 
-  <div class="UserCircle__container">
-  <canvas id="myChart" width="80%" height="80%"></canvas>
-  </div>
-<ul class="UserNav">
-<li class="UserNav__item"></li>
-<li class="UserNav__item"></li>
-</ul>
-</div>
-   <% @posts.each do |post| %>
-        <div class="user_post">
-         <p><%= post.sauna_one %></p>
-         <p><%= post.water_one %></p>
-         <p><%= post.totonoi_one %></p>
-         <p><%= post.totonoi_address %></p>
-        </div>
+ <div class="user__tab__wrapper">
+    <ul class="tab-menu">
+      <li class="tab-menu__item"><span class="tab-trigger js-tab-trigger is-active" data-id="tab01"><i class="far fa-clipboard"></i>サ活一覧</span></li>
+      <li class="tab-menu__item"><span class="tab-trigger js-tab-trigger" data-id="tab02"><%= image_tag 'onsen_icon.png', size: "25",class: "onsen_icon" %>サ活した施設</span></li>
+    </ul>
+    
+    <div class="tab-contents">
+      <div class="tab-content__item js-tab-target is-active" id="tab01">
+  <% @posts.each do |post| %>
+        <div class="user__post">
+          <div class="user__post__header">
+          <div class="user__feature">
+               <div class="user__imgicon">
+                    <%= image_tag @user.avatar.url , size: "26", class: "post__user__img"%>
+               </div>
+                    <p class="user__name"><%= @user.name%>が<%= post.created_at.strftime("%Y.%m.%d")%>にサ活</p> 
+          </div>
+          <p class="user__edit__icon"><i class="fas fa-edit fa-2x"></i><i class="fas fa-caret-down fa-2x"></i></p>
+          <div class="user__edit__menu" style="display:none;">
+          <li class="menu__link"><a href="/posts/<%=post.id%>/edit">編集する</a></li>
+          <li class="menu__link"><%= link_to "削除する", post_path(post.id),method: :delete, data: { confirm: "削除しますか?" }  %></li>
+          </div>
+          </div>
+          <%= link_to onsen_path(post.went_onsen_id), class: "user__totonoi__link" do%>                
+          <%= post.totonoi_address %>
+          <% end %>
+          <div class="user__sakatu__data">
+              <i class="far fa-clock fa-2x"></i> 
+              <div class="sauna__minute minute__part">
+                    <span class ="sauna__minute__mark minute__mark__size">サ</span><span class="minute__number"><%= post.sauna_one %></span>分
+               </div>
+               <div class="water__minute minute__part">
+                <span class="water__minute__mark minute__mark__size">水</span><span class = "minute__number"><%= post.water_one %></span>分
+               </div>
+               <div class="totonoi__minute minute__part">
+                <span class="totonoi__minute__mark minute__mark__size">外</span><span class="minute__number"><%= post.totonoi_one %></span>分
+               </div>
+          </div>
+       </div>
    <% end %>
+      </div>
+      <div class="tab-content__item js-tab-target" id="tab02">
+        <% @UserOnsen_data.each do |went| %>
+        <div class="WentOnsen">
+          <div class="WentOnsen__img">
+          <%= link_to image_tag(went.image.to_s , class: :post__onsen__img) ,onsen_path(went.id) %></div>
+         <div class="WentOnsen__text">
+             <p class="WentOnsen__name"><%= link_to onsen_path(went.id) do%><%= went.name %><% end %></p>
+             <p class="WentOnsen__address"><i class="fas fa-map-marker-alt"></i><span class="Onsen__address"><%= went.address %></span></p>
+             <div class="temperature__wrapper"> 
+              <i class="fas fa-thermometer-half fa-2x"></i> <div class = "sauna__temperature"><span class="sauna__circle">サ</span><%= went.sauna_temperature %>℃</div>
+               <div class = "water__temperature"> <span class="water__circle">水</span><%= went.water_temperature %>℃</div>
+             </div>
+          </div> 
+         </div>
+      <% end %> 
+      </div>
+    </div>
+  </div>
+     <div class="post__wrapper">
+ 
+     </div>
+
+  </div>
+
+</div>
+
 

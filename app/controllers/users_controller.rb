@@ -1,8 +1,18 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @posts = current_user.posts
-    gon.Totonoi_data = @posts.circle_data(current_user)
+    @posts = @user.posts.order("created_at DESC")
+    gon.Totonoi_data = @posts.circle_data(@user)
+
+    @posts.each do |post|
+      post.went_onsen_id = post.return_onsen_id(post.totonoi_address)
+    end
+
+    @went_onsen = @posts.distinct.pluck(:totonoi_address)
+    @UserOnsen_data = []
+    @went_onsen.each do |went|
+      @UserOnsen_data.concat(Onsen.where(name: went)) if Onsen.where(name: went).exists?
+    end
   end
 
   def update

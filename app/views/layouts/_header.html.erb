@@ -12,11 +12,11 @@
   <% if user_signed_in? %>
     <%# ログイン時 %>
 
-      <li class="nav__item opacity clickslide"> 
+      <li class="nav__item opacity clickslide" id="clickslide"> 
         <%= image_tag current_user.avatar.url, size: "40", class: "header__profile__img"%>
         <span><i class="fas fa-caret-down fa-3x"></i></span>
       </li>
-      <div class = "dropdown__header" id = "dropdown__header">
+      <div class = "dropdown__header" id = "dropdown__header" style="display:none;">
       <%= link_to "マイページ", user_path(current_user.id), class: "dropdown__link", id: "dropdown__link"  %>
        <%= link_to "保存した施設", bookmarks_user_path(current_user.id), class: "dropdown__link", id: "dropdown__link" %>
 

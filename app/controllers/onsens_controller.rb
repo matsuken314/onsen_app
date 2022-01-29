@@ -3,7 +3,6 @@ class OnsensController < ApplicationController
 
   def index
     @onsens = Onsen.all.select(:name, :sauna_temperature, :water_temperature, :address, :image, :id).order("created_at DESC")
-    @user = current_user
   end
 
   def new
@@ -17,7 +16,6 @@ class OnsensController < ApplicationController
 
   def show
     @onsen = Onsen.find_by(id: params[:id])
-    @user = current_user
   end
 
   def update
