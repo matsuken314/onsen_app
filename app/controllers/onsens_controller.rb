@@ -16,6 +16,7 @@ class OnsensController < ApplicationController
 
   def show
     @onsen = Onsen.find_by(id: params[:id])
+    @posts
   end
 
   def update
