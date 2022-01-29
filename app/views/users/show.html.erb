@@ -18,13 +18,8 @@
  
   <div class="user__container">
      <div class="user__circle__wrapper">
-          <canvas id= "myChart" ></canvas>
-     </div>
-     <div class="user__nav__wrapper">
-          <ul class="UserNav">
-               <li class="UserNav__item"></li>
-               <li class="UserNav__item"></li>
-          </ul>
+          <canvas id= "myChart"></canvas>
+          <p class="user__circle__name">サ活の平均</p>
      </div>
 
  <div class="user__tab__wrapper">
@@ -74,11 +69,11 @@
           <div class="WentOnsen__img">
           <%= link_to image_tag(went.image.to_s , class: :post__onsen__img) ,onsen_path(went.id) %></div>
          <div class="WentOnsen__text">
-             <p class="WentOnsen__name"><%= went.name %></p>
-             <div><p class="WentOnsen__address"><i class="fas fa-map-marker-alt"></i><%= went.address %></p></div>
+             <p class="WentOnsen__name"><%= link_to onsen_path(went.id) do%><%= went.name %><% end %></p>
+             <p class="WentOnsen__address"><i class="fas fa-map-marker-alt"></i><span class="Onsen__address"><%= went.address %></span></p>
              <div class="temperature__wrapper"> 
-               <div class = "sauna_temperature"><span class="">サ</span><%= went.sauna_temperature %>℃</div>
-               <div class = "water_temperature"> <span>水</span><%= went.water_temperature %>℃</div>
+              <i class="fas fa-thermometer-half fa-2x"></i> <div class = "sauna__temperature"><span class="sauna__circle">サ</span><%= went.sauna_temperature %>℃</div>
+               <div class = "water__temperature"> <span class="water__circle">水</span><%= went.water_temperature %>℃</div>
              </div>
           </div> 
          </div>

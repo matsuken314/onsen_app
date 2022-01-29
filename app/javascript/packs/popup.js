@@ -13,16 +13,16 @@ $(document).on('click', function(e) {
 			$('#dropdown__header').fadeOut();
 		}
 	}
-
-	 if(!$(e.target).closest('.user__edit__menu').length && !$(e.target).closest('.user__edit__icon').length){
-		$('.user__edit__menu').fadeOut();
-	}else if($(e.target).closest('.user__edit__icon').length){
-	
-		if($('.user__edit__menu').is(':hidden')){
-			$('.user__edit__menu').fadeIn();
-		}else{
-			$('.user__edit__menu').fadeOut();
-		}
-	}
-
   });
+	
+	//  if(!$(e.target).closest('.user__edit__menu').length && !$(e.target).closest('.user__edit__icon').length){
+	// 	$('.user__edit__menu').fadeOut();
+	// }else if($(e.target).closest('.user__edit__icon').length){
+	
+	// 	if($('.user__edit__menu').is(':hidden')){
+	// 		$('.user__edit__menu').fadeIn();
+	// 	}else{
+	// 		$('.user__edit__menu').fadeOut();
+	// 	}
+	// }
+

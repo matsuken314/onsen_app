@@ -2,7 +2,7 @@ document.addEventListener('turbolinks:load', () => {
     const TotonoiData = gon.Totonoi_data
 var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
-        type: 'pie',
+        type: 'doughnut',
         data: {
             labels: ['サウナ', '水風呂', '外気浴'],
             datasets: [{
@@ -11,12 +11,12 @@ var ctx = document.getElementById('myChart').getContext('2d');
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)'
+                    'rgba(97,195,89, 0.2)'
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
                     'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)'
+                    'rgba(97,195,89, 1)'
                 ],
                 borderWidth: 1
             }]
@@ -30,7 +30,18 @@ var ctx = document.getElementById('myChart').getContext('2d');
                         beginAtZero: true
                     }
                 }]
-            }
+            },
+            plugins: {
+              labels: [
+                    {
+                    render: 'label',
+                    position: 'outside'
+                    },
+                    {
+                    render: 'percentage'
+                    }
+                ]
+            },
         }
     });
     draw_graph();

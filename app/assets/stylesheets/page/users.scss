@@ -18,6 +18,17 @@
   position: relative;
   margin:0 auto;
 }
+.user__circle__name{
+  font-weight: 800;
+  position: absolute;
+   left: 0;
+   right: 0;
+   margin: auto;
+   text-align: center;
+   top: 55%;
+   -webkit-transform: translateY(-50%);
+   transform: translateY(-50%);
+}
 @media (max-width:900px){
 .user__circle__wrapper{
   width: 90%;
@@ -79,6 +90,11 @@ font-weight: 600;
 /*サカツ一覧*/
 .user__edit__icon{
   cursor: pointer;
+  padding:7px 5px;
+    width: 36px;
+    border-radius: 50%;
+    box-shadow: -4px -4px 8px 0px #e4e4e4, 4px 4px 8px 0px #e4e4e4;
+    height: 30px;
 }
 .user__edit__menu{
   position: absolute;
@@ -108,6 +124,7 @@ font-weight: 600;
 }
 .user__name{
   font-size: 14px;
+  line-height: 1.8;
 }
 .user__feature{
   display: flex;
@@ -130,6 +147,13 @@ font-weight: 600;
   font-size: 18px;
   font-weight: 800;
 }
+.user__totonoi__link:hover{
+  color: #FC9701;
+}
+.user__totonoi__link[class]{
+  text-decoration: underline;
+}
+
 .user__sakatu__data{
   display: flex;
   align-items: center;
@@ -182,6 +206,9 @@ font-weight: 600;
 
 
 /* タブコンテンツ */
+.user__tab__wrapper{
+  margin-top: 2.4rem;
+}
 .tab-contents {
   border-top: 1px solid #ccc;
   padding: 1.5rem 0;
@@ -205,6 +232,7 @@ padding-top: 1.5rem;
   padding-left: 0;
   max-width: 900px;
 }
+
 .profile__container{
   max-width: 960px;
 }
@@ -218,10 +246,11 @@ padding-top: 1.5rem;
 }
 }
 
-.temperature__wrapper{
-  display: flex;
-}
+
 /*サカツした施設*/
+.sauna__temperature{
+  margin-right: 0.6rem;
+}
 .WentOnsen{
   display: flex;
   padding: 18px 7px;
@@ -241,16 +270,50 @@ padding-top: 1.5rem;
   margin-right: 12px;
 }
 .WentOnsen__address{
+  margin-top: 1rem;
   font-size: 1.2rem;
+}
+.Onsen__address{
+  margin-left: 4px;
 }
 .WentOnsen__text{
   flex: 1 1 auto;
 }
 .WentOnsen__name{
-  font-size: 18px;
+  font-size: 1.6rem;
   font-weight: 700;
+  text-decoration: underline;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
+}
+.WentOnsen__name a:hover{
+  color: #FC9701;
+}
+.sauna__circle{
+  background-color: #f68655;
+    color: #fff;
+    padding: 3px;
+    margin-right: 2px;
+    border-radius: 50%;
+}
+.water__circle{
+  background-color: #6b99cf;
+    color: #fff;
+    padding: 3px;
+    margin-right: 2px;
+    border-radius: 50%;
+}
+.temperature__wrapper{
+  display: flex;
+  align-items: center;
+  margin-top: 0.4rem;
+}
+.sauna__temperature{
+font-size: 1.2rem;
+margin-left: 4px;
+}
+.water__temperature{
+  font-size: 1.2rem;
 }

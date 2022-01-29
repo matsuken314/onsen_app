@@ -55,9 +55,10 @@ p {
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
-a{
+a:link, a:visited{
   text-decoration: none;
   transition: .3s ease;
+  color: #333;
 }
 
 
