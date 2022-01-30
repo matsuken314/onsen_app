@@ -16,7 +16,8 @@ class OnsensController < ApplicationController
 
   def show
     @onsen = Onsen.find_by(id: params[:id])
-    @posts
+    @posts = Post.includes(:user).where(totonoi_address: @onsen.name).order("posts.created_at DESC")
+    gon.Onsen_TotonoiData = @onsen.onsen_circle_data(@posts)
   end
 
   def update

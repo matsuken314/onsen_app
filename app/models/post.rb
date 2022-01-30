@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   validates :water_one, presence: true
   validates :totonoi_one, presence: true
   validates :totonoi_address, presence: true
-  validates :memo, length: { maximum: 140 }
+  validates :memo, length: { maximum: 100 }
 
   def self.circle_data(user)
     relax_data = user.posts.pluck(:sauna_one, :water_one, :totonoi_one, :id)

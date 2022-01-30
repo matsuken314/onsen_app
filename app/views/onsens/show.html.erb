@@ -1,4 +1,22 @@
+<%= Gon::Base.render_data %> 
 <div class="onsenshow__wrapper">
 <%=@onsen.name %>
+<%=@onsen.sauna_temperature %>
+<%=@onsen.water_temperature %>
  <%= image_tag @onsen.image.to_s %>
+ <div class="onsen__circle__wrapper">
+ <canvas id="onsenChart"></canvas>
+ </div>
+ </div>
+ <div class="showpost__wrapper">
+  <% @posts.each do |post| %>
+  <%=link_to user_path(post.user.id) do%><%= post.user.name%> <% end %>
+  <%= image_tag post.user.avatar.url , size: "26", class: "post__user__img"%>
+<%= post.sauna_one %>
+<%= post.water_one %>
+<%= post.totonoi_one %>
+<br>
+<br>
+<br>
+  <% end %>
  </div>

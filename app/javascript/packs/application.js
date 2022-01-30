@@ -4,10 +4,13 @@
 // that code so it'll be compiled.
 import 'chart.js/dist/chart';
 import './totonoi_circle';
+import './onsen_circle';
 import './popup';
 import './user_tab';
 import './autocomplete';
 import '@fortawesome/fontawesome-free/js/all';
+
+require("chart.js")
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
