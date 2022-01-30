@@ -22,9 +22,12 @@ var ctx = document.getElementById('myChart').getContext('2d');
             }]
         },
         options: {
+            legend: {
+             onClick: function () { return false }
+            },
             responsive: true,
             maintainAspectRatio: false,
-            scales: {
+            scale: {
                 yAxes: [{
                     ticks: {
                         beginAtZero: true
