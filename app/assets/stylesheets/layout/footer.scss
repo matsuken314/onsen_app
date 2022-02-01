@@ -28,13 +28,14 @@ footer{
 
 .bottom__spnav{
   position: fixed;
+  z-index: 2;
   bottom: 0;
   padding-top: 6px;
   background-color: #F9F9F9;
   width: 100%;
   box-shadow: 0px 1px 4px #F9F9F9;
   border-top: 1px solid rgba(0,0,0,0.12);
-  height: 43px;
+  height: 45px;
   
 }
 .bottom__spnav li{
