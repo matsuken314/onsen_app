@@ -1,5 +1,5 @@
 ActiveAdmin.register Onsen do
-  permit_params :name, :address, :sauna_temperature, :water_temperature, :image
+  permit_params :name, :address, :sauna_temperature, :water_temperature, :introduce, :image
 
   form do |f|
     f.inputs do
@@ -7,6 +7,7 @@ ActiveAdmin.register Onsen do
       f.input :sauna_temperature
       f.input :water_temperature
       f.input :address
+      f.input :introduce
       f.input :image, as: :file
     end
     f.actions
@@ -18,6 +19,7 @@ ActiveAdmin.register Onsen do
       row :sauna_temperature
       row :water_temperature
       row :address
+      row :introduce
       # show画面で画像を表示するためのタグを追加
       row :image do
         image_tag(onsen.image.to_s)

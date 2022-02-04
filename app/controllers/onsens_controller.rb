@@ -1,6 +1,6 @@
 class OnsensController < ApplicationController
   def index
-    @onsens = Onsen.all.select(:name, :sauna_temperature, :water_temperature, :address, :image, :id).order("created_at DESC")
+    @onsens = Onsen.all.select(:name, :sauna_temperature, :water_temperature, :address, :image, :introduce, :id).order("created_at DESC")
   end
 
   def new
@@ -8,7 +8,7 @@ class OnsensController < ApplicationController
   end
 
   def create
-    onsen = params.require(:onsen).permit(:name, :sauna_temperature, :water_temperature, :image)
+    onsen = params.require(:onsen).permit(:name, :address, :introduce, :sauna_temperature, :water_temperature, :image)
     Onsen.create(onsen)
   end
 

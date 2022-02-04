@@ -1,25 +1,25 @@
 <%= Gon::Base.render_data %> 
 <div class="onsenshow__wrapper">
-<%=@onsen.name %>
-<%=@onsen.address %>
-<%=@onsen.sauna_temperature %>
-<%=@onsen.water_temperature %>
- <%= image_tag @onsen.image.to_s %>
- <div class="onsen__circle__wrapper">
- <% if @posts.present? %>
- <canvas id="onsenChart"></canvas>
-  <% else %>
-  <p>データ無し画像</p>
-  <% end %>
- </div>
+  <div class="onsenshow__data">
+    <%=@onsen.name %>
+    <p class="onsen__introduce"><%=@onsen.introduce %></p>
+    <%=@onsen.address %>
+    <%=@onsen.sauna_temperature %>
+    <%=@onsen.water_temperature %>
+    <%= image_tag @onsen.image.to_s %>
+  </div>
+  <div class="onsen__circle__wrapper">
+  <% if @posts.present? %>
+  <canvas id="onsenChart"></canvas>
+    <% else %>
+    <p>データ無し画像</p>
+    <% end %>
+  </div>
  </div>
  <div class="showpost__wrapper">
   <% @posts.each do |post| %>
-  <%=link_to user_path(post.user.id) do%><%= post.user.name%> <% end %>
-  <%= image_tag post.user.avatar.url , size: "26", class: "post__user__img"%>
-<%= post.sauna_one %>
-<%= post.water_one %>
-<%= post.totonoi_one %>
+<%= render partial: 'posts/postuser', locals: {post:post} %>
+<%= render partial: 'posts/poststatus', locals: {post:post} %>
 <br>
 <br>
 <br>

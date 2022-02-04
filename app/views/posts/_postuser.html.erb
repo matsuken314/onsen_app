@@ -1,0 +1,15 @@
+    <div class="user__post__header">
+          <div class="user__feature">
+               <div class="user__imgicon">
+                    <%=link_to user_path(post.user.id) do%><%= image_tag post.user.avatar.url , size: "26", class: "post__user__img"%> <% end %>
+               </div>
+                    <p class="user__name"><%= post.user.name%>が<%= post.created_at.strftime("%Y.%m.%d")%>にサ活</p> 
+          </div>
+          <% if post.user == current_user %>
+          <p class="user__edit__icon"><i class="fas fa-edit fa-2x"></i><i class="fas fa-caret-down fa-2x"></i></p>
+          <div class="user__edit__menu" style="display:none;">
+          <li class="menu__link"><a href="/posts/<%=post.id%>/edit">編集する</a></li>
+          <li class="menu__link"><%= link_to "削除する", post_path(post.id),method: :delete, data: { confirm: "削除しますか?" }  %></li>
+          </div>
+          <% end %>
+          </div>
