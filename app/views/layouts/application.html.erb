@@ -14,12 +14,14 @@
 
   <body>
 <%= render "layouts/header" %>
+<div class="Allcontents__wrapper">
     <% if flash[:alert] %>
       <div class="alert alert-danger">
         <%= flash[:alert] %>
       </div>
     <% end %>
     <%= yield %>
+    </div>
   <%= render 'layouts/footer' %>
   </body>
 </html>

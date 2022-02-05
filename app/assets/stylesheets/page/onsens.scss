@@ -2,23 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+
+
 /*温泉詳細ページ*/
 .onsenshow__wrapper{
   width: 100%;
-  max-width: 1260px;
+  max-width: 1200px;
   margin: 0 auto;
-  display: flex;
 }
 .showpost__wrapper{
   max-width: 1020px;
   width: 100%;
   margin: 4rem auto;
-  padding:0 2rem;
+  padding:0 1rem;
 
 }
 
+.onsenshow__img{
+  object-fit: cover;
+}
+
 .onsen__circle__wrapper{
-  width: 80%;
+  width: 55%;
+}
+@media (min-width:768px){
+.onsenshow__wrapper{
+  display: flex;
+}
 }
 /*///////温泉詳細ページ*/
 

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_post, only: %i[edit update destroy]
+  before_action :collect_user, only: [:edit, :update, :destroy]
   def index
     @posts = Post.includes(:user)
   end
@@ -23,30 +23,30 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit
-    @post = Post.find(params[:id])
-  end
+  def edit; end
 
   def update
     if @post.update(post_params)
-      redirect_to user_path(current_user.id)
+      redirect_back(fallback_location: fallback_location)
     else
-      render action: :edit
+      render :edit
     end
   end
 
   def destroy
     @post.destroy
-    redirect_to user_path(current_user.id)
+    redirect_to new_post_path
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:totonoi_address, :sauna_one, :water_one, :totonoi_one).merge(user_id: current_user.id)
+    params.require(:post).permit(:totonoi_address, :sauna_one, :water_one, :totonoi_one, :memo).merge(user_id: current_user.id)
   end
 
-  def set_post
-    @post = Post.find(params[:id])
+  def collect_user
+    @posts = current_user.posts
+    @post = @posts.find_by(id: params[:id])
+    redirect_to new_post_path unless @post
   end
 end

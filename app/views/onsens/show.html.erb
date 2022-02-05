@@ -1,12 +1,12 @@
 <%= Gon::Base.render_data %> 
 <div class="onsenshow__wrapper">
   <div class="onsenshow__data">
-    <%=@onsen.name %>
+   <h1 class="sauna__head"><%=@onsen.name %></h1> 
     <p class="onsen__introduce"><%=@onsen.introduce %></p>
     <%=@onsen.address %>
     <%=@onsen.sauna_temperature %>
     <%=@onsen.water_temperature %>
-    <%= image_tag @onsen.image.to_s %>
+    <%= image_tag @onsen.image.to_s, size: '335x250',class: "onsenshow__img" %>
   </div>
   <div class="onsen__circle__wrapper">
   <% if @posts.present? %>
@@ -17,7 +17,7 @@
   </div>
  </div>
  <div class="showpost__wrapper">
-<%= render partial: 'posts/userstatus', collection: @posts, as: 'post' %>
+<%= render partial: 'posts/postdata', collection: @posts, as: 'post' %>
 <br>
 <br>
  </div>
