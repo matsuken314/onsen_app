@@ -6,10 +6,18 @@
                     <p class="user__name"><%= post.user.name%>が<%= post.created_at.strftime("%Y.%m.%d")%>にサ活</p> 
           </div>
           <% if post.user == current_user %>
-          <p class="user__edit__icon"><i class="fas fa-edit fa-2x"></i><i class="fas fa-caret-down fa-2x"></i></p>
-          <div class="user__edit__menu" style="display:none;">
+          <p class="js-modal user__edit__icon"><i class="fas fa-edit fa-2x"></i><i class="fas fa-caret-down fa-2x"></i></p>
+
+           <section id="modalArea" class="modalArea">
+   <div id="modalBg" class="modalBg"></div>
+      <div class="modalWrapper">
+        <div class= "user__edit__menu">
           <li class="menu__link"><a href="/posts/<%=post.id%>/edit">編集する</a></li>
           <li class="menu__link"><%= link_to "削除する", post_path(post.id),method: :delete, data: { confirm: "削除しますか?" }  %></li>
-          </div>
+        </div>
+          <div id="closeModal" class="closeModal">×</div>
+   </div>
+              </section>
           <% end %>
-          </div>
+      
+     </div>

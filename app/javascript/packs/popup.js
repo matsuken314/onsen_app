@@ -1,5 +1,22 @@
-$(document).on('turbolinks:load', function() {
-     
+$(document).on('turbolinks:load', function(event){
+ 
+	   // モーダルのボタンをクリックした時
+  	$('.js-modal').on('click', function () {
+			var index = $('p.js-modal').index(this);
+		 // 何番目のモーダルボタンかを取得
+    $('.modal__area').eq(index).fadeIn(100); // クリックしたモーダルボタンと同じ番目のモーダルを表示する
+  });
+
+  // ×やモーダルの背景をクリックした時
+	$('.modal__bg').on('click', function () {
+   $('.modal__area').fadeOut(100);
+	 console.log('閉じる背景')
+ });
+$('.closeModal').on('click', function () {
+   $('.modal__area').fadeOut(100);
+	 console.log('閉じるボタン')
+ });
+
 });
 
 $(document).on('click', function(e) {
@@ -15,6 +32,7 @@ $(document).on('click', function(e) {
 	}
   });
 	
+
 	//  if(!$(e.target).closest('.user__edit__menu').length && !$(e.target).closest('.user__edit__icon').length){
 	// 	$('.user__edit__menu').fadeOut();
 	// }else if($(e.target).closest('.user__edit__icon').length){

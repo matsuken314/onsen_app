@@ -17,11 +17,7 @@
   </div>
  </div>
  <div class="showpost__wrapper">
-  <% @posts.each do |post| %>
-<%= render partial: 'posts/postuser', locals: {post:post} %>
-<%= render partial: 'posts/poststatus', locals: {post:post} %>
+<%= render partial: 'posts/userstatus', collection: @posts, as: 'post' %>
 <br>
 <br>
-<br>
-  <% end %>
  </div>
