@@ -1,12 +1,17 @@
 <%= Gon::Base.render_data %> 
+<%= render partial: 'shared/page_title', locals: { page_title: @onsen.name } %>
 <div class="onsenshow__wrapper">
   <div class="onsenshow__data">
+  <div class="onsenshow__header">
    <h1 class="sauna__head"><%=@onsen.name %></h1> 
-    <p class="onsen__introduce"><%=@onsen.introduce %></p>
     <%=@onsen.address %>
-    <%=@onsen.sauna_temperature %>
-    <%=@onsen.water_temperature %>
+
+    <div class="spec__info">
+    <i class="fas fa-temperature-high fa-2x"></i><%=@onsen.sauna_temperature %>
+   <i class="fas fa-temperature-low fa-2x"></i><%=@onsen.water_temperature %>  </div>
+   </div>
     <%= image_tag @onsen.image.to_s, size: '335x250',class: "onsenshow__img" %>
+   <p class="onsen__introduce"><%= safe_join(@onsen.introduce.split("\n"),tag(:br)) %></p>
   </div>
   <div class="onsen__circle__wrapper">
   <% if @posts.present? %>
@@ -17,6 +22,9 @@
   </div>
  </div>
  <div class="showpost__wrapper">
+ <div class="showpost__head">
+ <h2 class="showpost__label">みんなのサ活</h2>
+</div>
 <%= render partial: 'posts/postdata', collection: @posts, as: 'post' %>
 <br>
 <br>

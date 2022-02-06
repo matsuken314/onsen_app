@@ -27,7 +27,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_back(fallback_location: fallback_location)
+      redirect_back(fallback_location: root_path)
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to new_post_path
+    redirect_back(fallback_location: root_path)
   end
 
   private

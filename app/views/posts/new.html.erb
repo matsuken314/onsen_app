@@ -1,3 +1,4 @@
+<%= render partial: 'shared/page_title', locals: { page_title: "サ活の記録ページ" } %>
 <div class = "post__container">
 <%= form_with model: @post, local: true do |f| %>
 <%= f.text_field :totonoi_address, autofocus: true,placeholder:"サウナ施設名", class: 'onsen_name'%>
@@ -5,7 +6,7 @@
 <%= f.number_field :water_one , placeholder: "水風呂の時間" %>
 <%= f.number_field :totonoi_one , placeholder: "ととのった時間"%>
 
-<%= f.text_field :memo, placeholder: "サ活の感想を記録してみよう" %>
+<%= f.text_area :memo, placeholder: "サ活の感想を記録してみよう",rows: "5" %>
  <%= f.submit "投稿", class: "btn btn-primary" %>
 
   <% end %>

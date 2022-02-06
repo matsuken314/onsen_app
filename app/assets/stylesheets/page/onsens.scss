@@ -8,7 +8,8 @@
 .onsenshow__wrapper{
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  padding: 0 1rem;
+  margin: 2rem auto 0;
 }
 .showpost__wrapper{
   max-width: 1020px;
@@ -18,9 +19,29 @@
 
 }
 
+.showpost__head{
+  margin-bottom: 2rem;
+}
+.showpost__label{
+position: relative;
+font-size: 2.2rem;
+font-weight: 800;
+}
+.showpost__label::after{
+  content: '';
+  display: block;
+  width: 78px;
+  height: 2px;
+  background-color: #f68655;
+}
+.sauna__head{
+  font-size: 2.4rem;
+  font-weight: 800;
+}
 .onsenshow__img{
   object-fit: cover;
 }
+
 
 .onsen__circle__wrapper{
   width: 55%;
@@ -28,6 +49,10 @@
 @media (min-width:768px){
 .onsenshow__wrapper{
   display: flex;
+  justify-content: center;
+}
+.onsenshow__data{
+  width: 40%;
 }
 }
 /*///////温泉詳細ページ*/

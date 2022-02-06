@@ -16,7 +16,7 @@
      <% end %>
      <% if post.memo.present? %>
           <div class="user__memo__wrapper">
-               <p class="user__memo"><%= post.memo%></p>
+               <p class="user__memo"><%= safe_join(post.memo.split("\n"),tag(:br)) %></p>
           </div>
      <% end %>
        <div class="user__sakatu__data">
