@@ -2,11 +2,90 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+
+
+/*温泉詳細ページ*/
 .onsenshow__wrapper{
   width: 100%;
-  max-width: 1260px;
-  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: 2rem auto 0;
 }
+.showpost__wrapper{
+  max-width: 1200px;
+  width: 100%;
+  margin: 4rem auto;
+  padding:0 1rem;
+
+}
+
+.showpost__head{
+  margin-bottom: 2rem;
+}
+.onsenshow__headline{
+font-size: 2.2rem;
+font-weight: 800;
+}
+.label__underline{
+position: relative;
+}
+.label__underline::after{
+  content: '';
+  display: block;
+  width: 78px;
+  height: 2px;
+  background-color: #f68655;
+}
+.onsenshow__header{
+  margin-bottom: 0.8rem;
+}
+.onsenshow__head{
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+}
+.onsenshow__address{
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #888;
+}
+.onsenshow__img{
+  object-fit: cover;
+  width: 100%;
+}
+.onsenshow__img__wrapper{
+  margin-bottom: 1rem;
+}
+.onsenshow__data{
+  margin-bottom: 4rem;
+}
+.spec__info__number{
+  font-size: 1.4rem;
+}
+
+.onsen__introduce{
+  font-size: 1.3rem;
+}
+.onsen__circle__wrapper{
+width: 90%;
+margin: 1.5rem auto 0;
+}
+@media (min-width:768px){
+.onsenshow__wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+.onsen__circle__group{
+  width: 55%;
+}
+
+.onsenshow__data{
+  width: 40%;
+}
+}
+/*///////温泉詳細ページ*/
+
 .onsen__wrapper{
   max-width: 1260px;
   width: 100%;
@@ -98,14 +177,4 @@ margin-right: 12px;
    width: 48%;
  }
 
-}
-
-/*温泉詳細ページ*/
-.showpost__wrapper{
-  max-width: 1020px;
-  width: 100%;
-  margin: auto;
-}
-.onsen__circle__wrapper{
-  width: 80%;
 }

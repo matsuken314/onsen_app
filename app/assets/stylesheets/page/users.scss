@@ -82,16 +82,22 @@ font-weight: 600;
   text-decoration: none;
 }
 /*サカツ一覧*/
+
+.user__memo{
+  font-size: 1.4rem;
+}
+
 .user__edit__icon{
   cursor: pointer;
   padding:7px 5px;
+  right: 0;
+  position: absolute;
     width: 36px;
     border-radius: 50%;
     box-shadow: -4px -4px 8px 0px #e4e4e4, 4px 4px 8px 0px #e4e4e4;
     height: 30px;
 }
 .user__edit__menu{
-  position: absolute;
   top: 30px;
   right: 0;
 }
@@ -151,6 +157,7 @@ font-weight: 600;
 .user__sakatu__data{
   display: flex;
   align-items: center;
+  position: relative;
   padding-top: 10px;
   color: #333;
 }

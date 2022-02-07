@@ -1,6 +1,4 @@
-.modalArea {
-  visibility: hidden; /* displayではなくvisibility */
-  opacity : 0;
+.modal__area {
   position: fixed;
   z-index: 10; /* サイトによってここの数値は調整 */
   top: 0;
@@ -10,13 +8,13 @@
   transition: .4s;
 }
 
-.modalBg {
+.modal__bg {
   width: 100%;
   height: 100%;
   background-color: rgba(30,30,30,0.9);
 }
 
-.modalWrapper {
+.modal__wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -35,24 +33,6 @@
 }
 
 .is-show { /* モーダル表示用クラス */
-  visibility: visible;
+display: block;
   opacity : 1;
-}
-/* モーダルCSSここまで */
-
-
-/* 以下ボタンスタイル */
-button {
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #282828;
-  border-radius: 2px;
-  cursor: pointer;
-}
-
-#openModal {
-  // position: absolute;
-  // top: 50%;
-  // left: 50%;
-  transform:translate(-50%,-50%);
 }

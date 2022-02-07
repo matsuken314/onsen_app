@@ -1,22 +1,37 @@
 <%= Gon::Base.render_data %> 
+<%= render partial: 'shared/page_title', locals: { page_title: @onsen.name } %>
 <div class="onsenshow__wrapper">
-<%=@onsen.name %>
-<%=@onsen.sauna_temperature %>
-<%=@onsen.water_temperature %>
- <%= image_tag @onsen.image.to_s %>
- <div class="onsen__circle__wrapper">
- <canvas id="onsenChart"></canvas>
- </div>
+  <div class="onsenshow__data">
+  <div class="onsenshow__header">
+   <h1 class="onsenshow__head"><%=@onsen.name %></h1> 
+    <p class="onsenshow__address"><%=@onsen.address %></p>
+    <div class="spec__info">
+    <i class="fas fa-temperature-high fa-2x"></i><span class="spec__info__number"><%=@onsen.sauna_temperature %>℃</span>
+   <i class="fas fa-temperature-low fa-2x"></i><span class="spec__info__number"><%=@onsen.water_temperature %>℃</span></div>
+   </div>
+   <div class="onsenshow__img__wrapper">
+    <%= image_tag @onsen.image.to_s, size: '335x250',class: "onsenshow__img" %>
+    </div>
+   <p class="onsen__introduce"><%= safe_join(@onsen.introduce.split("\n"),tag(:br)) %></p>
+  </div>
+ 
+ <div class="onsen__circle__group">
+ <h2 class="onsenshow__headline label__underline">サ活平均円グラフ</h2>
+  <% if @posts.present? %>
+   <div class="onsen__circle__wrapper">
+  <canvas id="onsenChart"></canvas>
+    </div>
+    <% else %>
+    <p>データ無し画像</p>
+    <% end %>
+  </div>
  </div>
  <div class="showpost__wrapper">
-  <% @posts.each do |post| %>
-  <%=link_to user_path(post.user.id) do%><%= post.user.name%> <% end %>
-  <%= image_tag post.user.avatar.url , size: "26", class: "post__user__img"%>
-<%= post.sauna_one %>
-<%= post.water_one %>
-<%= post.totonoi_one %>
+ <div class="showpost__head">
+ <h2 class="onsenshow__headline label__underline">みんなのサ活</h2>
+</div>
+<%= render partial: 'posts/postdata', collection: @posts, as: 'post' %>
 <br>
 <br>
-<br>
-  <% end %>
  </div>
+

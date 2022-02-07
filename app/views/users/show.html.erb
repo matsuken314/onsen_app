@@ -1,4 +1,5 @@
 <%= Gon::Base.render_data %>
+<%= render partial: 'shared/page_title', locals: { page_title: @user.name  } %>
 <div class="UserMainPage__container">
   <div class="profile__container">
      <div class="profile__body">
@@ -30,38 +31,7 @@
     
     <div class="tab-contents">
       <div class="tab-content__item js-tab-target is-active" id="tab01">
-  <% @posts.each do |post| %>
-        <div class="user__post">
-          <div class="user__post__header">
-          <div class="user__feature">
-               <div class="user__imgicon">
-                    <%= image_tag @user.avatar.url , size: "26", class: "post__user__img"%>
-               </div>
-                    <p class="user__name"><%= @user.name%>が<%= post.created_at.strftime("%Y.%m.%d")%>にサ活</p> 
-          </div>
-          <p class="user__edit__icon"><i class="fas fa-edit fa-2x"></i><i class="fas fa-caret-down fa-2x"></i></p>
-          <div class="user__edit__menu" style="display:none;">
-          <li class="menu__link"><a href="/posts/<%=post.id%>/edit">編集する</a></li>
-          <li class="menu__link"><%= link_to "削除する", post_path(post.id),method: :delete, data: { confirm: "削除しますか?" }  %></li>
-          </div>
-          </div>
-          <%= link_to onsen_path(post.went_onsen_id), class: "user__totonoi__link" do%>                
-          <%= post.totonoi_address %>
-          <% end %>
-          <div class="user__sakatu__data">
-              <i class="far fa-clock fa-2x"></i> 
-              <div class="sauna__minute minute__part">
-                    <span class ="sauna__minute__mark minute__mark__size">サ</span><span class="minute__number"><%= post.sauna_one %></span>分
-               </div>
-               <div class="water__minute minute__part">
-                <span class="water__minute__mark minute__mark__size">水</span><span class = "minute__number"><%= post.water_one %></span>分
-               </div>
-               <div class="totonoi__minute minute__part">
-                <span class="totonoi__minute__mark minute__mark__size">外</span><span class="minute__number"><%= post.totonoi_one %></span>分
-               </div>
-          </div>
-       </div>
-   <% end %>
+<%= render partial: 'posts/postdata', collection: @posts, as: 'post' %>
       </div>
       <div class="tab-content__item js-tab-target" id="tab02">
         <% @UserOnsen_data.each do |went| %>

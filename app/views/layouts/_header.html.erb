@@ -18,6 +18,9 @@
       </li>
       <div class = "dropdown__header" id = "dropdown__header" style="display:none;">
       <%= link_to "マイページ", user_path(current_user.id), class: "dropdown__link", id: "dropdown__link"  %>
+
+ <%= link_to "サウナ施設", onsens_path, class: "dropdown__link", id: "dropdown__link"  %>
+
        <%= link_to "保存した施設", bookmarks_user_path(current_user.id), class: "dropdown__link", id: "dropdown__link" %>
 
       <%= link_to "サ活を記録", new_post_path, class: "dropdown__link", id: "dropdown__link"%>
