@@ -16,7 +16,41 @@
   width: 100%;
   margin: 4rem auto;
   padding:0 1rem;
+}
+/*ページネーション*/
 
+.onsen__paginations__block .pagination .page.current{
+  background-color: #F68658;
+  color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 7px 5px;
+}
+.pagination span.next{
+  font-size: 0.8rem;
+}
+.pagination span.last{
+  font-size: 0.8rem;
+}
+
+.onsen__paginations__block .pagination .page{
+  border-radius: 50%;
+}
+
+.onsen__paginations__block{
+  margin-top: 40px;
+}
+.onsen__paginations__block .pagination a{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 7px 5px;
+}
+
+.pagination{
+  float: none;
+  text-align: center;
 }
 
 .showpost__head{
