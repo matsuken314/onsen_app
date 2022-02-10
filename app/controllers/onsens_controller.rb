@@ -1,6 +1,7 @@
 class OnsensController < ApplicationController
   def index
-    @onsens = Onsen.all.select(:name, :sauna_temperature, :water_temperature, :address, :image, :introduce, :id).order("created_at DESC")
+    @onsens = Onsen.all.select(:name, :sauna_temperature, :water_temperature, :address, :image, :introduce,
+                               :id).order("created_at DESC").page(params[:page]).per(12)
   end
 
   def new
