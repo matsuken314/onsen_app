@@ -19,14 +19,29 @@
 }
 /*ページネーション*/
 
-.onsen__paginations__block .pagination .page.current{
+.pagination span.page.current{
   background-color: #F68658;
   color: #fff;
+  background-image: none;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  padding: 7px 5px;
+  border: none;
+  width: 40px;
+  height: 40px;
+  padding: 13px 5px;
+  margin-right: 10px;
+  font-size: 1.6rem;
 }
+
+.pagination span.page.current:not(.disabled):hover{
+background-image: none;
+background-color: #F68658;
+}
+.pagination a:not(.disabled):hover{
+  background-color: #F68658;
+  color: #fff;
+  background-image: none;
+}
+
 .pagination span.next{
   font-size: 0.8rem;
 }
@@ -41,17 +56,27 @@
 .onsen__paginations__block{
   margin-top: 40px;
 }
-.onsen__paginations__block .pagination a{
+.pagination a{
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  padding: 7px 5px;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  padding: 13px 5px;
+  font-size: 1.6rem;
+  border: none;
 }
+
 
 .pagination{
   float: none;
   text-align: center;
+  width: 100%;
+  margin: 40px auto 0;
 }
+.pagination-list{
+  display: flex;
+}
+
 
 .showpost__head{
   margin-bottom: 2rem;
