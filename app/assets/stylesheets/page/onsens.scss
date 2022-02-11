@@ -17,66 +17,6 @@
   margin: 4rem auto;
   padding:0 1rem;
 }
-/*ページネーション*/
-
-.pagination span.page.current{
-  background-color: #F68658;
-  color: #fff;
-  background-image: none;
-  border-radius: 50%;
-  border: none;
-  width: 40px;
-  height: 40px;
-  padding: 13px 5px;
-  margin-right: 10px;
-  font-size: 1.6rem;
-}
-
-.pagination span.page.current:not(.disabled):hover{
-background-image: none;
-background-color: #F68658;
-}
-.pagination a:not(.disabled):hover{
-  background-color: #F68658;
-  color: #fff;
-  background-image: none;
-}
-
-.pagination span.next{
-  font-size: 0.8rem;
-}
-.pagination span.last{
-  font-size: 0.8rem;
-}
-
-.onsen__paginations__block .pagination .page{
-  border-radius: 50%;
-}
-
-.onsen__paginations__block{
-  margin-top: 40px;
-}
-.pagination a{
-  border-radius: 50%;
-  margin-right: 10px;
-  width: 40px;
-  height: 40px;
-  padding: 13px 5px;
-  font-size: 1.6rem;
-  border: none;
-}
-
-
-.pagination{
-  float: none;
-  text-align: center;
-  width: 100%;
-  margin: 40px auto 0;
-}
-.pagination-list{
-  display: flex;
-}
-
 
 .showpost__head{
   margin-bottom: 2rem;
@@ -114,22 +54,45 @@ position: relative;
   width: 100%;
 }
 .onsenshow__img__wrapper{
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 .onsenshow__data{
   margin-bottom: 4rem;
 }
 .spec__info__number{
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
 }
-
+.show__spec__margin{
+  margin-right: 3px;
+}
 .onsen__introduce{
   font-size: 1.3rem;
+  margin-top: 1.5rem;
 }
 .onsen__circle__wrapper{
 width: 90%;
 margin: 1.5rem auto 0;
 }
+.spec__info{
+  display: flex;
+}
+
+.spec__info__block{
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.fa-temperature-high{
+  color: #f68655;
+}
+
+.fa-temperature-low{
+color:#6b99cf;
+}
+
 @media (min-width:768px){
 .onsenshow__wrapper{
   display: flex;
@@ -144,6 +107,69 @@ margin: 1.5rem auto 0;
 }
 }
 /*///////温泉詳細ページ*/
+
+
+/*ページネーション*/
+
+.pagination span.page.current{
+  background-color: #F68658;
+  color: #fff;
+  background-image: none;
+  border-radius: 50%;
+  border: none;
+  width: 40px;
+  height: 40px;
+  padding: 13px 5px;
+  margin-right: 10px;
+  font-size: 1.6rem;
+}
+
+.pagination span.page.current:not(.disabled):hover{
+background-image: none;
+background-color: #F68658;
+}
+.pagination a:not(.disabled):hover{
+  background-color: #F68658;
+  color: #fff;
+  background-image: none;
+  text-shadow: none;
+}
+
+.pagination span.next{
+  font-size: 0.8rem;
+}
+.pagination span.last{
+  font-size: 0.8rem;
+}
+
+.onsen__paginations__block .pagination .page{
+  border-radius: 50%;
+}
+
+.onsen__paginations__block{
+  margin-top: 40px;
+}
+.pagination a{
+  border-radius: 50%;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  padding: 13px 5px;
+  font-size: 1.6rem;
+  border: none;
+}
+
+
+.pagination{
+  float: none;
+  text-align: center;
+  width: 100%;
+  margin: 40px auto 0;
+}
+.pagination-list{
+  display: flex;
+}
+
 
 .onsen__wrapper{
   max-width: 1260px;
