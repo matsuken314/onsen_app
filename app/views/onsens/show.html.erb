@@ -6,12 +6,19 @@
    <h1 class="onsenshow__head"><%=@onsen.name %></h1> 
     <p class="onsenshow__address"><%=@onsen.address %></p>
     <div class="spec__info">
-    <i class="fas fa-temperature-high fa-2x"></i><span class="spec__info__number"><%=@onsen.sauna_temperature %>℃</span>
-   <i class="fas fa-temperature-low fa-2x"></i><span class="spec__info__number"><%=@onsen.water_temperature %>℃</span></div>
+    <div class="spec__info__sauna spec__info__block">
+    <i class="fas fa-temperature-high fa-2x"></i><span class="spec__info__number"><%=@onsen.sauna_temperature %></span>℃</div>
+
+    <div class="spec__info__water spec__info__block">
+   <i class="fas fa-temperature-low fa-2x"></i><span class="spec__info__number"><%=@onsen.water_temperature %></span>℃
+   </div>
+   </div>
    </div>
    <div class="onsenshow__img__wrapper">
     <%= image_tag @onsen.image.to_s, size: '335x250',class: "onsenshow__img" %>
     </div>
+ <h2 class="onsenshow__headline label__underline">施設メモ</h2>
+    <h2 class="onsenshow__headline "></h2>
    <p class="onsen__introduce"><%= safe_join(@onsen.introduce.split("\n"),tag(:br)) %></p>
   </div>
  

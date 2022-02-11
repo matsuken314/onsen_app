@@ -8,6 +8,7 @@ import './onsen_circle';
 import './popup';
 import './user_tab';
 import './autocomplete';
+import './scroll';
 import '@fortawesome/fontawesome-free/js/all';
 
 require("chart.js")
