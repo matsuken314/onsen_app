@@ -64,7 +64,9 @@ position: relative;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
 }
-
+.show__spec__margin{
+  margin-right: 3px;
+}
 .onsen__introduce{
   font-size: 1.3rem;
   margin-top: 1.5rem;
@@ -79,6 +81,8 @@ margin: 1.5rem auto 0;
 
 .spec__info__block{
   width: 50%;
+  display: flex;
+  align-items: center;
 }
 
 .fa-temperature-high{
