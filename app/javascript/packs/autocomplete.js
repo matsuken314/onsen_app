@@ -1,10 +1,10 @@
 document.addEventListener('turbolinks:load', () => {
-$(function() {
-        var names = ['RUN','RON','RXN','サウナー','ファイル'];
-        $('.onsen_name').autocomplete({
-          source: names,
-          minLength: 0,
-        });
-
-})    
+  $input = $('*[data-behavior="autocomplete"]')
+  var options = {
+    url: function(phrase) {
+      return "/onsens/search.json?q=" + phrase;
+    },
+    getValue: "name",
+  };
+  $input.easyAutocomplete(options);
 })

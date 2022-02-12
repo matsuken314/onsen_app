@@ -1,4 +1,5 @@
 class OnsensController < ApplicationController
+  before_action :force_json, only: :search
   def index
     @onsens = Onsen.all.select(:name, :sauna_temperature, :water_temperature, :address, :image, :introduce,
                                :id).order("created_at DESC").page(params[:page]).per(12)
@@ -28,6 +29,11 @@ class OnsensController < ApplicationController
     @onsen = Onsen.find_by(id: params[:id])
   end
 
+  def search
+    q = params[:q]
+    @onsens = Onsen.where("name LIKE ? or name_hiragana LIKE ?", "%#{q}%", "%#{q}%").limit(5)
+  end
+
   def destroy; end
 
   def guest_sign_in
@@ -38,5 +44,11 @@ class OnsensController < ApplicationController
     end
     sign_in user
     redirect_to root_path, notice: "ゲストユーザーとしてログインしました。"
+  end
+
+  private
+
+  def force_json
+    request.format = :json
   end
 end

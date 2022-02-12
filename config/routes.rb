@@ -8,10 +8,14 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   post "/onsens/guest_sign_in", to: "onsens#guest_sign_in"
+  get "onsens/search", to: "onsens#search"
   resources :onsens
-  resources :onsens do
-    get "/autocomplete_onsen_name/:onsen_name", on: :collection, action: :autocomplete_onsen_name
-  end
+
+  # resources :onsens do
+  #   collection do
+  #     get '/onsens/auto_complete'
+  #   end
+  # end
   post "bookmark/:id" => "bookmarks#create", as: "create_bookmark"
   delete "bookmark/:id" => "bookmarks#destroy", as: "destroy_bookmark"
   devise_scope :user do
