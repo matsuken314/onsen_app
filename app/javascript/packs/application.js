@@ -7,7 +7,6 @@ import './totonoi_circle';
 import './onsen_circle';
 import './popup';
 import './user_tab';
-import './autocomplete';
 import './scroll';
 import '@fortawesome/fontawesome-free/js/all';
 
@@ -18,8 +17,8 @@ require("@rails/activestorage").start()
 require("channels")
 require('jquery');
 require("jquery-ui-dist/jquery-ui")
-
-
+require("easy-autocomplete")
+import './autocomplete';
 
 
 
