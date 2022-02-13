@@ -1,5 +1,7 @@
 <%= Gon::Base.render_data %> 
 <%= render partial: 'shared/page_title', locals: { page_title: @onsen.name } %>
+<% breadcrumb :onsen_show, @onsen %>
+
 <div class="onsenshow__wrapper">
   <div class="onsenshow__data">
   <div class="onsenshow__header">
