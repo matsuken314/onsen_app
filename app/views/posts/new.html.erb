@@ -3,9 +3,16 @@
 <%= render partial: 'shared/page_title', locals: { page_title: "サ活の記録ページ" } %>
 <div class = "post__container">
 <%= form_with model: @post, local: true do |f| %>
-<%= f.text_field :totonoi_address, autofocus: true,placeholder:"サウナ施設名",id: 'auto_onsen_name' ,class: 'form__OnsenName form__width', data: {behavior: "autocomplete"}%>
 
-<%= f.number_field :sauna_one ,placeholder: "サウナの時間" ,height: "50",class:"form__SaunaMinutes form__width"%>
+<div class="autocomplete__block">
+<label>場所</label>
+  <%= f.text_field :totonoi_address, autofocus: true,placeholder:"サウナ施設名",id: 'auto_onsen_name' ,class: 'form__OnsenName form__width', data: {behavior: "autocomplete"}%>
+</div>
+
+<div class="sauna__temperature__block">
+  <%= f.number_field :sauna_one ,placeholder: "サウナの時間" ,height: "50",class:"form__SaunaMinutes form__width"%>
+</div>
+
 <%= f.number_field :water_one , placeholder: "水風呂の時間" ,height: "50",class:"form__WaterMinutes form__width"%>
 <%= f.number_field :totonoi_one , placeholder: "ととのった時間",height: "50",class:"form__TotonoiMinutes form__width"%>
 

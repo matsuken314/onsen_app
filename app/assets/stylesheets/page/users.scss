@@ -4,12 +4,12 @@
 
 
 .UserMainPage__container{
-  max-width: 1020px;
+  max-width: 1220px;
   width: 100%;
   padding: 0 1.6rem;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 /*円グラフ*/
@@ -82,6 +82,9 @@ font-weight: 600;
   text-decoration: none;
 }
 /*サカツ一覧*/
+.user__memo__wrapper{
+  margin: 1.6rem 0;
+}
 
 .user__memo{
   font-size: 1.4rem;

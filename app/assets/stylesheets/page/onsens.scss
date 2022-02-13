@@ -2,6 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+// パンくずリスト
+.breadcrumbs{
+  font-size: 1.4rem;
+  opacity: 0.7;
+}
+
+.breadcrumbs__wrapper{
+  padding: 10px 0 16px 10px;
+  max-width: 1260px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 
 /*温泉詳細ページ*/
@@ -68,7 +81,7 @@ position: relative;
   margin-right: 3px;
 }
 .onsen__introduce{
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin-top: 1.5rem;
 }
 .onsen__circle__wrapper{

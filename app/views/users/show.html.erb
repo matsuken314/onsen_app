@@ -1,5 +1,7 @@
 <%= Gon::Base.render_data %>
 <%= render partial: 'shared/page_title', locals: { page_title: @user.name  } %>
+
+<% breadcrumb :user_show, @user %>
 <div class="UserMainPage__container">
   <div class="profile__container">
      <div class="profile__body">
