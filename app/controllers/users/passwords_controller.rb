@@ -4,4 +4,8 @@ class Users::PasswordsController < Devise::PasswordsController
   def ensure_normal_user
     redirect_to new_user_session_path, alert: "ゲストユーザーのパスワード再設定はできません。" if params[:user][:email].downcase == "guest@example.com"
   end
+
+  def create
+      flash[:alert] = "パスワード再設定用のリンクを入力されたメールアドレスに送信しました"
+  end
 end
