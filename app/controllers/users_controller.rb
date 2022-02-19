@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @went_onsen = @posts.distinct.pluck(:totonoi_address)
     @UserOnsen_data = []
     @went_onsen.each do |went|
-      @UserOnsen_data.concat(Onsen.where(name: went)) if Onsen.where(name: went).exists?
+      @UserOnsen_data.concat(Onsen.where(name: went)) if Onsen.exists?(name: went)
     end
   end
 

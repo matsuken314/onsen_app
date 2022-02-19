@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "homes#index"
   devise_for :users, controllers: {
     registrations: "users/registrations",
+    confirmations: "users/confirmations",
     passwords: "users/passwords"
   }
   devise_for :admin_users, ActiveAdmin::Devise.config

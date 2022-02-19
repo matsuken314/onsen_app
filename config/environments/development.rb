@@ -39,15 +39,14 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
-
+ 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
 
-  host = 'localhost:3000'
-  config.action_mailer.default_url_options = { host: host, protocol: 'http' }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   config.action_mailer.perform_caching = false
 
@@ -91,8 +90,8 @@ Rails.application.configure do
     port:                 587,
     address:              'smtp.gmail.com',
     domain:               'smtp.gmail.com',
-    user_name:            'totonoi2022@gmail.com',
-    password:             'bzyhcqefheogxnzt',
+    user_name:            ENV['MAILER_ADDRESS'],
+    password:             ENV['MAILER_PASSWORD'],
     authentication:       'login',
     enable_starttls_auto: true
   }

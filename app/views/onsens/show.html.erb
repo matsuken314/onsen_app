@@ -33,7 +33,7 @@
   <canvas id="onsenChart"></canvas>
     </div>
     <% else %>
-    <p>データ無し画像</p>
+       <%= image_tag "onsen_nodata.png" %>
     <% end %>
   </div>
  </div>
@@ -41,7 +41,14 @@
  <div class="showpost__head">
  <h2 class="onsenshow__headline label__underline">みんなのサ活</h2>
 </div>
-<%= render partial: 'posts/postdata', collection: @posts, as: 'post' %>
+  <% if @posts.present? %>
+    <%= render partial: 'posts/postdata', collection: @posts, as: 'post' %>
+  <% else %>
+<p class="onsenshow__nodata__message">
+まだ<%= link_to "サ活投稿", new_post_path,id: "new__post__link"%>がありません!
+<br>1番乗りで投稿してみよう! 
+</p>
+  <% end %>
 <br>
 <br>
  </div>

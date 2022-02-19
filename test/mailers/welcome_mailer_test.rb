@@ -8,5 +8,4 @@ class WelcomeMailerTest < ActionMailer::TestCase
     assert_equal ["from@example.com"], mail.from
     assert_match "Hi", mail.body.encoded
   end
-
 end

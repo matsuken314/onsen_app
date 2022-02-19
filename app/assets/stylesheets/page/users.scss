@@ -61,9 +61,11 @@ width: 100%;
 }
 .profile__img{
   border-radius: 50%;
+  object-fit: cover;
 }
 .header__profile__img{
   border-radius: 50%;
+  object-fit: cover;
 }
 .profile__edit__btn{
 width: 100%;

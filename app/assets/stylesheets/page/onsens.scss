@@ -276,3 +276,13 @@ margin-right: 12px;
  }
 
 }
+
+// 温泉詳細ページにデータがない場合
+.onsenshow__nodata__message{
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+#new__post__link{
+  text-decoration: underline;
+}
