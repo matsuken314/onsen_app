@@ -20,9 +20,12 @@
       </div>
     <% end %>
       <p class="notice"><%= notice %></p>
-    <div class="breadcrumbs__wrapper">
-    <%= breadcrumbs separator: " &rsaquo; " %>
-    </div>
+    <% if  request.path == "/" %>
+     <% else %>
+      <div class="breadcrumbs__wrapper">
+      <%= breadcrumbs separator: " &rsaquo; " %>
+      </div>
+    <% end %>
     <%= yield %>
     </div>
   <%= render 'layouts/footer' %>
