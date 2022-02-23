@@ -269,7 +269,22 @@ padding-top: 1.5rem;
 }
 }
 
-
+// 投稿データがないときのサ活施設覧
+.empty__post__went__data{
+  text-align: center;
+  margin-top: 2rem;
+}
+.empty__post__went__data span{
+  padding:20px 10px 10px;
+  border-radius: 50%;
+  border: 2px solid #333;
+}
+.empty__post__went__text{
+  font-size: 1.4rem;
+    text-align: center;
+    margin-top: 3.2rem;
+    color: #8e8e8e;
+}
 /*サカツした施設*/
 .sauna__temperature{
   margin-right: 0.6rem;
