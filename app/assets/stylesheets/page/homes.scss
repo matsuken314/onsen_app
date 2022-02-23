@@ -64,6 +64,39 @@ background-size: cover;
 .home__onsen__block{
   margin-top: 5rem;
 }
+
+.home__onsen__copy__wrapper{
+padding: 0 15px;
+max-width: 1260px;
+width: 100%;
+margin: 0 auto;
+}
+
+#home__copy__text__link{
+  text-decoration: underline;
+}
+
+.home__onsen__block .home__onsen__wrapper{
+  padding: 0 15px;
+  margin-top: 1.6rem;
+}
+.home__onsen__copy__text{
+  font-size: 1.2rem;
+}
+
+.home__onsen__copy{
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #333;
+}
+.home__onsen__copy::after{
+  content: '';
+  display: block;
+  width: 78px;
+  height: 2px;
+  margin: 4px 0;
+  background-color: #f68655;
+}
 @media (min-width:1280px){
   .hero__description__block{
     left: 20%;

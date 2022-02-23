@@ -17,12 +17,17 @@
 </div>
 
 <div class="three__merit__block">
+
 </div>
 
 <div class="home__onsen__block">
-<div class="onsen__wrapper">
+<div class="home__onsen__copy__wrapper"><h3 class="home__onsen__copy">新着サウナデータ</h3>
+<p class="home__onsen__copy__text">
+運営が更新します。追加してほしい施設は<a id="home__copy__text__link" href="" target="_blank">お問い合わせ</a>ください。</p>
+</div>
+<div class="home__onsen__wrapper onsen__wrapper">
 <% @onsens.each do |onsen| %>
   <%= render partial: 'onsens/onsen', locals: {onsen: onsen} %>
 <% end %>
-<div class="onsen__wrapper">
+</div>
 </div>
