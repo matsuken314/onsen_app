@@ -11,6 +11,19 @@
   display: flex;
   justify-content: space-around;
 }
+// 投稿がないときの表示
+.user__emptyposts__icon{
+  text-align: center;
+  font-size: 2.4rem;
+  margin-top: 1.6rem;
+}
+
+.empty__description{
+  font-size: 1.4rem;
+  text-align: center;
+  margin-top: 1.6rem;
+  color: #8e8e8e;
+}
 
 /*円グラフ*/
 

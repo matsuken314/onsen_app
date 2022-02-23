@@ -1,9 +1,28 @@
 <div class="hero">
 <div class="hero__container">
   <div class="hero__view">
-     <%= image_tag 'top_hero.jpg' ,class: "hero__img" %>
+     <%# <%= image_tag 'top_hero.jpg' ,class: "hero__img" %> 
   </div>
-  <div class="hero__description">
+  <div class="hero__description__block">
+  <h2 class="hero__copy">サウナライフを<br>記録しよう</h2>
+  <p class="hero__btn__wrapper">
+  <% if user_signed_in? %>
+     <%= render partial: 'homes/login_user_hero_btn' %>
+  <% else %>
+   <%= render partial: 'homes/no_login_user_hero_btn' %>
+  <% end %>
+  </p>
   </div>
 </div>
+</div>
+
+<div class="three__merit__block">
+</div>
+
+<div class="home__onsen__block">
+<div class="onsen__wrapper">
+<% @onsens.each do |onsen| %>
+  <%= render partial: 'onsens/onsen', locals: {onsen: onsen} %>
+<% end %>
+<div class="onsen__wrapper">
 </div>

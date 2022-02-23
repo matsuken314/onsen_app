@@ -21,8 +21,17 @@
  
   <div class="user__container">
      <div class="user__circle__wrapper">
+       <% if @posts.present? %>
           <canvas id= "myChart"></canvas>
           <p class="user__circle__name">サ活の平均</p>
+       <% else %>
+       <div class="user__emptyposts__icon">
+       <i class="fas fa-chart-pie fa-2x"></i>
+       </div>
+       <p class="empty__description">
+       <%=@user.name%>さんのサ活がある場合、<br>サ活の平均円グラフが表示されます。
+       </p>
+       <% end %>
      </div>
 
  <div class="user__tab__wrapper">
