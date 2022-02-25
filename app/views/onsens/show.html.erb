@@ -45,7 +45,7 @@
     <%= render partial: 'posts/postdata', collection: @posts, as: 'post' %>
   <% else %>
 <p class="onsenshow__nodata__message">
-まだ<%= link_to "サ活投稿", new_post_path,id: "new__post__link"%>がありません!
+まだこのサウナで<%= link_to "サ活投稿", new_post_path,id: "new__post__link"%>がありません!
 <br>1番乗りで投稿してみよう! 
 </p>
   <% end %>

@@ -42,7 +42,13 @@
     
     <div class="tab-contents">
       <div class="tab-content__item js-tab-target is-active" id="tab01">
+       <% if @posts.present? %>
 <%= render partial: 'posts/postdata', collection: @posts, as: 'post' %>
+      <% else %>
+      <div class="empty__post__img__wrapper">
+      <%= image_tag 'PostNodata.png' ,class: "empty_post__img" %>
+      </div>
+      <% end %>
       </div>
       <div class="tab-content__item js-tab-target" id="tab02">
       <% if @posts.present? %>

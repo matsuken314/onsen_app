@@ -1,3 +1,5 @@
+// ファーストビュー
+
 .hero__container{
   position: relative;
 }
@@ -37,14 +39,7 @@ background-size: cover;
   color: #f68655;
    background-color: #fff;
 }
-// .hero__img{
-// max-width: 100%;
-// width: 100%;
-// height: auto;
-// max-height: 700px;
-// vertical-align: bottom;
-// object-fit: cover;
-// }
+
 .hero__description__block{
   position: absolute;
   bottom: 25%;
@@ -60,6 +55,8 @@ background-size: cover;
   padding: 0.6rem;
   color: #fff;
 }
+
+// ////ファーストビュー
 
 .home__onsen__block{
   margin-top: 5rem;
@@ -97,6 +94,15 @@ margin: 0 auto;
   margin: 4px 0;
   background-color: #f68655;
 }
+
+// 新着サ活
+.home__post__block{
+  max-width: 1260px;
+  width: 100%;
+  margin: 5rem auto 0;
+  padding:0 1.5rem;
+}
+
 @media (min-width:1280px){
   .hero__description__block{
     left: 20%;
