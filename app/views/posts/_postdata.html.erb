@@ -39,7 +39,7 @@
       <div class="modal__wrapper">
         <div class= "user__edit__menu">
           <li class="menu__link"><a href="/posts/<%=post.id%>/edit"><%= post.user.name%><%= post.totonoi_address %><%=post.id%>を編集する</a></li>
-          <li class="menu__link"><%= link_to  post_path(post.id),method: :delete, data: { confirm: "削除しますか?" }  do%><i class="far fa-trash-alt fa-2x"></i>削除する<% end %></li>
+          <li class="menu__link"><%= link_to  post_path(post.id),method: :delete, data: { confirm: "削除しますか?" }  do%><i class="far fa-trash-alt"></i>削除する<% end %></li>
         </div>
           <div class="closeModal">×</div>
    </div>

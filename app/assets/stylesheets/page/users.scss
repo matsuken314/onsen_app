@@ -12,6 +12,33 @@
   justify-content: space-around;
 }
 // 投稿がないときの表示
+.empty__post__btn{
+  background-color: #f68655;
+  color: #fff;
+  display: inline-block;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  font-weight: 800;
+  padding: 10px;
+}
+#empty__post__btn_id{
+  color: #fff;
+}
+.empty__post__btn__wrapper{
+  text-align: center;
+  margin-top: 1.2rem;
+}
+
+
+.empty__post__img__wrapper{
+  width: 90%;
+  margin: 0 auto;
+}
+.empty__post__img__text{
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 800;
+}
 .user__emptyposts__icon{
   text-align: center;
   font-size: 2.4rem;

@@ -19,7 +19,7 @@
   top: 50%;
   left: 50%;
   transform:translate(-50%,-50%);
-  width: 70%;
+  width: 85%;
   max-width: 500px;
   padding: 10px 30px;
   background-color: #fff;
@@ -27,9 +27,15 @@
 
 .closeModal {
   position: absolute;
+  font-size: 1.6rem;
   top: 0.5rem;
   right: 1rem;
   cursor: pointer;
+}
+
+.user__edit__menu .menu__link{
+  font-size: 1.4rem;
+  padding: 8px 0;
 }
 
 .is-show { /* モーダル表示用クラス */

@@ -48,6 +48,12 @@
       <div class="empty__post__img__wrapper">
       <%= image_tag 'PostNodata.png' ,class: "empty_post__img" %>
       </div>
+      <div class="empty__post__img__text">
+      最初のサ活を記録しよう!
+      </div>
+      <div class="empty__post__btn__wrapper">
+       <%= link_to "サ活を記録", new_post_path,id: "empty__post__btn_id", class: "empty__post__btn"%>
+      </div>
       <% end %>
       </div>
       <div class="tab-content__item js-tab-target" id="tab02">

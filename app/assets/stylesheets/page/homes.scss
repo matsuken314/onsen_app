@@ -58,10 +58,31 @@ background-size: cover;
 
 // ////ファーストビュー
 
+.home__app__description{
+  padding: 0 15px;
+margin-top: 5rem;
+text-align: center;
+}
+.app__text{
+  font-size: 2.8rem;
+}
+.app__text__bold{
+  font-weight: 800;
+-webkit-text-emphasis:circle #f68655;
+}
+.app__description{
+  font-size: 13.5px;
+  font-weight: 800;
+  margin-top: 2.5rem;
+}
 .home__onsen__block{
   margin-top: 5rem;
 }
-
+@media (min-width:769px){
+.sp_br{
+display: none;
+}
+}
 .home__onsen__copy__wrapper{
 padding: 0 15px;
 max-width: 1260px;
@@ -95,6 +116,42 @@ margin: 0 auto;
   background-color: #f68655;
 }
 
+//特徴ブロック
+.three__feature__wrapper{
+  margin-top: 5rem;
+  padding: 0 15px;
+}
+.one__feature__wrapper{
+  margin-bottom: 2.5rem;
+}
+
+.feature__text__wrapper{
+  margin-top: 1rem;
+}
+.feature__text{
+  font-weight: 800;
+  font-size: 2.2rem;
+}
+
+.feature__img{
+  width: 100%;
+  mix-blend-mode: multiply;
+}
+@media (min-width:769px){
+.one__feature__wrapper{
+  width: 32%;
+}
+.three__feature__wrapper{
+  display: flex;
+  justify-content:space-between;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  max-width: 1260px;
+}
+
+}
+////特徴ブロック
 // 新着サ活
 .home__post__block{
   max-width: 1260px;
