@@ -1,8 +1,6 @@
 class HomesController < ApplicationController
-  # before_action :authenticate_user!
-  # skip_before_action :authenticate_user!, only: %i[index]
   def index
-    @onsens = Onsen.all
-    @posts = Post.all
+    @onsens = Onsen.order("id DESC").limit(6)
+    @posts = Post.order("id DESC").limit(6)
   end
 end

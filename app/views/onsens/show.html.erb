@@ -33,7 +33,12 @@
   <canvas id="onsenChart"></canvas>
     </div>
     <% else %>
+    <div class="onsen__nodata__img__wrapper">
        <%= image_tag "onsen_nodata.png" %>
+    </div>
+   <div class="onsen__nodata__img__message">
+     NO DATA...
+   </div>
     <% end %>
   </div>
  </div>
@@ -45,7 +50,7 @@
     <%= render partial: 'posts/postdata', collection: @posts, as: 'post' %>
   <% else %>
 <p class="onsenshow__nodata__message">
-まだ<%= link_to "サ活投稿", new_post_path,id: "new__post__link"%>がありません!
+まだこのサウナで<%= link_to "サ活投稿", new_post_path,id: "new__post__link"%>がありません!
 <br>1番乗りで投稿してみよう! 
 </p>
   <% end %>

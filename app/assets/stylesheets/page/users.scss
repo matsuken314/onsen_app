@@ -11,6 +11,46 @@
   display: flex;
   justify-content: space-around;
 }
+// 投稿がないときの表示
+.empty__post__btn{
+  background-color: #f68655;
+  color: #fff;
+  display: inline-block;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  font-weight: 800;
+  padding: 10px;
+}
+#empty__post__btn_id{
+  color: #fff;
+}
+.empty__post__btn__wrapper{
+  text-align: center;
+  margin-top: 1.2rem;
+}
+
+
+.empty__post__img__wrapper{
+  width: 90%;
+  margin: 0 auto;
+}
+.empty__post__img__text{
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+.user__emptyposts__icon{
+  text-align: center;
+  font-size: 2.4rem;
+  margin-top: 1.6rem;
+}
+
+.empty__description{
+  font-size: 1.4rem;
+  text-align: center;
+  margin-top: 1.6rem;
+  color: #8e8e8e;
+}
 
 /*円グラフ*/
 
@@ -256,7 +296,22 @@ padding-top: 1.5rem;
 }
 }
 
-
+// 投稿データがないときのサ活施設覧
+.empty__post__went__data{
+  text-align: center;
+  margin-top: 2rem;
+}
+.empty__post__went__data span{
+  padding:20px 10px 10px;
+  border-radius: 50%;
+  border: 2px solid #333;
+}
+.empty__post__went__text{
+  font-size: 1.4rem;
+    text-align: center;
+    margin-top: 3.2rem;
+    color: #8e8e8e;
+}
 /*サカツした施設*/
 .sauna__temperature{
   margin-right: 0.6rem;

@@ -8,7 +8,6 @@ class User < ApplicationRecord
   attr_accessor :current_password
 
   has_many :posts, dependent: :destroy
-  has_many :onsens, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   has_many :bookmarked_onsens, through: :bookmarks, source: :onsen
   mount_uploader :avatar, AvatarUploader

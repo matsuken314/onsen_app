@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     @went_onsen = @posts.distinct.pluck(:totonoi_address)
     @UserOnsen_data = []
-    @went_onsen.each do |went|
+    @went_onsen.find_all do |went|
       @UserOnsen_data.concat(Onsen.where(name: went)) if Onsen.exists?(name: went)
     end
   end
@@ -27,6 +27,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     bookmarks = Bookmark.where(user_id: @user.id).pluck(:onsen_id)
     @bookmark_onsens = Onsen.find(bookmarks)
+    redirect_back(fallback_location: root_path) unless @user.id == current_user.id
   end
 
   def user_params

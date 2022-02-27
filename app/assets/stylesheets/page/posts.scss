@@ -12,6 +12,9 @@
 .post__user__img:hover{
   opacity: 0.6;
 }
+.post__user__img{
+object-fit: cover;
+}
 
 // 新規投稿ページ
 

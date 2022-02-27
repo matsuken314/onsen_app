@@ -1,7 +1,167 @@
-.hero__img{
-max-width: 100%;
+// ファーストビュー
+
+.hero__container{
+  position: relative;
+}
+
+.hero__view{
+  background-image: image-url("top_hero.jpg");
+  background-position: center;
+background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 300px;
+  max-height: 700px;
+  width: 100%;
+}
+.hero__view::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,0.85) 100%);
+}
+.hero__btn{
+  display: inline-block;
+  font-weight: 800;
+  border-radius: 0.8rem;
+  font-size: 1.2rem;
+  padding: 10px;
+}
+#hero__post__btn__color{
+  color: #fff;
+  background-color: #f68655;
+}
+.hero__btn__wrapper{
+  margin-top: 1.6rem;
+}
+#hero__guest__btn__color{
+  color: #f68655;
+   background-color: #fff;
+}
+
+.hero__description__block{
+  position: absolute;
+  bottom: 25%;
+  left: 10%;
+}
+.hero__copy{
+  font-size: 28px;
+  font-weight: 800;
+  text-shadow:2px 2px 0 #333;
+  box-decoration-break: clone;	
+	-webkit-box-decoration-break: clone;
+	display: inline;
+  padding: 0.6rem;
+  color: #fff;
+}
+
+// ////ファーストビュー
+
+.home__app__description{
+  padding: 0 15px;
+margin-top: 5rem;
+text-align: center;
+}
+.app__text{
+  font-size: 2.8rem;
+}
+.app__text__bold{
+  font-weight: 800;
+-webkit-text-emphasis:circle #f68655;
+}
+.app__description{
+  font-size: 13.5px;
+  font-weight: 800;
+  margin-top: 2.5rem;
+}
+.home__onsen__block{
+  margin-top: 5rem;
+}
+@media (min-width:769px){
+.sp_br{
+display: none;
+}
+}
+.home__onsen__copy__wrapper{
+padding: 0 15px;
+max-width: 1260px;
 width: 100%;
-height: auto;
-max-height: 900px;
-vertical-align: bottom;
+margin: 0 auto;
+}
+
+#home__copy__text__link{
+  text-decoration: underline;
+}
+
+.home__onsen__block .home__onsen__wrapper{
+  padding: 0 15px;
+  margin-top: 1.6rem;
+}
+.home__onsen__copy__text{
+  font-size: 1.4rem;
+}
+
+.home__onsen__copy{
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #333;
+}
+.home__onsen__copy::after{
+  content: '';
+  display: block;
+  width: 78px;
+  height: 2px;
+  margin: 4px 0;
+  background-color: #f68655;
+}
+
+//特徴ブロック
+.three__feature__wrapper{
+  margin-top: 5rem;
+  padding: 0 15px;
+}
+.one__feature__wrapper{
+  margin-bottom: 2.5rem;
+}
+
+.feature__text__wrapper{
+  margin-top: 1rem;
+}
+.feature__text{
+  font-weight: 800;
+  font-size: 2.2rem;
+}
+
+.feature__img{
+  width: 100%;
+  mix-blend-mode: multiply;
+}
+@media (min-width:769px){
+.one__feature__wrapper{
+  width: 32%;
+}
+.three__feature__wrapper{
+  display: flex;
+  justify-content:space-between;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  max-width: 1260px;
+}
+
+}
+////特徴ブロック
+// 新着サ活
+.home__post__block{
+  max-width: 1260px;
+  width: 100%;
+  margin: 5rem auto 0;
+  padding:0 1.5rem;
+}
+
+@media (min-width:1280px){
+  .hero__description__block{
+    left: 20%;
+  }
 }

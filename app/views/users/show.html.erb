@@ -21,8 +21,17 @@
  
   <div class="user__container">
      <div class="user__circle__wrapper">
+       <% if @posts.present? %>
           <canvas id= "myChart"></canvas>
           <p class="user__circle__name">サ活の平均</p>
+       <% else %>
+       <div class="user__emptyposts__icon">
+       <i class="fas fa-chart-pie fa-2x"></i>
+       </div>
+       <p class="empty__description">
+       <%=@user.name%>さんがサ活した場合、<br>サ活の平均円グラフが表示されます。
+       </p>
+       <% end %>
      </div>
 
  <div class="user__tab__wrapper">
@@ -33,24 +42,47 @@
     
     <div class="tab-contents">
       <div class="tab-content__item js-tab-target is-active" id="tab01">
+       <% if @posts.present? %>
 <%= render partial: 'posts/postdata', collection: @posts, as: 'post' %>
+      <% else %>
+      <div class="empty__post__img__wrapper">
+      <%= image_tag 'PostNodata.png' ,class: "empty_post__img" %>
+      </div>
+      <div class="empty__post__img__text">
+      最初のサ活を記録しよう!
+      </div>
+      <div class="empty__post__btn__wrapper">
+       <%= link_to "サ活を記録", new_post_path,id: "empty__post__btn_id", class: "empty__post__btn"%>
+      </div>
+      <% end %>
       </div>
       <div class="tab-content__item js-tab-target" id="tab02">
+      <% if @posts.present? %>
         <% @UserOnsen_data.each do |went| %>
         <div class="WentOnsen">
-          <div class="WentOnsen__img">
-          <%= link_to image_tag(went.image.to_s , class: :post__onsen__img) ,onsen_path(went.id) %></div>
-         <div class="WentOnsen__text">
-             <p class="WentOnsen__name"><%= link_to onsen_path(went.id) do%><%= went.name %><% end %></p>
-             <p class="WentOnsen__address"><i class="fas fa-map-marker-alt"></i><span class="Onsen__address"><%= went.address %></span></p>
-             <div class="temperature__wrapper"> 
-              <i class="fas fa-thermometer-half fa-2x"></i> <div class = "sauna__temperature"><span class="sauna__circle">サ</span><%= went.sauna_temperature %>℃</div>
-               <div class = "water__temperature"> <span class="water__circle">水</span><%= went.water_temperature %>℃</div>
-             </div>
-          </div> 
+            <div class="WentOnsen__img">
+             <%= link_to image_tag(went.image.to_s , class: :post__onsen__img) ,onsen_path(went.id) %></div>
+              <div class="WentOnsen__text">
+                <p class="WentOnsen__name"><%= link_to onsen_path(went.id) do%><%= went.name %><% end %></p>
+                <p class="WentOnsen__address"><i class="fas fa-map-marker-alt"></i><span class="Onsen__address"><%= went.address %></span></p>
+                  <div class="temperature__wrapper"> 
+                  <i class="fas fa-thermometer-half fa-2x"></i> <div class = "sauna__temperature"><span class="sauna__circle">サ</span><%= went.sauna_temperature %>℃</div>
+                  <div class = "water__temperature"> <span class="water__circle">水</span><%= went.water_temperature %>℃</div>
+              </div>
+            </div> 
          </div>
       <% end %> 
+       <% else %>
+      <div class="empty__post__went__data">
+      <span><i class="fas fa-map-marker-alt fa-4x"></i></span>
+      <p class="empty__post__went__text">
+      <%=@user.name%>さんがサ活した場合、<br>
+      サ活した施設が表示されます。
+      </p>
       </div>
+      <% end %>
+      </div>
+     
     </div>
   </div>
      <div class="post__wrapper">
