@@ -2,10 +2,10 @@
  <div class="post__container">
   <%= form_with model: @post, url: { action: :update }, html: { class: 'postForm' }, local: true do |f| %>
         <% if @post.errors.any? %>
-          <p class="text-danger">タイトルは1～255文字以内で入力してください</p>
+          <p class="text-danger">原因不明のエラーが起こりました。</p>
         <% end %>
         <%= f.label :"サウナ施設名" %>
-        <%= f.text_field :totonoi_address, placeholder: "サウナ施設名" %>
+  <%= f.text_field :totonoi_address, autofocus: true,placeholder:"サウナ施設名",id: 'auto_onsen_name' ,class: 'form__OnsenName form__width', data: {behavior: "autocomplete"}%>
         <%= f.number_field :sauna_one ,placeholder: "サウナの時間" %>
 <%= f.number_field :water_one , placeholder: "水風呂の時間" %>
 <%= f.number_field :totonoi_one , placeholder: "ととのった時間"%>
