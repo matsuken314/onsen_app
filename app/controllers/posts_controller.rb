@@ -26,7 +26,6 @@ class PostsController < ApplicationController
   def edit; end
 
   def update
- 
     if @post.update(post_params)
       redirect_to onsen_path(@post.onsen.id)
     else
@@ -42,7 +41,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-   onsens_id = Onsen.where(name:params[:post][:totonoi_address]).pluck(:id)[0]
+    onsens_id = Onsen.where(name: params[:post][:totonoi_address]).pluck(:id)[0]
     params.require(:post).permit(:totonoi_address, :sauna_one, :water_one, :totonoi_one, :memo).merge(user_id: current_user.id, onsen_id: onsens_id)
   end
 

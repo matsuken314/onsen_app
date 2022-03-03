@@ -17,7 +17,7 @@
 </div>
 <div class="home__app__description">
 <div class="app__text__wrapper"><h3 class="app__text"><span class="app__text__bold">ととのい</span>とは</h3></div>
-<p class="app__description">「ととのい」はサ活(サウナ活動)を記録して、<br class ="sp_br">グラフデータとして可視化できます。<br>いつでもサ活を振り返ることができるサービスです。</p>
+<p class="app__description">「ととのい」はサ活(サウナ活動)を記録して、<br class ="sp_br">グラフデータとして可視化できます。<br>いつでもあなたのサ活を<br class ="sp_br">振り返ることができるサービスです。</p>
 </div>
 
 <div class="three__merit__block">
@@ -55,7 +55,7 @@
 <div class="home__post__block">
  <h3 class="home__onsen__copy">新着サ活</h3>
  <div class="home__post__wrapper">
-   
+   <%= render partial: 'posts/postdata', collection: @posts, as: 'post' %>
  </div>
 </div>
 <div class="home__onsen__block">

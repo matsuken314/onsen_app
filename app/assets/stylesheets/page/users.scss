@@ -52,6 +52,18 @@
   color: #8e8e8e;
 }
 
+.user__circle__head{
+  font-size: 2.8rem;
+  font-weight: 800;
+}
+.user__circle__head::after{
+    content: '';
+    display: block;
+    width: 78px;
+    height: 2px;
+    background-color: #f68655;
+}
+
 /*円グラフ*/
 
 .user__circle__wrapper{

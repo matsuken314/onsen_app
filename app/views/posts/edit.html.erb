@@ -1,17 +1,47 @@
  <%= render partial: 'shared/page_title', locals: { page_title: "サ活の編集ページ" } %>
  <div class="post__container">
+ <h2 class="post__header__title">サ活を編集</h2>
   <%= form_with model: @post, url: { action: :update }, html: { class: 'postForm' }, local: true do |f| %>
         <% if @post.errors.any? %>
           <p class="text-danger">原因不明のエラーが起こりました。</p>
         <% end %>
-        <%= f.label :"サウナ施設名" %>
+<div class="autocomplete__block">
+<h3 class="time__block__text">ととのった場所</h3>
+<div class="search__form__block">
   <%= f.text_field :totonoi_address, autofocus: true,placeholder:"サウナ施設名",id: 'auto_onsen_name' ,class: 'form__OnsenName form__width', data: {behavior: "autocomplete"}%>
-        <%= f.number_field :sauna_one ,placeholder: "サウナの時間" %>
-<%= f.number_field :water_one , placeholder: "水風呂の時間" %>
-<%= f.number_field :totonoi_one , placeholder: "ととのった時間"%>
+   <span class="autocomplete__search__icon"><i class="fas fa-search fa-2x"></i></span></div>
 
-<%= f.text_area :memo, placeholder: "サ活の感想を記録してみよう",rows: "5" %>
-        <div class="text-center"><%= f.submit "編集する", class: "submitBtn" %></div>
+<div class="form__part">
+<h3 class="time__block__text">感想</h3>
+<%= f.text_area :memo, placeholder: "サ活の感想を記録してみよう。空でも投稿できます。",rows: "5",class:"form__width" %>
+</div>
+
+<div class="form__part">
+<h3 class="time__block__text"><i class="far fa-clock"></i>時間</h3>
+<div class="time__block__outer">
+  <div class="time__wrapper">
+    <div class="sauna__time__block time__block">
+    <span class="sauna__form__circle form__circle">サ</span>
+      <%= f.number_field :sauna_one ,placeholder: "サウナの時間" ,height: "50",class:"form__minutes"%>
+      <span class="minutes__text">分</span>
+    </div>
+
+    <div class="water__time__block time__block">
+    <span class="water__form__circle form__circle">水</span>
+    <%= f.number_field :water_one , placeholder: "水風呂の時間" ,height: "50",class:"form__minutes"%>
+    <span class="minutes__text">分</span>
+    </div>
+
+    <div class="totonoi__time__block time__block">
+    <span class="totonoi__form__circle form__circle">外</span>
+    <%= f.number_field :totonoi_one , placeholder: "外気浴の時間",height: "50",class:"form__minutes"%>
+    <span class="minutes__text">分</span>
+    </div>
+  </div>
+</div>
+</div>
+
+        <div class="post__submit"><%= f.submit "サ活を編集する", class: "btn btn-primary" %></div>
       <% end %>
       </div>
     </div>
