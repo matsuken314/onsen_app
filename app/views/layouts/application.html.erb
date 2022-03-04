@@ -15,11 +15,11 @@
 <%= render "layouts/header" %>
 <div class="Allcontents__wrapper">
     <% if flash[:alert] %>
-      <div class="alert alert-danger">
+      <div class="flash alert alert-danger">
         <%= flash[:alert] %>
       </div>
     <% end %>
-      <p class="notice"><%= notice %></p>
+      <p class="flash notice"><%= notice %></p>
     <% if  request.path == "/" %>
      <% else %>
       <div class="breadcrumbs__wrapper">

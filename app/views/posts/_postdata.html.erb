@@ -9,11 +9,10 @@
 
       
      </div>
-     <% if current_page?(controller: "users", action: "show") %>
-          <%= link_to onsen_path(post.went_onsen_id), class: "user__totonoi__link" do%>                
+     <% if %w[root user].any? {|name| current_page?(send("#{name}_path"))} %>
+       <%= link_to onsen_path(post.onsen_id), class: "user__totonoi__link" do%>                
           <%= post.totonoi_address %>
-          <% end %>
-     
+       <% end %>
      <% end %>
      <% if post.memo.present? %>
           <div class="user__memo__wrapper">

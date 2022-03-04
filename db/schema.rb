@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_20_023425) do
+ActiveRecord::Schema.define(version: 2022_02_27_091133) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -77,6 +77,8 @@ ActiveRecord::Schema.define(version: 2022_02_20_023425) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "went_onsen_id"
     t.text "memo"
+    t.integer "onsen_id"
+    t.index ["onsen_id"], name: "index_posts_on_onsen_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -99,5 +101,6 @@ ActiveRecord::Schema.define(version: 2022_02_20_023425) do
 
   add_foreign_key "bookmarks", "onsens"
   add_foreign_key "bookmarks", "users"
+  add_foreign_key "posts", "onsens"
   add_foreign_key "posts", "users"
 end

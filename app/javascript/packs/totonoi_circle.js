@@ -1,8 +1,33 @@
 document.addEventListener('turbolinks:load', () => {
     const TotonoiData = gon.Totonoi_data
 var ctx = document.getElementById('myChart').getContext('2d');
+var dataLabelPlugin = {
+    afterDatasetsDraw: function (chart, easing) {
+        var ctx = chart.ctx;
+        chart.data.datasets.forEach(function (dataset, i) {
+            var meta = chart.getDatasetMeta(i);
+            if (!meta.hidden) {
+                meta.data.forEach(function (element, index) {
+                    ctx.fillStyle = '#333';
+
+                    var fontSize = 14;
+                    var fontStyle = 'bold';
+                    var fontFamily = 'Helvetica Neue';
+                    ctx.font = Chart.helpers.fontString(fontSize, fontStyle, fontFamily);
+ 
+                    var dataString = chart.data.labels[index]+`\r\n`+dataset.data[index].toString()+'分';
+ 
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    var position = element.tooltipPosition();
+                    ctx.fillText(dataString, position.x, position.y - (fontSize / 2) );
+                })
+            }
+        })
+    }
+}
     var myChart = new Chart(ctx, {
-        type: 'doughnut',
+        type: 'pie',
         data: {
             labels: ['サウナ', '水風呂', '外気浴'],
             datasets: [{
@@ -21,31 +46,13 @@ var ctx = document.getElementById('myChart').getContext('2d');
                 borderWidth: 1
             }]
         },
-        options: {
-            legend: {
-             onClick: function () { return false }
-            },
-            responsive: true,
-            maintainAspectRatio: false,
-            scale: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            },
-            plugins: {
-              labels: [
-                    {
-                    render: 'label',
-                    position: 'outside'
-                    },
-                    {
-                    render: 'percentage'
-                    }
-                ]
-            },
-        }
+     options: {
+      title: {
+        display: true,
+        text: '温泉割合'
+      }
+    },
+    plugins: [dataLabelPlugin]
     });
     draw_graph();
 })

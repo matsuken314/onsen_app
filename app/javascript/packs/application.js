@@ -10,6 +10,7 @@ import './popup';
 import './user_tab';
 import './scroll';
 import './autocomplete';
+import './flash';
 import '@fortawesome/fontawesome-free/js/all';
 
 require("chart.js")

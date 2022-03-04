@@ -27,7 +27,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_back(fallback_location: root_path)
+      redirect_to onsen_path(@post.onsen.id)
     else
       render :edit
     end
@@ -41,7 +41,8 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:totonoi_address, :sauna_one, :water_one, :totonoi_one, :memo).merge(user_id: current_user.id)
+    onsens_id = Onsen.where(name: params[:post][:totonoi_address]).pluck(:id)[0]
+    params.require(:post).permit(:totonoi_address, :sauna_one, :water_one, :totonoi_one, :memo).merge(user_id: current_user.id, onsen_id: onsens_id)
   end
 
   def collect_user
