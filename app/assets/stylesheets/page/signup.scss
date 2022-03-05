@@ -1,0 +1,96 @@
+// devise/registrations/newのデザイン
+
+.signup__other__guest__link{
+  background-color: #333;
+  font-size: 1.1rem;
+  padding: 12px;
+  width: 70%;
+  display: inline-block;
+  border-radius: 8px;
+}
+#signup__other__guest__link__color{
+  color: #fff;
+}
+.signup__other__guest__link__wrapper{
+  text-align: center;
+}
+.signup__others__head{
+  color: #C8C9C9;
+  margin-top: 4rem;
+  font-weight: 800;
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.signup__others__head::before, .signup__others__head::after{
+  content: '';
+  width: 37.8%;
+  height: 3px;
+  background-color: #C8C9C9;
+}
+
+.signup__others__head::before{
+  margin-right: 20px;
+}
+.signup__others__head::after{
+  margin-left: 20px;
+}
+
+.signup__contents__wrapper{
+  background-color: #fff;
+  max-width: 540px;
+  margin: 0 auto;
+  width: 90%;
+  padding: 20px;
+}
+
+.actions .form__submit__action[class]{
+width: 70%;
+background-color: #F6B352;
+background-image: none;
+color: #fff;
+text-shadow: none;
+border: none;
+font-size: 1.2rem;
+padding: 12px;
+border-radius: 8px;
+}
+
+.actions .form__submit__action[class]:hover {
+background-color: #F6B352;
+background-image: none;
+}
+
+.signup__head__name{
+  color: #333;
+  font-weight: 800;
+  font-size: 1.7rem;
+}
+.signup__login__link{
+  font-size: 1.3rem;
+  margin-bottom: 3.2rem;
+}
+#signup__link__color{
+  color:#6a94be ;
+}
+
+.form-control[class]{
+  width: 100%;
+  padding: 8px 20px 8px 30px;
+}
+
+.signup__form__feature__wrapper{
+  position: relative;
+}
+
+.form__icon{
+position: absolute;
+top: 7px;
+left: 7px;
+}
+.signup__field{
+  margin-bottom: 2.1rem;
+}

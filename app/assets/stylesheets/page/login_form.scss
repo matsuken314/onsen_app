@@ -1,0 +1,92 @@
+// devise/sessions/new
+
+.login__contents__wrapper{
+  background-color: #fff;
+  max-width: 540px;
+  margin: 0 auto;
+  width: 90%;
+  padding: 20px;
+}
+.login__link{
+font-size: 1.3rem;
+}
+
+.login__signup__link{
+  margin-bottom: 3.2rem;
+}
+.login__form__wrapper{
+  position: relative;
+}
+.login__field{
+  margin-bottom: 2.1rem;
+  text-align: left;
+}
+
+.login__head__name{
+  color: #333;
+  font-weight: 800;
+  font-size: 1.7rem;
+}
+.login__action__wrapper{
+  margin-bottom: 3rem;
+}
+#forgot__password{
+  color: #6a94be;
+  text-decoration: underline;
+}
+
+// devise/passwords/new  「パスワードを忘れた方はこちら」のデザイン
+
+.password____form__reset{
+    background-color: #fff;
+  max-width: 540px;
+  margin: 0 auto;
+  width: 90%;
+  padding: 20px;
+}
+
+.password__head__name{
+    color: #333;
+  font-weight: 800;
+  font-size: 1.7rem;
+}
+.reset__form__group{
+  position: relative;
+}
+.form-bottom-text{
+  text-align: left;
+  margin-bottom: 3.2rem;
+}
+
+.reset__actions{
+  display: flex;
+  justify-content: space-between;
+}
+
+.reset__field{
+  margin-bottom: 2rem;
+  justify-content: space-between;
+}
+
+.login__action__organize{
+  display: flex;
+  align-items: center;
+}
+
+.base__btn[class]{
+background-image: none;
+text-shadow: none;
+border: none;
+padding: 12px;
+border-radius: 8px;
+}
+.reset__actions .base__btn[class]:hover{
+background-image: none;
+}
+.reset__submit__btn[class]{
+  background-color: #F6B352;
+}
+
+.reset__actions .reset__submit__btn[class]:hover{
+  background-color: #F6B352;
+}
