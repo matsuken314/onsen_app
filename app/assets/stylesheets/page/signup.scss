@@ -4,7 +4,7 @@
   background-color: #333;
   font-size: 1.1rem;
   padding: 12px;
-  width: 100%;
+  width: 70%;
   display: inline-block;
   border-radius: 8px;
 }
@@ -15,6 +15,7 @@
   text-align: center;
 }
 .signup__others__head{
+  color: #C8C9C9;
   margin-top: 4rem;
   font-weight: 800;
   margin-bottom: 4rem;
@@ -28,7 +29,7 @@
   content: '';
   width: 37.8%;
   height: 3px;
-  background-color: #333;
+  background-color: #C8C9C9;
 }
 
 .signup__others__head::before{
@@ -47,7 +48,7 @@
 }
 
 .actions .form__submit__action[class]{
-width: 100%;
+width: 70%;
 background-color: #F6B352;
 background-image: none;
 color: #fff;

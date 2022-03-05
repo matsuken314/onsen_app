@@ -1,21 +1,25 @@
-<h2>パスワード再設定ページ</h2>
-
+<div class="password____form__reset">
+<h2 class="password__head__name">パスワード再設定</h2>
+    <p class='form-bottom-text'>
+      入力されたメールアドレスにパスワード再設定メールを送信します
+    </p>
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-  <div class="form__group">
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email,autofocus: true, autocomplete: "email" %>
+  <div class="reset__form__group">
+  <div class="reset__field">
+    <span class="form__icon"><i class="far fa-envelope fa-2x"></i></span>
+    <%= f.email_field :email,autofocus: true, autocomplete: "email" , class: "form-control" , placeholder: "メールアドレス"%>
   </div>
   </div>
-  <div class="form__group">
-    <h2 class='form-bottom-text'>
-      入力されたメールアドレスにパスワード再設定メールを<br>送信します
-    </h2>
+  <div class="reset__form__group">
+
   </div>
-  <div class="actions">
-    <%= f.submit "パスワード再設定メールを送る" %>
+  <div class="reset__actions">
+   <%= link_to :back do%>
+   <button class="base__btn">戻る</button>
+   <% end %>
+   <%= f.submit "パスワード再設定メールを送る" ,class: "base__btn reset__submit__btn"%>
   </div>
 <% end %>
-
+</div>
 
