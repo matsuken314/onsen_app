@@ -1,5 +1,5 @@
 class BookmarksController < ApplicationController
-  before_action :onsen_params
+  before_action :onsen_params, :authenticate_user!
   def create
     Bookmark.create(user_id: current_user.id, onsen_id: params[:id])
   end
