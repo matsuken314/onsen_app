@@ -1,56 +1,39 @@
 <%= render partial: 'shared/page_title', locals: { page_title: "#{current_user.name}のプロフィール編集" } %>
 
 <% breadcrumb :user_edit, current_user %>
-
-<h2><%= t('.title', resource: resource.model_name.human) %></h2>
+<div class="user__edit__container">
+<h2 class="user__edit__title">プロフィール編集</h2>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
+  <div class="user__edit__field">
+  <%= image_tag current_user.avatar.url , size: "120", class: "profile__img"%>
+  <div class="user__edit__iconbtn__wrapper">
+  <p class="user__edit__iconbtn">
+ <span><i class="fas fa-camera"></i></span><%= f.label :avatar, "プロフィール写真を変更する" %></p>
+    <%= f.file_field :avatar ,class:"user__edit__field__icon"%>
+  </div>
+  </div>
+
+  <div class="user__edit__field">
     <%= f.label :name, "名前" %>
-    <%= f.text_field :name, autofocus: true, class: "form-control" %>
+    <%= f.text_field :name, autofocus: true, class: "user__edit__form" %>
   </div>
 
-  <div class="field">
-    <%= f.label :name,"プロフィール画像" %>
-    <%= f.file_field :avatar %>
+
+
+    <div class="user__edit__field">
+    <%= f.label :name,"自己紹介文" %>
+    <%= f.text_area :self_introduction, class: "user__edit__form",rows: "4" %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
 
   <div class="actions">
-    <%= f.submit t('.update') %>
+    <%= f.submit "プロフィールを更新する" ,class: "base__btn user__edit__btn"%>
   </div>
 <% end %>
 
-<h3><%= t('.cancel_my_account') %></h3>
+<p class="retire__btn__wrapper"> <%= button_to "退会はこちら",registration_path(resource_name), data: {confirm: "退会の最終確認です。OKボタンを押すと退会手続きが完了します。" }, method: :delete, class: "retire__btn" %></p>
 
-<p><%= t('.unhappy') %> <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete %></p>
-
-<%= link_to t('devise.shared.links.back'), :back %>
+</div>

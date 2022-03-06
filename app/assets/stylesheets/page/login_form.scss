@@ -90,3 +90,19 @@ background-image: none;
 .reset__actions .reset__submit__btn[class]:hover{
   background-color: #F6B352;
 }
+
+// devise/passwords/edit パスワード変更フォームのデザイン
+
+.actions .password__reset__btn[class]:hover{
+  background-color: #838a90;
+  background-image: none;
+}
+
+.password__reset__field{
+  margin-top: 1.5rem;
+  text-align: left;
+  position: relative;
+}
+.password__reset__icon[class]{
+  top: 22px;
+}

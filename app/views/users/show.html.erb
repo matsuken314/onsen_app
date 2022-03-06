@@ -13,6 +13,11 @@
                <span><%= @user.name %></span>
                </div>
           </div>
+          <% if @user.self_introduction.present? %>
+          <div class="profile__memo">
+            <%= @user.self_introduction%>
+          </div>
+          <% end %>
           <% if @user == current_user %>
           <%= link_to "プロフィールを編集", edit_user_registration_path, class: "profile__edit__btn", id: "profile__edit" %>
           <% end %>

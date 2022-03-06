@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_27_091133) do
+ActiveRecord::Schema.define(version: 2022_03_05_215435) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 2022_02_27_091133) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.text "self_introduction"
   end
 
   add_foreign_key "bookmarks", "onsens"
