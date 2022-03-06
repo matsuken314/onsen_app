@@ -10,15 +10,6 @@ module Users
       redirect_to root_path, alert: "ゲストユーザーは更新・削除できません。" if resource.email == "guest@example.com"
     end
 
-    # def create
-    #  super
-    # WelcomeMailerクラスのsend_welcomeメソッドを呼び、POSTから受け取ったuserのemailとnameを渡す
-
-    # WelcomeMailer.send_welcome(params[:user][:email], params[:user][:name]).deliver
-    # binding.pry
-    # flash[:alert] = "入力されたメールアドレスに会員登録完了のメッセージを送信しました"
-    #  end
-
     protected
 
     def update_resource(resource, params)

@@ -10,30 +10,30 @@
   <%= image_tag current_user.avatar.url , size: "120", class: "profile__img"%>
   <div class="user__edit__iconbtn__wrapper">
   <p class="user__edit__iconbtn">
- <span><i class="fas fa-camera fa-2x"></i></span><%= f.label :avatar, "プロフィール写真を変更する" %></p>
+ <span><i class="fas fa-camera"></i></span><%= f.label :avatar, "プロフィール写真を変更する" %></p>
     <%= f.file_field :avatar ,class:"user__edit__field__icon"%>
   </div>
   </div>
 
   <div class="user__edit__field">
     <%= f.label :name, "名前" %>
-    <%= f.text_field :name, autofocus: true, class: "user__edit__name" %>
+    <%= f.text_field :name, autofocus: true, class: "user__edit__form" %>
   </div>
 
 
 
     <div class="user__edit__field">
     <%= f.label :name,"自己紹介文" %>
-    <%= f.text_area :self_introduction, class: "user__edit__introduce",rows: "4" %>
+    <%= f.text_area :self_introduction, class: "user__edit__form",rows: "4" %>
   </div>
 
 
 
   <div class="actions">
-    <%= f.submit "プロフィールを更新する" ,class: "base__btn"%>
+    <%= f.submit "プロフィールを更新する" ,class: "base__btn user__edit__btn"%>
   </div>
 <% end %>
 
-<p> <%= button_to "退会はこちら",registration_path(resource_name), data: {confirm: "退会の最終確認です。OKボタンを押すと退会手続きが完了します。" }, method: :delete, class: "retire__btn base__btn" %></p>
+<p class="retire__btn__wrapper"> <%= button_to "退会はこちら",registration_path(resource_name), data: {confirm: "退会の最終確認です。OKボタンを押すと退会手続きが完了します。" }, method: :delete, class: "retire__btn" %></p>
 
 </div>

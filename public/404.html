@@ -51,17 +51,39 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+  .nodata__error__page{
+  margin-top: 5rem;
+  padding: 40px;
+}
+.nodata__img__wrapper img{
+  width: 100%;
+}
+.nodata__img__wrapper{
+  text-align: center;
+}
+
+.error__feature__wrapper{
+  text-align: center;
+  margin: 30px 0;
+}
+.error__feature{
+  font-weight: 800;
+  font-size: 32px;
+}
   </style>
 </head>
 
-<body class="rails-default-error-page">
+<body class="nodata__error__page">
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
+  <div class="nodata__img__wrapper">
+    <img src="/images/nodata__logo.png" alt="">
   </div>
+  <div class="error__feature__wrapper">
+<span class="error__feature">404 Not Found</span>
+    </div>
+    <div class="dialog">
+      <p class="error__text">お探しのページは一時的にアクセスができない状況にあるか、移動もしくは削除された可能性があります。</p>
+    </div>
+ <a class="when__error__link" href="/">ととのいトップへ戻る</a>
 </body>
 </html>
