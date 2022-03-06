@@ -1,0 +1,36 @@
+.user__edit__container{
+    max-width: 700px;
+  width: 100%;
+  margin: auto;
+  padding: 0 40px;
+}
+
+.user__edit__title{
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+}
+.user__edit__title::after{
+    content: '';
+    display: block;
+    width: 78px;
+    height: 3px;
+    margin: 2px 0;
+    background-color: #f68655;
+}
+.user__edit__field{
+  margin-bottom: 2.5rem;
+}
+.user__edit__field__icon{
+display: none;
+}
+.user__edit__field .profile__img{
+  margin-bottom: 2rem;
+}
+.user__edit__iconbtn{
+  display: flex;
+  color: #63A6DD;
+  align-items: center;
+  justify-content: center;
+}
+
