@@ -16,7 +16,7 @@ class PostsController < ApplicationController
       render :new
     elsif @post.save
       flash[:notice] = "サ活の記録を追加しました"
-      redirect_to user_path(current_user.id)
+      redirect_to onsen_path(@post.onsen.id)
     else
       flash[:alert] = "サ活の記録に失敗しました"
       render :new
