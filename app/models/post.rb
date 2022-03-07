@@ -2,9 +2,9 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :onsen
   belongs_to :post, optional: true
-  validates :sauna_one, presence: true, numericality: { greater_than: 0, less_than: 140, message: "0~140の間で入力してください" }
-  validates :water_one, presence: true
-  validates :totonoi_one, presence: true
+  validates :sauna_one, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 100 }
+  validates :water_one, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 100 }
+  validates :totonoi_one, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 100 }
   validates :totonoi_address, presence: true
   validates :memo, length: { maximum: 100 }
 
