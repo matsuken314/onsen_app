@@ -19,7 +19,8 @@
 <div class="app__text__wrapper"><h3 class="app__text"><span class="app__text__bold">ととのい</span>とは</h3></div>
 <p class="app__description">「ととのい」はサ活(サウナ活動)を記録して、<br class ="sp_br">グラフデータとして可視化できます。<br>いつでもあなたのサ活を<br class ="sp_br">振り返ることができるサービスです。</p>
 </div>
-
+ <% if user_signed_in? %>
+ <% else %>
 <div class="three__merit__block">
 <div class="three__feature__wrapper">
 <div class="one__feature__wrapper">
@@ -51,7 +52,7 @@
 </div>
 </div>
 </div>
-
+<% end %>
 <div class="home__post__block">
  <h3 class="home__onsen__copy">新着サ活</h3>
  <div class="home__post__wrapper">
