@@ -53,6 +53,8 @@
 </div>
 </div>
 <% end %>
+
+
 <div class="home__post__block">
  <h3 class="home__onsen__copy">新着サ活</h3>
  <div class="home__post__wrapper">
@@ -65,8 +67,6 @@
 運営が更新します。追加してほしい施設は<a id="home__copy__text__link" href="" target="_blank">お問い合わせ</a>ください。</p>
 </div>
 <div class="home__onsen__wrapper onsen__wrapper">
-<% @onsens.each do |onsen| %>
-  <%= render partial: 'onsens/onsen', locals: {onsen: onsen} %>
-<% end %>
+  <%= render partial: 'onsens/onsen', collection: @onsens, as: 'onsen'%>
 </div>
 </div>

@@ -63,7 +63,7 @@
       </div>
       <div class="tab-content__item js-tab-target" id="tab02">
       <% if @posts.present? %>
-        <% @UserOnsen_data.each do |went| %>
+        <% @User_onsen_data.each do |went| %>
         <div class="WentOnsen">
             <div class="WentOnsen__img">
              <%= link_to image_tag(went.image.to_s , class: :post__onsen__img) ,onsen_path(went.id) %></div>
