@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
 
   validates :name, presence: true, length: { maximum: 20 }
+  validates :email, presence: true
   attr_accessor :current_password
 
   has_many :posts, dependent: :destroy

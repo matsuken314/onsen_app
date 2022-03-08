@@ -7,13 +7,14 @@
 
 <div class="autocomplete__block">
 <h3 class="time__block__text">ととのった場所</h3>
+<p class="post__alert__text">掲載中のサウナ施設の中でととのった場所を入力してください。</p>
 <div class="search__form__block">
   <%= f.text_field :totonoi_address, autofocus: true,placeholder:"サウナ施設名",id: 'auto_onsen_name' ,class: 'form__OnsenName form__width', data: {behavior: "autocomplete"}%>
   <span class="autocomplete__search__icon"><i class="fas fa-search fa-2x"></i></span></div>
 </div>
 <div class="form__part">
 <h3 class="time__block__text">感想</h3>
-<%= f.text_area :memo, placeholder: "サ活の感想を記録してみよう。空でも投稿できます。",rows: "5",class:"form__width" %>
+<%= f.text_area :memo, placeholder: "サ活の感想を記録してみよう。100字以内で入力してください。空でも投稿できます。",rows: "5",class:"form__width" %>
 </div>
 
 <div class="form__part">

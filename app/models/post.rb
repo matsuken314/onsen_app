@@ -2,9 +2,9 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :onsen
   belongs_to :post, optional: true
-  validates :sauna_one, presence: true
-  validates :water_one, presence: true
-  validates :totonoi_one, presence: true
+  validates :sauna_one, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 100 }
+  validates :water_one, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 100 }
+  validates :totonoi_one, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 100 }
   validates :totonoi_address, presence: true
   validates :memo, length: { maximum: 100 }
 
@@ -25,10 +25,5 @@ class Post < ApplicationRecord
 
   def onsen_name_valid(totonoi_address)
     Onsen.where(name: totonoi_address).empty?
-  end
-
-  def return_onsen_id(onsen_name)
-    onsen_data = Onsen.where(name: onsen_name).ids
-    onsen_data.first.to_i
   end
 end
