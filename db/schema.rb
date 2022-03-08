@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_05_215435) do
+ActiveRecord::Schema.define(version: 2022_03_08_133306) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -65,17 +65,10 @@ ActiveRecord::Schema.define(version: 2022_03_05_215435) do
     t.integer "sauna_one", null: false
     t.integer "water_one", null: false
     t.integer "totonoi_one", null: false
-    t.integer "sauna_two"
-    t.integer "water_two"
-    t.integer "totonoi_two"
-    t.integer "sauna_three"
-    t.integer "water_three"
-    t.integer "totonoi_three"
     t.string "totonoi_address"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "went_onsen_id"
     t.text "memo"
     t.integer "onsen_id"
     t.index ["onsen_id"], name: "index_posts_on_onsen_id"
@@ -91,7 +84,6 @@ ActiveRecord::Schema.define(version: 2022_03_05_215435) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name", null: false
-    t.string "profile_photo"
     t.string "avatar"
     t.string "confirmation_token"
     t.datetime "confirmed_at"

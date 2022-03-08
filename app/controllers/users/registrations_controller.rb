@@ -3,7 +3,7 @@ module Users
     before_action :ensure_normal_user, only: %i[update destroy]
 
     def after_sign_up_path_for(_resource)
-      root_path
+      user_path(current_user.id)
     end
 
     def ensure_normal_user
