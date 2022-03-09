@@ -17,7 +17,7 @@ footer{
 .footer__discription{
   font-weight: 800;
   font-size: 1.5rem;
-  margin-bottom: 40px;
+  margin-bottom: 35px;
 }
 .footer__copyright{
   padding: 15px 0 45px;
@@ -78,4 +78,12 @@ text-align: left;
   width: 20%;
   float: left;
   text-align: center;
+}
+
+.footer__alert__text .footer__alert__link[class]{
+  color: #fff;
+  text-decoration: underline;
+}
+.footer__alert__text{
+  margin-bottom: 5px;
 }
