@@ -22,7 +22,6 @@ class OnsensController < ApplicationController
 
   def update
     @onsen = Onsen.find_by(id: params[:id])
-    @onsen.name_hiragana = kanji_to_hiragana(@onsen.name)
     onsen.update
   end
 

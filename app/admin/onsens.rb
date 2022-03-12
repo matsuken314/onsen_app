@@ -1,9 +1,10 @@
 ActiveAdmin.register Onsen do
-  permit_params :name, :address, :sauna_temperature, :water_temperature, :introduce, :image
+  permit_params :name, :address, :sauna_temperature, :water_temperature, :introduce, :image, :name_hiragana
 
   form do |f|
     f.inputs do
       f.input :name
+      f.input :name_hiragana
       f.input :sauna_temperature
       f.input :water_temperature
       f.input :address
@@ -16,6 +17,7 @@ ActiveAdmin.register Onsen do
   show do |_item_image|
     attributes_table do
       row :name
+      row :name_hiragana
       row :sauna_temperature
       row :water_temperature
       row :address

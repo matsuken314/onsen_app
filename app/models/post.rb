@@ -12,9 +12,9 @@ class Post < ApplicationRecord
     relax_data = user.posts.pluck(:sauna_one, :water_one, :totonoi_one, :id)
     return [{ sauna_one: 0, water_one: 0, totonoi_one: 0 }] if relax_data.empty?
 
-    sauna_ave = user.posts.average(:sauna_one)
-    water_ave = user.posts.average(:water_one)
-    totonoi_ave = user.posts.average(:totonoi_one)
+    sauna_ave = user.posts.average(:sauna_one).round(1)
+    water_ave = user.posts.average(:water_one).round(1)
+    totonoi_ave = user.posts.average(:totonoi_one).round(1)
     [sauna_ave, water_ave, totonoi_ave]
   end
 

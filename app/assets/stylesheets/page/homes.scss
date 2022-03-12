@@ -136,10 +136,24 @@ margin: 0 auto;
 .feature__description{
   font-size: 13px;
 }
-
+.feature__img__wrapper{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-right: 2.95%;
+}
+.feature__img__wrapper::before{
+  content: '';
+  display: block;
+  padding-top: 56.25%;
+}
 .feature__img{
   width: 100%;
   mix-blend-mode: multiply;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 @media (min-width:769px){
 .one__feature__wrapper{

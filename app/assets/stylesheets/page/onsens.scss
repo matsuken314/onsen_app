@@ -226,6 +226,10 @@ background-color: #F68658;
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.5;
+  display:-webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 .onsen__card__imgWrapper{
   padding-top: 66.416873%;
@@ -301,4 +305,22 @@ margin-right: 12px;
 }
 #new__post__link{
   text-decoration: underline;
+}
+
+.onsenshowdata__empty__btn__wrapper{
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.onsenshowdata__empty__btn{
+  background-color: #f68655;
+    color: #fff;
+    display: inline-block;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    padding: 10px;
+}
+#onsenshowdata__empty__btn__color{
+  color: #fff;
 }
