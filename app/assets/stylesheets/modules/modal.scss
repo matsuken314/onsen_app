@@ -1,6 +1,6 @@
 .modal__area {
   position: fixed;
-  z-index: 10; /* サイトによってここの数値は調整 */
+  z-index: 10; 
   top: 0;
   left: 0;
   width: 100%;
@@ -19,23 +19,35 @@
   top: 50%;
   left: 50%;
   transform:translate(-50%,-50%);
-  width: 85%;
+  width: 90%;
   max-width: 500px;
-  padding: 10px 30px;
+  padding: 10px 0;
   background-color: #fff;
 }
 
 .closeModal {
   position: absolute;
   font-size: 1.6rem;
-  top: 0.5rem;
+  top: 0.7rem;
   right: 1rem;
   cursor: pointer;
 }
 
 .user__edit__menu .menu__link{
   font-size: 1.4rem;
-  padding: 8px 0;
+  padding: 8px 30px;
+}
+.modal__area__title{
+  padding-left: 30px;
+  border-bottom: 1.6px solid #eee;
+  font-weight: 800;
+  font-size: 1.8rem;
+}
+.modal__area__day{
+  font-size: 1.4rem;
+  text-align: right;
+  padding-right: 21px;
+  border-top: 1.6px solid #eee;
 }
 
 .is-show { /* モーダル表示用クラス */
