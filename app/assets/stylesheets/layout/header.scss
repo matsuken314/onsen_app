@@ -93,6 +93,9 @@ background-color: #f2f2f2;
   text-decoration: none;
   color: #333;
 }
+.dropdown__link span{
+  margin-left: 8px;
+}
 @media (max-width:520px){
 .nav__item--link{
   width: 65px;
