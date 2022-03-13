@@ -107,9 +107,23 @@ margin: 1.5rem auto 0;
 .spec__info{
   display: flex;
 }
+.spec__info__bookmark{
+  position: relative;
+}
+.spec__info__bookmark .onsen__bookmark__area{
+  right: 34px;
+  width: 29px;
+  height: 29px;
+  bottom: -4px;
+}
+
+.spec__info__bookmark .onsen__bookmark__area .bookmark{
+padding-top: 0;
+height: initial;
+}
 
 .spec__info__block{
-  width: 50%;
+  width: 33.333%;
   display: flex;
   align-items: center;
 }
