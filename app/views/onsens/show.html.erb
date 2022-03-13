@@ -9,13 +9,18 @@
     <p class="onsenshow__address"><%=@onsen.address %></p>
     <div class="spec__info">
     <div class="spec__info__sauna spec__info__block">
-    <div class="sauna__circle show__spec__margin">サ</div>
-    <i class="fas fa-temperature-high fa-2x"></i><span class="spec__info__number"><%=@onsen.sauna_temperature %></span>℃</div>
+      <div class="sauna__circle show__spec__margin">サ</div>
+      <i class="fas fa-temperature-high fa-2x"></i><span class="spec__info__number"><%=@onsen.sauna_temperature %></span>℃</div>
 
-    <div class="spec__info__water spec__info__block">
-      <div class="water__circle show__spec__margin">水</div>
-   <i class="fas fa-temperature-low fa-2x"></i><span class="spec__info__number"><%=@onsen.water_temperature %></span>℃
-   </div>
+      <div class="spec__info__water spec__info__block">
+        <div class="water__circle show__spec__margin">水</div>
+    <i class="fas fa-temperature-low fa-2x"></i><span class="spec__info__number"><%=@onsen.water_temperature %></span>℃
+    </div>
+    <div class="spec__info__bookmark spec__info__block">
+     <div class = "onsen__bookmark__area" id="onsen_<%= @onsen.id %>">
+     <%= render partial: 'bookmarks/bookmark', locals: {onsen: @onsen} %>
+     </div>
+    </div>
    </div>
    </div>
    <div class="onsenshow__img__wrapper">
@@ -53,6 +58,9 @@
 まだこのサウナで<%= link_to "サ活投稿", new_post_path,id: "new__post__link"%>がありません!
 <br>1番乗りで投稿してみよう! 
 </p>
+<div class="onsenshowdata__empty__btn__wrapper">
+  <%= link_to "サ活を記録",new_post_path,id: "onsenshowdata__empty__btn__color", class: "onsenshowdata__empty__btn"  %>
+</div>
   <% end %>
 <br>
 <br>

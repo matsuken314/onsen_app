@@ -17,14 +17,12 @@
         <span><i class="fas fa-caret-down fa-3x"></i></span>
       </li>
       <div class = "dropdown__header" id = "dropdown__header" style="display:none;">
-      <%= link_to "マイページ", user_path(current_user.id), class: "dropdown__link", id: "dropdown__link"  %>
+      <%= link_to user_path(current_user.id), class: "dropdown__link", id: "dropdown__link"  do%><i class="far fa-user"></i><span>マイページ</span><% end %>
 
- <%= link_to "サウナ施設", onsens_path, class: "dropdown__link", id: "dropdown__link"  %>
-
-       <%= link_to "保存した施設", bookmarks_user_path(current_user.id), class: "dropdown__link", id: "dropdown__link" %>
-
-      <%= link_to "サ活を記録", new_post_path, class: "dropdown__link", id: "dropdown__link"%>
-     <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "dropdown__link", id: "dropdown__link" do%><i class="fas fa-sign-out-alt"></i>ログアウト<% end %>
+ <%= link_to  onsens_path, class: "dropdown__link", id: "dropdown__link" do %><%= image_tag 'onsen_icon.png', size: "16" %><span>サウナ施設一覧</span><% end %>
+    <%= link_to  new_post_path, class: "dropdown__link", id: "dropdown__link" do %><i class="far fa-edit"></i><span>サ活を記録</span><% end %>
+       <%= link_to  bookmarks_user_path(current_user.id), class: "dropdown__link", id: "dropdown__link" do %><i class="far fa-bookmark"></i><span>保存した施設</span><% end %>
+     <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "dropdown__link", id: "dropdown__link" do%><i class="fas fa-sign-out-alt"></i><span>ログアウト</span><% end %>
       </div>
       <li class="nav__item"> <%=link_to "サ活を記録", new_post_path, class: "nav__item--link", id: "newpost__link"%></li>
   <% else %>

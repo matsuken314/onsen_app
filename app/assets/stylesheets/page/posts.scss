@@ -50,6 +50,7 @@ form{
 }
 .form__OnsenName[class]{
   height: 40px;
+  padding-left: 24px;
 }
 .easy-autocomplete{
   width: 100%!important;
@@ -123,7 +124,7 @@ color: #fff;
 .autocomplete__search__icon{
   position: absolute;
   top: 14px;
-  right: 13px;
+  left: 8px;
 }
 
 .post__submit .btn-primary[class]{

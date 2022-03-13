@@ -200,6 +200,9 @@ font-weight: 600;
 .user__post:first-child{
   border-top: none;
 }
+div .user__post:last-child{
+  padding-bottom: 0;
+}
 .user__totonoi__link{
   font-size: 18px;
   font-weight: 800;
