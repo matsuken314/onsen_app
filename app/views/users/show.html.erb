@@ -26,7 +26,8 @@
  
   <div class="user__container">
      <div class="user__circle__wrapper">
-     <%# <h2 class="user__circle__head">サ活平均円グラフ</h2> %>
+     <h2 class="user__circle__head">サ活平均円グラフ</h2> 
+     <p class="user__circle__subhead"><%= @user.name %>のデータ</p>
        <% if @posts.present? %>
           <canvas id= "myChart"></canvas>
        <% else %>
