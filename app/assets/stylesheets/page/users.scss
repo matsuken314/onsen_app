@@ -53,8 +53,12 @@
 }
 
 .user__circle__head{
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   font-weight: 800;
+}
+.user__circle__subhead{
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
 }
 .user__circle__head::after{
     content: '';
@@ -305,16 +309,17 @@ padding-top: 1.5rem;
   display: flex;
   align-items: center;
 }
-.profile__memo{
-  font-size: 1.6rem;
-  margin-bottom: 2.4rem;
-}
+
 .profile__img__wrapper{
   margin-right: 5%;
   margin-bottom: 0;
 }
 }
 
+.profile__memo{
+  font-size: 15px;
+  margin-bottom: 2.4rem;
+}
 // 投稿データがないときのサ活施設覧
 .empty__post__went__data{
   text-align: center;

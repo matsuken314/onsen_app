@@ -1,7 +1,7 @@
 <div class="hero">
 <div class="hero__container">
   <div class="hero__view">
-     
+  
   </div>
   <div class="hero__description__block">
   <h2 class="hero__copy">サウナライフを<br>記録しよう</h2>
@@ -23,33 +23,33 @@
  <% else %>
 <div class="three__merit__block">
 <div class="three__feature__wrapper">
-<div class="one__feature__wrapper">
-  <div class="feature__img__wrapper">
-    <%= image_tag 'Pie_graph.png' ,class: "feature__img" %>
-  </div> 
-  <div class="feature__text__wrapper">
-    <h2 class="feature__text">サ活データ可視化機能</h2>
-    <p class="feature__description">あなたのサ活 (サウナ・水風呂・外気浴) 平均データを表示。</p>
- </div>
-</div>
-<div class="one__feature__wrapper">
-  <div class="feature__img__wrapper">
-    <%= image_tag 'bookmark.png' ,class: "feature__img" %>
-  </div> 
-  <div class="feature__text__wrapper">
-    <h2 class="feature__text">サウナ保存機能</h2>
-    <p class="feature__description">お気に入りのサウナを1タッチ・クリックで保存。</p>
- </div>
-</div>
-<div class="one__feature__wrapper">
-  <div class="feature__img__wrapper">
-    <%= image_tag 'share.png' ,class: "feature__img" %>
-  </div> 
-  <div class="feature__text__wrapper">
-    <h2 class="feature__text">サ活を共有</h2>
-    <p class="feature__description">各サウナ施設のページで他のサウナーのサ活が見れるので、参考にしてみよう。</p>
- </div>
-</div>
+  <div class="one__feature__wrapper">
+    <div class="feature__img__wrapper">
+      <%= image_tag 'Pie_graph.png' ,class: "feature__img" %>
+    </div> 
+    <div class="feature__text__wrapper">
+      <h2 class="feature__text">サ活データ可視化機能</h2>
+      <p class="feature__description">あなたのサ活 (サウナ・水風呂・外気浴) 平均データを表示。</p>
+  </div>
+  </div>
+  <div class="one__feature__wrapper">
+    <div class="feature__img__wrapper">
+      <%= image_tag 'bookmark.png' ,class: "feature__img" %>
+    </div> 
+    <div class="feature__text__wrapper">
+      <h2 class="feature__text">サウナ保存機能</h2>
+      <p class="feature__description">お気に入りのサウナを1タッチ・クリックで保存。</p>
+  </div>
+  </div>
+  <div class="one__feature__wrapper">
+    <div class="feature__img__wrapper">
+      <%= image_tag 'share.png' ,class: "feature__img" %>
+    </div> 
+    <div class="feature__text__wrapper">
+      <h2 class="feature__text">サ活を共有</h2>
+      <p class="feature__description">各サウナ施設のページで他のサウナーのサ活が見れるので、参考にしてみよう。</p>
+  </div>
+  </div>
 </div>
 </div>
 <% end %>
@@ -57,9 +57,10 @@
 
 <div class="home__post__block">
  <h3 class="home__onsen__copy">新着サ活</h3>
- <div class="home__post__wrapper">
-   <%= render partial: 'posts/postdata', collection: @posts, as: 'post' %>
- </div>
+ 
+  <div class="home__post__wrapper">
+    <%= render partial: 'posts/postdata', collection: @posts, as: 'post' %>
+  </div>
 </div>
 <div class="home__onsen__block">
 <div class="home__onsen__copy__wrapper"><h3 class="home__onsen__copy">新着サウナデータ</h3>
