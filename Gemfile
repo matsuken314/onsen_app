@@ -15,10 +15,6 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-# 本番環境ではPostgresqlを使う
-group :production do
-  gem 'pg', '0.20.0'
-end
 # Use Puma as the app server
 gem "puma", "~> 5.0"
 # Use SCSS for stylesheets
@@ -82,3 +78,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
+
+group :production do
+  gem 'pg'
+end
