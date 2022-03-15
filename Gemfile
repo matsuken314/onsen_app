@@ -9,7 +9,16 @@ gem "rubyfuri"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem "rails", "~> 6.1.4", ">= 6.1.4.1"
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+
+# 開発・テスト環境ではSQLite3を使う
+group :development, :test do
+  gem 'sqlite3'
+end
+
+# 本番環境ではPostgresqlを使う
+group :production do
+  gem 'pg', '0.20.0'
+end
 # Use Puma as the app server
 gem "puma", "~> 5.0"
 # Use SCSS for stylesheets
