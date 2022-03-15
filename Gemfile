@@ -41,6 +41,12 @@ gem "gon"
 gem "jquery-rails"
 gem "jquery-ui-rails"
 gem "kaminari"
+gem "activeadmin"
+gem "carrierwave", "~> 2.0"
+gem "devise"
+gem "devise-i18n"
+gem "mini_magick"
+gem "rails-i18n", "~> 6.0"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: %i[mri mingw x64_mingw]
@@ -54,15 +60,9 @@ group :development do
   gem "listen", "~> 3.3"
   gem "rack-mini-profiler", "~> 2.0"
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem "activeadmin"
-  gem "bullet"
-  gem "carrierwave", "~> 2.0"
-  gem "devise"
-  gem "devise-i18n"
-  gem "mini_magick"
   gem "pre-commit", require: false
   gem "pry-rails"
-  gem "rails-i18n", "~> 6.0"
+  gem "bullet"
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
   gem "spring"
