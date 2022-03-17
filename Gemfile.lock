@@ -382,7 +382,7 @@ DEPENDENCIES
   kaminari
   listen (~> 3.3)
   mini_magick
-  pg (~> 0.20.0)
+  pg (>= 0.18, < 2.0)
   pre-commit
   pry-rails
   puma (~> 5.0)
