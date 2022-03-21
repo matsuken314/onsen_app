@@ -8,12 +8,8 @@ gem "gretel"
 gem "rubyfuri"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem "rails", "~> 6.1.4", ">= 6.1.4.1"
-# Use sqlite3 as the database for Active Record
-
-# 開発・テスト環境ではSQLite3を使う
-group :development, :test do
-  gem 'sqlite3'
-end
+# Use pg as the database for Active Record
+gem "pg"
 
 # Use Puma as the app server
 gem "puma", "~> 5.0"
@@ -35,16 +31,16 @@ gem "jbuilder", "~> 2.7"
 
 # Reduces boot times through caching; required in config/boot.rb
 
+gem "activeadmin"
 gem "bootsnap", ">= 1.4.4", require: false
+gem "carrierwave", "~> 2.0"
 gem "chart-js-rails"
+gem "devise"
+gem "devise-i18n"
 gem "gon"
 gem "jquery-rails"
 gem "jquery-ui-rails"
 gem "kaminari"
-gem "activeadmin"
-gem "carrierwave", "~> 2.0"
-gem "devise"
-gem "devise-i18n"
 gem "mini_magick"
 gem "rails-i18n", "~> 6.0"
 group :development, :test do
@@ -60,9 +56,9 @@ group :development do
   gem "listen", "~> 3.3"
   gem "rack-mini-profiler", "~> 2.0"
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem "bullet"
   gem "pre-commit", require: false
   gem "pry-rails"
-  gem "bullet"
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
   gem "spring"
@@ -78,7 +74,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
-
-group :production do
-  gem "pg", ">= 0.18", "< 2.0"
-end
