@@ -4,7 +4,8 @@ class UsersController < ApplicationController
     @posts = @user.posts.order("created_at desc")
     gon.Totonoi_data = @posts.circle_data(@user)
     unless @posts.empty?
-      went_onsen = @posts.distinct.pluck(:onsen_id)
+      went_onsen = @user.posts.select("DISTINCT ON (onsen_id) onsen_id").order(:onsen_id, created_at: :desc)
+      binding.pry
       @User_onsen_data = Onsen.find(went_onsen)
     end
   end
