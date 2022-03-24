@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.order("created_at desc")
+    @posts = @user.posts.order(created_at: :desc)
     gon.Totonoi_data = @posts.circle_data(@user)
     unless @posts.empty?
-      went_onsen = @user.posts.select("DISTINCT ON (onsen_id) onsen_id").order(:onsen_id, created_at: :desc)
-      binding.pry
+      went_onsen = @posts.uniq.pluck(:onsen_id)
       @User_onsen_data = Onsen.find(went_onsen)
     end
   end
