@@ -7,6 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 AdminUser.create!(email: ENV["EMAIL"], password: ENV["ADMIN_KEY"], password_confirmation: ENV["ADMIN_KEY"]) if Rails.env.development?
 
-user = AdminUser.new(email: ENV["PRODUCTION_EMAIL"], password: ENV["PRODUCTION_ADMIN_KEY"], password_confirmation: ENV["PRODUCTION_ADMIN_KEY"]) if Rails.env.production?
-user.skip_confirmation!
-user.save!
+AdminUser.create!(email: ENV["PRODUCTION_EMAIL"], password: ENV["PRODUCTION_ADMIN_KEY"], password_confirmation: ENV["PRODUCTION_ADMIN_KEY"]) if Rails.env.production?
