@@ -5,7 +5,8 @@ ruby "2.6.8"
 
 gem "dotenv-rails"
 gem "gretel"
-gem "rubyfuri"
+
+gem "fog-aws"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem "rails", "~> 6.1.4", ">= 6.1.4.1"
 # Use pg as the database for Active Record
