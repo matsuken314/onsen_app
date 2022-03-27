@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.order("created_at DESC")
+    @posts = @user.posts.order(created_at: :desc)
     gon.Totonoi_data = @posts.circle_data(@user)
-
-    went_onsen = @posts.distinct.pluck(:onsen_id)
-    @User_onsen_data = Onsen.find(went_onsen)
+    unless @posts.empty?
+      went_onsen = @posts.uniq.pluck(:onsen_id)
+      @User_onsen_data = Onsen.find(went_onsen)
+    end
   end
 
   def update

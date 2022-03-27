@@ -4,6 +4,7 @@ module Users
       # ゲストアカウントでログイン
       user = User.guest
       user.skip_confirmation!
+      user.save!
       sign_in user
       # トップページへリダイレクト
       redirect_to root_path, notice: "ゲストユーザーとしてログインしました。"

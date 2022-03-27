@@ -22,10 +22,10 @@ class DeviseCreateAdminUsers < ActiveRecord::Migration[6.1]
       # t.string   :last_sign_in_ip
 
       ## Confirmable
-      add_column  :users,  :confirmation_token,  :string
-      add_column  :users,  :confirmed_at,        :datetime
-      add_column  :users,  :confirmation_sent_at, :datetime
-      add_column  :users,  :unconfirmed_email, :string
+      # add_column  :users,  :confirmation_token,  :string
+      # add_column  :users,  :confirmed_at,        :datetime
+      # add_column  :users,  :confirmation_sent_at, :datetime
+      # add_column  :users,  :unconfirmed_email, :string
 
       ## Lockable
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts

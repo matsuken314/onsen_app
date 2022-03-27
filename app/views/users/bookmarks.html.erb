@@ -1,7 +1,7 @@
 <%= render partial: 'shared/page_title', locals: { page_title: "保存したサウナ施設" } %>
 <h1 class="bookmark__list">保存したサウナ施設一覧<br><span>(他のユーザーからは見れません)</span></h1>
 <div class="onsen__wrapper save__onsen__wrapper">
-<% @bookmark_onsens.each do |onsen| %>
- <%= render partial: 'onsens/onsen', locals: {onsen: onsen} %>
-<% end %>
+  <% @bookmark_onsens.each do |onsen| %>
+  <%= render partial: 'onsens/onsen', locals: {onsen: onsen} %>
+  <% end %>
 </div>

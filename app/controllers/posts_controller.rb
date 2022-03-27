@@ -27,6 +27,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
+      flash[:notice] = "サ活の記録を編集しました"
       redirect_to onsen_path(@post.onsen.id)
     else
       render :edit
