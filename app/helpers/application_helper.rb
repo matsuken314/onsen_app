@@ -16,4 +16,23 @@ module ApplicationHelper
       "#{page_title} - #{BASIC_TITLE}"
     end
   end
+
+  def og_description(page_description = "")
+    base_description = "ととのいはサ活（サウナ活動）の記録を管理することに特化したサービスです。"
+    if page_description.empty?
+      base_description
+    else
+      page_description
+    end
+  end
+
+  # イメージ画像
+  def og_image(page_image = "")
+    base_image = "https://totonoi-and-infra.s3.ap-northeast-1.amazonaws.com/uploads/ogp/ogp_default.JPG"
+    if page_image.empty?
+      base_image
+    else
+      page_image
+    end
+  end
 end
