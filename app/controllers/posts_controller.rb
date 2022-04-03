@@ -36,6 +36,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
+    flash[:notice] = "サ活の記録を削除しました"
     redirect_back(fallback_location: root_path)
   end
 
