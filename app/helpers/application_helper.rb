@@ -28,7 +28,7 @@ module ApplicationHelper
 
   # イメージ画像
   def og_image(page_image = "")
-    base_image = "https://totonoi-and-infra.s3.ap-northeast-1.amazonaws.com/uploads/ogp/ogp_default.JPG"
+    base_image = "https://s3-ap-northeast-1.amazonaws.com/totonoi-and-infra/uploads/ogp/ogp_default.JPG"
     if page_image.empty?
       base_image
     else
