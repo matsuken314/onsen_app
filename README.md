@@ -178,7 +178,7 @@
 
 ## ER図
 
-
+<img src="public/readme_images/ER.png" width="100%">
 
 ## 今後の課題
 
@@ -186,7 +186,7 @@
 - サ活投稿のTwitterシェア
 - AWSにデプロイ
 - テストコード
-- Vue.ｊｓの使用
+- Vue.jsの使用
 
 ## 作者情報
 
