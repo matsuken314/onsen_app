@@ -51,7 +51,7 @@
 - PCでは3カラム,タブレットでは2カラム,スマホでは1カラムで一覧表示します。
 - 一覧ページからでもブックマークアイコンを1クリックでお気に入りのサウナ施設を保存できます。
 
-![image](public/readme_images/sauna_list.png)
+![image](public/readme_images/sauna_list.gif)
 
 
 ### ④サウナ施設詳細ページ
@@ -59,7 +59,13 @@
 - サウナ施設での全ユーザーのサ活（サウナ・水風呂・外気浴のそれぞれの時間）の平均が円グラフに表示されます。
 - サウナ施設でのサ活を一覧表示します。サ活が無い場合、ユーザーのサ活を促すデザインにしました。（別画像）
 
-![image](public/readme_images/onsen_show_page.png)
+
+| サ活投稿あり | サ活投稿なし |
+----|---- 
+| ![image](public/readme_images/onsen_show_page.png) | ![image](public/readme_images/nodata_onsenshow.png) |
+
+
+
 
 
 
@@ -69,7 +75,7 @@
 - サウナ施設名は１文字入力すると、文字に関連する候補のサウナ施設名が検索窓のような形で表示されます。
 
 
-![image](public/readme_images/sakatu_new_form.png)
+![image](public/readme_images/autocomplete.gif)
 
 ### ⑥マイ保存サウナ施設ページ
 
