@@ -66,9 +66,6 @@
 
 
 
-
-
-
 ### ⑤サ活投稿ページ
 
 - サウナ施設名とサウナ・水風呂・外気浴の時間を入力して、サ活を投稿できます。感想は空でも投稿可能です。
@@ -132,14 +129,14 @@
 
 - gemの[bullet](https://github.com/flyerhzm/bullet) を使用してN+1問題を発見した場合はリファクタリングをしていました。N+1を発見した場合は下記のように警告画像が出現します。
 
-![image](public/readme_images/use_bullet.jpeg)
+<img src="public/readme_images/use_bullet.jpeg" width="50%">
 
 - 部分テンプレートのrenderメソッドを使う際はeach文の中で使わず、collectionを使用。そうすることで部分テンプレートの呼び出しはレコードの件数が多くなっても１回に抑えることができるので、パフォーマンスが悪化することを防ぎました。（下記のBefore▶afterのコード参照）
 
 **【Before】N+1発生コード**
 ```Ruby
-# インスタンス変数のに入ってるonsenの個数分だけ部分テンプレートを表示するロジックなので、
-# onsenの個数が多いとパフォーマンスが悪くなる
+# インスタンス変数に入ってるonsenの個数分だけ部分テンプレートを表示するロジックなので、
+# onsenの個数が多いとパフォーマンスが悪くなります。
 <% @onsens.each do |onsen| %>
   <%= render partial: 'onsens/onsen', locals: { onsen: onsen }%>
 <% end %>
@@ -163,9 +160,7 @@
 ### ユーザーのサ活(投稿)に連動した円グラフ
 マイページで各ユーザーのサウナ・水風呂・外気浴の平均データを円グラフで表示しています。こうすることで「ととのう」時の時間配分の目安になるようにしています。
 
-
-![image](public/readme_images/sakatu_circle.png)
-
+<img src="public/readme_images/sakatu_circle.png" width="50%">
 
 ### チーム開発を意識
 
@@ -179,10 +174,16 @@
 ### UI・UX
 -  アイコンやロゴを使用して、パッと見で分かるシンプルなデザインにしました。
 -  スマホサイズではユーザビリティを高めるため、ログインしている場合、最下部に固定メニューバーを自作しました。
+
+
+|  スマホサイズでは下部に固定メニューが表示  |
+| ---- |
+|  ![image](public/readme_images/sp_fix_under.png)  |
+
 - サ活を記録するとマイページの円グラフが変化していき、記録するほど、自分のサ活の傾向が見えてくる設計。
 - ユーザーの目に優しく、奇抜な色使いはせず、以下の配色を参考に全体的な落ち着いたデザインにしました。
 
-<img src="public/readme_images/totonoi_color.png" width="80%">
+<img src="public/readme_images/totonoi_color.png" width="65%">
 
 
 ## 機能一覧
