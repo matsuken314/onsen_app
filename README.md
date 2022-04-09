@@ -12,6 +12,7 @@
 
 ### 読む前に知ってほしいこと
 **「ととのう」**・・・ サウナ・水風呂・外気浴を繰り返すことで身体はリラックスし、頭は興奮するトランス状態になること。
+
 **「サウナー」**・・・サウナ大好きな人。
 
 参考サイト　: [現役医師が教える、サウナで「ととのう」条件と正しい入浴方法](https://www.pen-online.jp/article/008062.html)
@@ -223,7 +224,7 @@
 
 ## ER図
 
-<img src="public/readme_images/ER.jpg" width="100%">
+<img src="public/readme_images/ER.jpg" width="70%">
 
 ## 今後の課題
 
