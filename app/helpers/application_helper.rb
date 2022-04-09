@@ -1,13 +1,5 @@
 module ApplicationHelper
-  # def avatar_url(user)
-  #   avatar_url = if user.avatar?
-  #                  "default_people.png"
-  #                elsif user.avatar.url.blank?
-  #                  "default_people.png"
-  #                else
-  #                  user.avatar
-  #                end
-  # end
+
   BASIC_TITLE = "ととのい".freeze
   def full_title(page_title)
     if page_title.blank?
@@ -28,7 +20,7 @@ module ApplicationHelper
 
   # イメージ画像
   def og_image(page_image = "")
-    base_image = "https://s3.amazonaws.com/totonoi-and-infra/uploads/ogp/ogp_default.JPG"
+    base_image = "/images/ogp_default.JPG"
     if page_image.empty?
       base_image
     else

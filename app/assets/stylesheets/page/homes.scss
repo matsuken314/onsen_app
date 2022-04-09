@@ -185,8 +185,24 @@ margin: 0 auto;
   padding:0 1.5rem;
 }
 
+
 @media (min-width:1280px){
   .hero__description__block{
     left: 20%;
   }
+}
+
+.home__onsen__btn__wrapper{
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.home__onsen__btn__wrapper .onsens__btn{
+background-color: #f68655;
+color: #fff;
+display: inline-block;
+font-weight: 800;
+font-size: 1.3rem;
+border-radius: 0.8rem;
+padding: 10px;
 }
