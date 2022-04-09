@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   BASIC_TITLE = "ととのい".freeze
   def full_title(page_title)
     if page_title.blank?
@@ -20,7 +19,7 @@ module ApplicationHelper
 
   # イメージ画像
   def og_image(page_image = "")
-    base_image = "/images/ogp_default.JPG"
+    base_image = "#{root_url}images/ogp_default.JPG"
     if page_image.empty?
       base_image
     else
