@@ -3,13 +3,25 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+import 'chart.js/dist/chart';
+import './totonoi_circle';
+import './onsen_circle';
+import './popup';
+import './user_tab';
+import './scroll';
+import './autocomplete';
+import './flash';
 import '@fortawesome/fontawesome-free/js/all';
-import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
-import * as ActiveStorage from "@rails/activestorage"
-import "channels"
+
+require("chart.js")
+require("@rails/ujs").start()
+require("turbolinks").start()
+require("@rails/activestorage").start()
+require("channels")
+require('jquery');
+require("jquery-ui-dist/jquery-ui")
+require("easy-autocomplete")
 
 
-Rails.start()
-Turbolinks.start()
-ActiveStorage.start()
+
+

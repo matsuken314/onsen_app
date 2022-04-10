@@ -1,0 +1,84 @@
+.user__edit__container{
+    max-width: 700px;
+  width: 100%;
+  margin: auto;
+  padding: 0 40px;
+}
+
+.user__edit__title{
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+}
+.user__edit__title::after{
+    content: '';
+    display: block;
+    width: 78px;
+    height: 3px;
+    margin: 2px 0;
+    background-color: #f68655;
+}
+.user__edit__field{
+  margin-bottom: 2.5rem;
+}
+.user__edit__field__icon{
+display: none;
+}
+.user__edit__field .profile__img{
+  margin-bottom: 2rem;
+}
+.user__edit__iconbtn{
+  display: flex;
+  font-size: 1.3rem;
+  color: #63A6DD;
+  align-items: center;
+  justify-content: center;
+}
+.user__edit__field label{
+  float: left;
+  font-size: 1.2rem;
+}
+
+.user__edit__form[class]{
+  width: 100%;
+  font-size: 16px;
+}
+.user__edit__btn[class]{
+  background-color: #f68655;
+}
+.actions .user__edit__btn[class]:hover{
+   background-color: #f68655;
+   background-image: none;
+}
+.retire__btn[class]{
+  background-image: none;
+    text-shadow: none;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    color: #333;
+    background-color: rgba(0,0,0,0);
+    text-decoration: underline;
+}
+
+.retire__btn[class]:hover{
+background-image: none;
+}
+
+.retire__btn__wrapper{
+  margin-top: 3rem;
+}
+
+.user__edit__container .retire__btn[class]:hover{
+background-image: none;
+background-color: rgba(0,0,0,0);
+}
+
+.user__edit__container .button_to{
+  text-align: right;
+}
+
+.user__edit__container .retire__btn[class]:active{
+background-image: none;
+box-shadow: none;
+}

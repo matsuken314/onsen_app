@@ -1,0 +1,77 @@
+<div class="hero">
+<div class="hero__container">
+  <div class="hero__view">
+  
+  </div>
+  <div class="hero__description__block">
+  <h2 class="hero__copy">サウナライフを<br>記録しよう</h2>
+  <p class="hero__btn__wrapper">
+  <% if user_signed_in? %>
+     <%= render partial: 'homes/login_user_hero_btn' %>
+  <% else %>
+   <%= render partial: 'homes/no_login_user_hero_btn' %>
+  <% end %>
+  </p>
+  </div>
+</div>
+</div>
+<div class="home__app__description">
+<div class="app__text__wrapper"><h3 class="app__text"><span class="app__text__bold">ととのい</span>とは</h3></div>
+<p class="app__description">「ととのい」はサ活(サウナ活動)を記録して、<br class ="sp_br">グラフデータとして可視化できます。<br>いつでもあなたのサ活を<br class ="sp_br">振り返ることができるサービスです。</p>
+</div>
+ <% if user_signed_in? %>
+ <% else %>
+<div class="three__merit__block">
+<div class="three__feature__wrapper">
+  <div class="one__feature__wrapper">
+    <div class="feature__img__wrapper">
+      <%= image_tag 'Pie_graph.png' ,class: "feature__img" %>
+    </div> 
+    <div class="feature__text__wrapper">
+      <h2 class="feature__text">サ活データ可視化機能</h2>
+      <p class="feature__description">あなたのサ活 (サウナ・水風呂・外気浴) 平均データを表示。</p>
+  </div>
+  </div>
+  <div class="one__feature__wrapper">
+    <div class="feature__img__wrapper">
+      <%= image_tag 'bookmark.png' ,class: "feature__img" %>
+    </div> 
+    <div class="feature__text__wrapper">
+      <h2 class="feature__text">サウナ保存機能</h2>
+      <p class="feature__description">お気に入りのサウナを1タッチ・クリックで保存。</p>
+  </div>
+  </div>
+  <div class="one__feature__wrapper">
+    <div class="feature__img__wrapper">
+      <%= image_tag 'share.png' ,class: "feature__img" %>
+    </div> 
+    <div class="feature__text__wrapper">
+      <h2 class="feature__text">サ活を共有</h2>
+      <p class="feature__description">各サウナ施設のページで他のサウナーのサ活が見れるので、参考にしてみよう。</p>
+  </div>
+  </div>
+</div>
+</div>
+<% end %>
+
+
+<div class="home__post__block">
+ <h3 class="home__onsen__copy">新着サ活</h3>
+ 
+  <div class="home__post__wrapper">
+    <%= render partial: 'posts/postdata', collection: @posts, as: 'post' %>
+  </div>
+</div>
+<div class="home__onsen__block">
+  <div class="home__onsen__copy__wrapper">
+    <h3 class="home__onsen__copy">新着サウナデータ</h3>
+    <p class="home__onsen__copy__text">
+    運営が更新します。追加してほしい施設は<a id="home__copy__text__link" href="https://docs.google.com/forms/d/e/1FAIpQLSfpzlRzC1p8kuk3g6vmCX3lNgQRpDLTw6MDhHLLWQRg13ulaw/viewform?usp=pp_url" target="_blank">お問い合わせ</a>ください。</p>
+  </div>
+  <div class="home__onsen__wrapper onsen__wrapper">
+    <%= render partial: 'onsens/onsen', collection: @onsens, as: 'onsen'%>
+  </div>
+  <div class="home__onsen__btn__wrapper">
+  <%= link_to "SAUNA MORE", onsens_path ,class: :onsens__btn,id: :onsens__btn__id%>
+  </div>
+</div>

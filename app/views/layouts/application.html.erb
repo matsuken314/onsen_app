@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ととのい</title>
+ <title><%= full_title(yield(:title)) %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+     <meta name="twitter:card" content="summary_large_image" >
+     <meta property="og:title" content="<%= full_title(yield(:title)) %>" >
+      <meta name="twitter:title" content="<%= full_title(yield(:title)) %>" />
+    <meta property="og:description" content="<%= og_description(yield(:og_description)) %>" >
+     <meta property="og:image" content="<%= og_image(yield(:og_image)) %>" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+      <%= stylesheet_link_tag '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/le-frog/jquery-ui.min.css' %>
+       <%= favicon_link_tag('favicon.ico') %>
   </head>
 
   <body>
 <%= render "layouts/header" %>
-<%= render "layouts/flash" %>
-   <% if flash[:notice] %>
-      <div class="alert alert-info">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
-    <% if flash[:alert] %>
-      <div class="alert alert-danger">
-        <%= flash[:alert] %>
+<div class="Allcontents__wrapper">
+<%=render 'layouts/flash' %>
+    <% if  request.path == "/" %>
+     <% else %>
+      <div class="breadcrumbs__wrapper">
+      <%= breadcrumbs separator: " &rsaquo; " %>
       </div>
     <% end %>
     <%= yield %>
-    <%= render 'layouts/footer' %>
+    </div>
+  <%= render 'layouts/footer' %>
   </body>
 </html>

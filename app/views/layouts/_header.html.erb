@@ -1,47 +1,38 @@
-<header class="header">
+ <header class="header">
     <div class="header__inner">
     <div class="header__logo">
-    <a href="#"><img src="img/header-logo.png" class="" alt="ヘッダーロゴ"></a>
-    <h1 class="ttl">ととのい<i class="fas fa-edit"></i>
-</h1>
+    <h1 class ="header__title" >
+   <%= link_to root_path, class: :header__title do%>
+      <%= image_tag 'header-logo.png', alt: "ヘッダーロゴ"%>
+  <% end %>
+  </h1>
   </div>
 <nav class="nav">
-<ul class="nav__list">
-<% if user_signed_in? %>
-  <%# ログイン時 %>
-  <li class="nav__item"><%= link_to "アカウント編集", edit_user_registration_path , class: "nav__item--link"%></li>
-  <li class="nav__item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "nav__item--link" %></li>
-<% else %>
-  <%# 非ログイン時 %>
-  <li class="nav__item"><%= link_to "新規登録", new_user_registration_path, class: "nav__item--link"%></li>
- <li class="nav__item"> <%= link_to "ログイン", new_user_session_path, class: "nav__item--link"%></li>
-  <li class="nav__item"><%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class: "nav__item--link" %></li>
-<% end %>
-  <li class="nav__item"><a class="nav__item--link" href="#features">特徴</a></li>
-  <li class="nav__item"><a href="#price" class="nav__item--link">価格</a></li>
-  <li class="nav__item"><a href="#contact" class="nav__item--link">お問い合わせ</a></li>
-</ul>
-  </nav>
-  <a class="header__btn none__btn" href="#contact">お問い合わせ</a>
-<!--hamburgerボタンー-->
-<div class="hamburger__btn">
-  <span class="hamburger__btn--parts -top"></span>
-  <span class="hamburger__btn--parts -middle"></span>
-  <span class="hamburger__btn--parts -bottom"></span>
-</div>
-<!--hamburgerメニュー-->
-<nav class="hamburger">
-  <ul class="hamburger__lists">
-    <li class="hamburger__list">
-      <a class="hamburger__link" href="#features">特徴</a>
-    </li>
-    <li class="hamburger__list">
-      <a class="hamburger__link" href="#price">価格</a>
-    </li>
-    <li class="hamburger__list">
-      <a class="hamburger__link" href="#contact">お問い合わせ</a>
-    </li>
+  <ul class="nav__list">
+  <% if user_signed_in? %>
+    <%# ログイン時 %>
+
+      <li class="nav__item opacity clickslide" id="clickslide"> 
+        <%= image_tag current_user.avatar.url, size: "40", class: "header__profile__img"%>
+        <span><i class="fas fa-caret-down fa-3x"></i></span>
+      </li>
+      <div class = "dropdown__header" id = "dropdown__header" style="display:none;">
+      <%= link_to user_path(current_user.id), class: "dropdown__link", id: "dropdown__link"  do%><i class="far fa-user"></i><span>マイページ</span><% end %>
+
+ <%= link_to  onsens_path, class: "dropdown__link", id: "dropdown__link" do %><%= image_tag 'onsen_icon.png', size: "16" %><span>サウナ施設一覧</span><% end %>
+    <%= link_to  new_post_path, class: "dropdown__link", id: "dropdown__link" do %><i class="far fa-edit"></i><span>サ活を記録</span><% end %>
+       <%= link_to  bookmarks_user_path(current_user.id), class: "dropdown__link", id: "dropdown__link" do %><i class="far fa-bookmark"></i><span>保存した施設</span><% end %>
+     <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "dropdown__link", id: "dropdown__link" do%><i class="fas fa-sign-out-alt"></i><span>ログアウト</span><% end %>
+      </div>
+      <li class="nav__item"> <%=link_to "サ活を記録", new_post_path, class: "nav__item--link", id: "newpost__link"%></li>
+  <% else %>
+    <%# 非ログイン時 %>
+    <li class="nav__item"><%= link_to "新規登録", new_user_registration_path, class: "nav__item--link",id: "sighup__link"%></li>
+  <li class="nav__item"> <%= link_to "ログイン", new_user_session_path, class: "nav__item--link",id: "signin__link"%></li>
+    
+  <% end %>
   </ul>
 </nav>
+
 </div>
 </header>

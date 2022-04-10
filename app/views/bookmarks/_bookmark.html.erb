@@ -1,0 +1,16 @@
+<% if !user_signed_in? %>
+    <%= link_to create_bookmark_path(onsen), method: :POST,id: 'bookmark__button', class: 'bookmark',remote: true do %>
+     <i class="far fa-bookmark fa-2x"></i>
+      
+      <div class = "onsen__count"><%= onsen.bookmarks.count %></div><% end %>
+<% elsif current_user.bookmarked_by?(onsen.id) %>
+       <%= link_to destroy_bookmark_path(onsen), method: :DELETE,id: 'bookmark__button-active',  class: 'bookmark',remote: true do %>
+      <i class="fas fa-bookmark fa-2x"></i>
+      
+      <div class = "onsen__count count-active"><%= onsen.bookmarks.count %></div><% end %>
+<% else %>
+      <%= link_to create_bookmark_path(onsen), method: :POST,id: 'bookmark__button', class: 'bookmark',remote: true do %>
+     <i class="far fa-bookmark fa-2x"></i>
+      
+      <div class = "onsen__count"><%= onsen.bookmarks.count %></div><% end %>
+<% end %>

@@ -1,0 +1,50 @@
+    <div class="user__post">
+    <div class="user__post__header">
+          <div class="user__feature">
+               <div class="user__imgicon">
+                    <%=link_to user_path(post.user.id), class: "post__user__link"  do%><%= image_tag post.user.avatar.url , size: "26", class: "post__user__img"%> <% end %>
+               </div>
+                    <p class="user__name"><strong><%= post.user.name%></strong>が<%= post.created_at.strftime("%Y.%m.%d")%>にサ活</p> 
+          </div>
+
+      
+     </div>
+     <% if %w[root user].any? {|name| current_page?(send("#{name}_path"))} %>
+       <%= link_to onsen_path(post.onsen_id), class: "user__totonoi__link" do%>                
+          <%= post.totonoi_address %>
+       <% end %>
+     <% end %>
+     <% if post.memo.present? %>
+          <div class="user__memo__wrapper">
+               <p class="user__memo"><%= safe_join(post.memo.split("\n"),tag(:br)) %></p>
+          </div>
+     <% end %>
+       <div class="user__sakatu__data">
+              <i class="far fa-clock fa-2x"></i> 
+              <div class="sauna__minute minute__part">
+                    <span class ="sauna__minute__mark minute__mark__size">サ</span><span class="minute__number"><%= post.sauna_one %></span>分
+               </div>
+               <div class="water__minute minute__part">
+                <span class="water__minute__mark minute__mark__size">水</span><span class = "minute__number"><%= post.water_one %></span>分
+               </div>
+               <div class="totonoi__minute minute__part">
+                <span class="totonoi__minute__mark minute__mark__size">外</span><span class="minute__number"><%= post.totonoi_one %></span>分
+               </div>
+                         <% if post.user == current_user %>
+          <p class="js-modal user__edit__icon"><i class="fas fa-edit fa-2x"></i><i class="fas fa-caret-down fa-2x"></i></p>
+
+           <section id="modal__area" class="modal__area" style = "display:none;">
+   <div class="modal__bg"></div>
+      <div class="modal__wrapper">
+      <div class="modal__area__title"><%= post.totonoi_address %></div>
+        <div class= "user__edit__menu">
+          <li class="menu__link"><a href="/posts/<%=post.id%>/edit"><i class="far fa-edit"></i>サ活を編集する</a></li>
+          <li class="menu__link"><%= link_to  post_path(post.id),method: :delete, data: { confirm: "削除しますか?" }  do%><i class="far fa-trash-alt"></i>サ活を削除する<% end %></li>
+        </div>
+        <div class="modal__area__day"><%= post.created_at.strftime("%Y / %m / %d")%></div>
+          <div class="closeModal">×</div>
+   </div>
+              </section>
+          <% end %>
+          </div>
+                </div>

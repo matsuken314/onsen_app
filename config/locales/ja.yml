@@ -8,3 +8,11 @@ ja:
     author_id: 著者ID
     created_at: 作成日時
     updated_at: 更新日時
+
+  views:
+    pagination:
+      first: <i class="fas fa-angle-double-left"></i>
+      last: <i class="fas fa-angle-double-right"></i>
+      previous: <i class="fas fa-angle-left"></i>
+      next: <i class="fas fa-angle-right"></i>
+      truncate: "..."

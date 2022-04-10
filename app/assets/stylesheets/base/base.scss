@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&family=Noto+Sans+JP&display=swap');
+
+html,
+input,
+textarea,
+select,
+button {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+html {
+  color: #000;
+  font-size: 62.5%;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  word-break: break-all;
+  position: relative;
+}
+
+@media screen and (min-width:769px) and (max-width:1260px) {
+  html{
+    font-size: 0.8vw;
+  }
+}
+
+
+body {
+  background-color: #EDEBE8;
+  margin-top: 0;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 405px;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+figure {
+  margin: 0;
+}
+
+img {
+  border: 0;
+  margin: 0;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+a:link, a:visited{
+  text-decoration: none;
+  transition: .3s ease;
+  color: #333;
+}
+
+
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}

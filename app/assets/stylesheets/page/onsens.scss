@@ -1,0 +1,340 @@
+// Place all the styles related to the onsens controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// パンくずリスト
+.breadcrumbs{
+  font-size: 1.4rem;
+  opacity: 0.7;
+}
+
+.breadcrumbs__wrapper{
+  padding: 10px 0 16px 10px;
+  max-width: 1260px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+/*温泉詳細ページ*/
+.onsenshow__wrapper{
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: 2rem auto 0;
+}
+.showpost__wrapper{
+  max-width: 1200px;
+  width: 100%;
+  margin: 4rem auto;
+  padding:0 1rem;
+}
+
+.showpost__head{
+  margin-bottom: 2rem;
+}
+.onsenshow__headline{
+font-size: 2.2rem;
+font-weight: 800;
+}
+.label__underline{
+position: relative;
+}
+.label__underline::after{
+  content: '';
+  display: block;
+  width: 78px;
+  height: 2px;
+  background-color: #f68655;
+}
+.onsenshow__header{
+  margin-bottom: 0.8rem;
+}
+.onsenshow__head{
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+}
+.onsenshow__address{
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #888;
+}
+
+.onsen__nodata__img__message{
+  font-weight: 800;
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+.onsen__nodata__img__wrapper{
+  mix-blend-mode: multiply;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.onsenshow__nodata__message{
+  margin-top: 2rem;
+}
+.onsenshow__img{
+  object-fit: cover;
+  width: 100%;
+}
+.onsenshow__img__wrapper{
+  margin-bottom: 2rem;
+}
+.onsenshow__data{
+  margin-bottom: 4rem;
+}
+.spec__info__number{
+  font-size: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
+.show__spec__margin{
+  margin-right: 3px;
+}
+.onsen__introduce{
+  font-size: 14.5px;
+  margin-top: 1.5rem;
+}
+.onsen__circle__wrapper{
+width: 90%;
+margin: 1.5rem auto 0;
+}
+.spec__info{
+  display: flex;
+}
+.spec__info__bookmark{
+  position: relative;
+}
+.spec__info__bookmark .onsen__bookmark__area{
+  right: 34px;
+  width: 29px;
+  height: 29px;
+  bottom: -4px;
+}
+
+.spec__info__bookmark .onsen__bookmark__area .bookmark{
+padding-top: 0;
+height: initial;
+}
+
+.spec__info__block{
+  width: 33.333%;
+  display: flex;
+  align-items: center;
+}
+
+.fa-temperature-high{
+  color: #f68655;
+}
+
+.fa-temperature-low{
+color:#6b99cf;
+}
+
+@media (min-width:768px){
+.onsenshow__wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+.onsen__circle__group{
+  width: 55%;
+}
+
+.onsenshow__data{
+  width: 40%;
+}
+}
+/*///////温泉詳細ページ*/
+
+
+/*ページネーション*/
+
+.pagination span.page.current{
+  background-color: #F68658;
+  color: #fff;
+  background-image: none;
+  border-radius: 50%;
+  border: none;
+  width: 40px;
+  height: 40px;
+  padding: 13px 5px;
+  margin-right: 10px;
+  font-size: 1.6rem;
+}
+
+.pagination span.page.current:not(.disabled):hover{
+background-image: none;
+background-color: #F68658;
+}
+.pagination a:not(.disabled):hover{
+  background-color: #F68658;
+  color: #fff;
+  background-image: none;
+  text-shadow: none;
+}
+
+.pagination span.next{
+  font-size: 0.8rem;
+}
+.pagination span.last{
+  font-size: 0.8rem;
+}
+
+.onsen__paginations__block .pagination .page{
+  border-radius: 50%;
+}
+
+.onsen__paginations__block{
+  margin-top: 40px;
+}
+.pagination a{
+  border-radius: 50%;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  padding: 13px 5px;
+  font-size: 1.6rem;
+  border: none;
+}
+
+
+.pagination{
+  float: none;
+  text-align: center;
+  width: 100%;
+  margin: 40px auto 0;
+}
+.pagination-list{
+  display: flex;
+}
+
+
+.onsen__wrapper{
+  max-width: 1260px;
+  width: 100%;
+ margin: 0 auto;
+ display: flex;
+ flex-wrap: wrap;
+ gap:  56px 0;
+ padding: 0 32px;
+}
+
+.save__onsen__wrapper{
+  margin-top: 80px;
+}
+.onsen__card{
+  background-color: #fff;
+  display: block;
+  width: 100%;
+  position: relative;
+}
+.onsen__card__body{
+  padding: 15px;
+}
+.onsen__title{
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  display:-webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.onsen__card__imgWrapper{
+  padding-top: 66.416873%;
+  position: relative;
+  overflow: hidden;
+}
+.onsen__card__img{
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-50%);
+  object-fit: cover;
+}
+
+#onsen__title-link{
+  text-decoration: none;
+  color: #333;
+}
+#onsen__title-link:hover{
+text-decoration: underline;
+color: #FC9701;
+}
+.onsen__address{
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+.onsen__spec{
+  display: flex;
+  margin-top: 0.4rem;
+  font-size: 1.2rem;
+}
+
+.onsen__spec__sauna{
+  background-color: #f68655;
+  color: #fff;
+    padding: 3px;
+  border-radius: 50%;
+}
+.onsen__spec__water{
+  background-color: #6b99cf;
+  color: #fff; 
+  padding: 3px;
+  border-radius: 50%;
+}
+
+.onsen__spec__text{
+margin-right: 12px;
+}
+@media (min-width:960px){
+ .onsen__wrapper{
+  gap: 56px 3.5%;
+ }
+ .onsen__card{
+   width: 31%;
+ }
+}
+@media (min-width:520px)and (max-width:959px) {
+  .onsen__wrapper{
+  gap: 56px 4%;
+  }
+  .onsen__card{
+   width: 48%;
+ }
+
+}
+
+// 温泉詳細ページにデータがない場合
+.onsenshow__nodata__message{
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+#new__post__link{
+  text-decoration: underline;
+}
+
+.onsenshowdata__empty__btn__wrapper{
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.onsenshowdata__empty__btn{
+  background-color: #f68655;
+    color: #fff;
+    display: inline-block;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    padding: 10px;
+}
+#onsenshowdata__empty__btn__color{
+  color: #fff;
+}

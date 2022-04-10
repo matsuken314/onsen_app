@@ -1,5 +1,27 @@
+<% if user_signed_in? %>
+   <ul class="bottom__spnav">
+        <li><%= link_to  root_path ,class: "spnav__link" do%><i class="fa fa-home fa-2x"></i><br><span>ホーム</span><% end %></li>
+        <li><%= link_to  onsens_path ,class: "spnav__link" do%><%= image_tag 'onsen_icon.png', size: "17",class: "footer_onsen_icon" %><br><span>サウナ施設</span><% end %></li>
+        <li><%= link_to  new_post_path ,class: "spnav__link" do%><i class="fas fa-plus-circle fa-2x"></i><br><span>サ活を記録</span><% end %></li>
+        <li><%= link_to bookmarks_user_path(current_user.id) ,class: "spnav__link" do %><i class="far fa-bookmark fa-2x"></i><br><span>keep</span><% end %></li>
+        <li><%= link_to user_path(current_user.id),class: "spnav__link" do%><i class="far fa-user fa-2x"></i><br><span>マイページ</span></a><% end %></li>
+    </ul>
+<% end %>
 <footer>
-<div class="footer__inner">
- <p>© 2021 ととのい</p>
- </div>
+    <div class="footer__inner">
+   <%= link_to root_path, class: "footer__title" do%>
+        <%= image_tag 'footer_white_Logo.png', alt: "フッターロゴ",class:"footer__title__img", width:"135" ,height:"40"%>
+   <% end %>
+   <p class="footer__discription">
+   「ととのい」はサウナの記録を管理して、<br class ="brspsp">
+   よりサウナライフを<br class ="brsp">充実させるためのサービスです。<br class ="brspsp">
+   あなたのサウナライフをととのえませんか？
+   </p>
+   <p class="footer__alert__text">※現在ととのいは金沢・東京・その他人気のサウナ施設のみに対応しています。施設追加の要望は<a target="_blank" class="footer__alert__link" href="https://docs.google.com/forms/d/e/1FAIpQLSfpzlRzC1p8kuk3g6vmCX3lNgQRpDLTw6MDhHLLWQRg13ulaw/viewform?usp=pp_url">こちら</a>からお願いします</p>
+   <div class="footer__link__block">
+        <a href="https://twitter.com/matsuken_web314" target="_blank" rel="noopener" class="footer__form__link" id="footer__link__color">管理人のTwitter<i class="fab fa-twitter"></i></a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdCTUbMHNBzhNHU61OFUPHnCvmmrtc2lkI4g_s2jnEgGFy_1g/viewform?usp=pp_url" rel="noopener" target="_blank" class="footer__form__link" id="footer__link__color">お問い合わせ<i class="fas fa-external-link-alt"></i></a>
+    </div>
+        <p class ="footer__copyright">2022 ©ととのい</p>
+    </div>
 </footer>

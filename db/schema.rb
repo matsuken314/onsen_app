@@ -10,15 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_30_093736) do
+ActiveRecord::Schema.define(version: 2022_03_08_132227) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
     t.string "resource_type"
-    t.integer "resource_id"
+    t.bigint "resource_id"
     t.string "author_type"
-    t.integer "author_id"
+    t.bigint "author_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author"
@@ -38,13 +41,43 @@ ActiveRecord::Schema.define(version: 2021_10_30_093736) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "onsens", force: :cascade do |t|
-    t.string "name"
-    t.integer "sauna_temperature"
-    t.string "water_temperature"
+  create_table "bookmarks", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "onsen_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "image"
+    t.index ["onsen_id"], name: "index_bookmarks_on_onsen_id"
+    t.index ["user_id", "onsen_id"], name: "index_bookmarks_on_user_id_and_onsen_id", unique: true
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
+
+  create_table "onsens", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "sauna_temperature"
+    t.integer "water_temperature"
+    t.string "image", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "address"
+    t.string "name_hiragana"
+    t.integer "bookmarks_count"
+    t.text "introduce"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.integer "sauna_one", null: false
+    t.integer "water_one", null: false
+    t.integer "totonoi_one", null: false
+    t.integer "totonoi_two"
+    t.integer "totonoi_three"
+    t.string "totonoi_address"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.text "memo"
+    t.bigint "onsen_id"
+    t.index ["onsen_id"], name: "index_posts_on_onsen_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,11 +86,20 @@ ActiveRecord::Schema.define(version: 2021_10_30_093736) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name", null: false
+    t.string "avatar"
+    t.text "self_introduction"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookmarks", "onsens"
+  add_foreign_key "posts", "onsens"
+  add_foreign_key "posts", "users"
 end

@@ -1,0 +1,155 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.post__wrapper{
+  max-width: 720px;
+  width: 100%;
+}
+.post__user__link{
+  display: block;
+}
+.post__user__img:hover{
+  opacity: 0.6;
+}
+.post__user__img{
+object-fit: cover;
+}
+
+// 新規投稿ページ
+
+.post__header__title{
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+}
+.post__header__title::after{
+      content: '';
+    display: block;
+    width: 78px;
+    height: 3px;
+    margin: 2px 0;
+    background-color: #f68655;
+}
+
+
+
+.post__container{
+  max-width: 700px;
+  width: 100%;
+  margin: auto;
+  padding: 0 40px;
+}
+form{
+  text-align: center;
+}
+.form__width[class]{
+  width: 100%;
+  font-size: 16px;
+}
+.post__submit{
+  text-align: right;
+  margin-top: 10px;
+}
+
+.post__alert__text{
+  font-size: 13px;
+}
+
+.form__OnsenName[class]{
+  height: 40px;
+  padding-left: 24px;
+}
+.easy-autocomplete{
+  width: 100%!important;
+text-align: left;
+}
+
+.sauna__temperature__block{
+  margin-top: 40px;
+}
+.autocomplete__block{
+  text-align: left;
+}
+
+.time__block__outer{
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.time__block__text{
+  font-weight: 800;
+  font-size: 15px;
+   margin-bottom: 1rem;
+text-align: left;
+}
+
+.time__block{
+   display: flex;
+   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.form__minutes[class]{
+width: 80%;
+font-size: 16px;
+padding: 12px 26px 12px 12px;
+}
+
+.form__circle{
+color: #fff;
+    padding: 3px;
+    border-radius: 50%;
+    font-size: 12px;
+    margin-right: 2px;
+}
+.sauna__form__circle{
+  background-color: #f68655;
+}
+
+.water__form__circle{
+  background-color: #6b99cf;
+}
+
+.totonoi__form__circle{
+  background-color: #61C359;
+}
+
+.minutes__text{
+  position: absolute;
+  right: 11px;
+  top: 10px;
+  font-size: 13px;
+}
+.form__part{
+  margin-top: 2.5rem;
+}
+.search__form__block{
+  position: relative;
+}
+
+.autocomplete__search__icon{
+  position: absolute;
+  top: 14px;
+  left: 8px;
+}
+
+.post__submit .btn-primary[class]{
+  background-color: #F68655;
+  padding: 14px;
+  font-size: 1.1rem;
+  background-image: none;
+  border: none;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+.post__submit .btn-primary[class]:hover{
+  background-color: #f6b352;
+  background-image: none;
+}
+.post__alert__text .post__alert__link[class]{
+  text-decoration: underline;
+}

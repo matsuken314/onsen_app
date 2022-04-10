@@ -1,5 +1,9 @@
-<p><%= t('.greeting', recipient: @email) %></p>
+<h2><%= @user.name %> さま</h2>
 
-<p><%= t('.instruction') %></p>
+<p>この度は、「ととのい」へのご登録ありがとうございます。</p>
+<p><%= link_to "こちらをクリックして登録完了です", confirmation_url(@resource, confirmation_token: @token) %></p>
+<p>今後とも「ととのい」をよろしくお願いいたします。</p>
+<p>ととのい運営より</p>
+<br>
+ ※このメールは返信しても届きません。お問い合わせは「ととのい」最下部の「お問い合わせ」からお願いいたします。
 
-<p><%= link_to t('.action'), confirmation_url(@resource, confirmation_token: @token) %></p>
