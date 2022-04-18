@@ -29,6 +29,7 @@
     <%# 非ログイン時 %>
     <li class="nav__item"><%= link_to "新規登録", new_user_registration_path, class: "nav__item--link",id: "sighup__link"%></li>
   <li class="nav__item"> <%= link_to "ログイン", new_user_session_path, class: "nav__item--link",id: "signin__link"%></li>
+    <li class="nav__item"> <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "nav__item--link nav__guest__login--link",id: "signin__link"%></li>
     
   <% end %>
   </ul>

@@ -17,7 +17,6 @@
   height: 50px;
 }
 
-
 .nav__item--link{
   width: 100px;
   display: inline-block;
@@ -28,6 +27,11 @@
   border-radius: 0.8rem;
   padding: 10px 0;
 }
+
+.nav__guest__login--link{
+ width: 110px; 
+}
+
 #sighup__link{
  background-color: #F6B352;
  color: #fff;
@@ -96,6 +100,12 @@ background-color: #f2f2f2;
 .dropdown__link span{
   margin-left: 8px;
 }
+@media (max-width:700px){
+  .nav__guest__login--link{
+    display: none;
+  }
+}
+
 @media (max-width:520px){
 .nav__item--link{
   width: 65px;

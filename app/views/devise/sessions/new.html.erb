@@ -33,6 +33,9 @@
     <%= f.submit "ログインする",class: "form__submit__action" %>
    </div>
 </div>
+<div class="signup__others__head">OR</div>
+<div class="login__guest__link signup__other__guest__link__wrapper"><%= link_to "ゲストログイン（お試し用）", users_guest_sign_in_path, method: :post, class: "signup__other__guest__link", id: "signup__other__guest__link__color" %></div>
+
   <a href="/users/password/new" id="forgot__password" class="forgot__password">パスワードを忘れたらこちらへ</a>
 <% end %>
 
