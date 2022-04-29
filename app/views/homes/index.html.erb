@@ -57,10 +57,23 @@
 
 <div class="home__post__block">
  <h3 class="home__onsen__copy">新着サ活</h3>
- 
+ <div class="home__sakatu__outer">
   <div class="home__post__wrapper">
     <%= render partial: 'posts/postdata', collection: @posts, as: 'post' %>
   </div>
+  <div class="home__sakatuUse__wrapper">
+    <h3 class="sakatuUse__head">サ活について</h3>
+    <div class="sakatuUse__body">
+      <p class="sakatuUse__description">
+      あなたのサ活(サウナ・水風呂・外気浴)の平均が円グラフとなって、マイページに表示されます。
+      </p>
+      <p class="sakatuUse__notice">マイページの円グラフをチェック!!</p>
+      <div class="sakatuUse__img__wrapper">
+        <%= image_tag 'sakatugraph.png', alt: "円グラフ", class: "sakatuUse__img"%>
+     </div>
+    </div>
+  </div>
+ </div>
 </div>
 <div class="home__onsen__block">
   <div class="home__onsen__copy__wrapper">

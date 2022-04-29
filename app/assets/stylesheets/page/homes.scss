@@ -185,6 +185,9 @@ margin: 0 auto;
   padding:0 1.5rem;
 }
 
+.home__post__wrapper{
+  flex-grow: 1;
+}
 
 @media (min-width:1280px){
   .hero__description__block{
@@ -205,4 +208,74 @@ font-weight: 800;
 font-size: 1.3rem;
 border-radius: 0.8rem;
 padding: 10px;
+}
+
+
+.home__sakatu__outer{
+  display: flex;
+}
+.home__sakatuUse__wrapper{
+padding: 0 0 20px 48px;
+flex-grow: 1;
+}
+.sakatuUse__link[class]{
+  text-decoration: underline;
+}
+.sakatuUse__head{
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  color: #f68655;
+}
+
+.sakatuUse__body{
+  font-size: 14px;
+  margin-top: 20px;
+}
+.sakatuUse__notice{
+  font-size: 14px;
+}
+.sakatuUse__description{
+  margin-bottom: 30px;
+}
+.sakatuUse__notice{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 700;
+  color: #f68655;
+}
+
+.sakatuUse__notice::before,
+.sakatuUse__notice::after{
+content: '';
+	width: 3px;
+	height: 30px;
+	background-color: #f68655;
+}
+
+.sakatuUse__notice::before{
+  margin-right: 30px;
+  transform: rotate(-35deg)
+}
+
+.sakatuUse__notice::after{
+  margin-left: 30px;
+  transform: rotate(35deg)
+}
+.sakatuUse__img{
+  width: 100%;
+}
+@media (max-width:799px){
+.home__sakatuUse__wrapper{
+display: none;
+}
+.home__post__wrapper{
+  width: 100%;
+}
+.home__sakatu__outer{
+  display: block;
+}
 }
