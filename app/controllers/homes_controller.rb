@@ -1,6 +1,8 @@
 class HomesController < ApplicationController
   def index
-    @onsens = Onsen.order("id DESC").limit(6)
-    @posts = Post.includes(:user).order("id DESC").limit(3)
+    top_new_sauna = 6
+    top_new_post = 3
+    @onsens = Onsen.order("id DESC").limit(top_new_sauna)
+    @posts = Post.includes(:user).order("id DESC").limit(top_new_post)
   end
 end
